@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="AccountRewardSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="AccountSaleSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<w:Config id="1580011779a"/>
 	<e:Group right="0" left="0" height="80" x="20">
 		<e:Rect right="0" bottom="0" left="0" top="0" fillColor="0xF8F8F8" x="10" y="10"/>
-		<e:Label text="进卡奖励" verticalCenter="0" horizontalCenter="0" textColor="0x000000" fontFamily="黑体" size="36"/>
+		<e:Label text="进卡奖励" verticalCenter="0" horizontalCenter="0" textColor="0x000000" fontFamily="微软雅黑" size="36"/>
 		<e:Image source="img_line" bottom="0" left="0" right="0" x="10" y="10"/>
 	</e:Group>
 	<e:TextInput id="txt_total" y="122" height="60" prompt="本月购卡总计:0" horizontalCenter="0" enabled="false"/>

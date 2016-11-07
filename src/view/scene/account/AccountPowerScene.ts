@@ -8,7 +8,6 @@ class AccountPowerScene extends BaseScene {
     private txt_id: eui.TextInput;
     private btn_followSearch: eui.Button;
     private ddm_games: MenuDropDown;
-    private btn_superAgent: eui.Button;
     private btn_agent: eui.Button;
     private scroller: eui.Scroller;
     private itemGroup: eui.Group;
@@ -29,8 +28,6 @@ class AccountPowerScene extends BaseScene {
         this.update();
 
         this.ttl_page.addEventListener(CommonEventType.CHANGED, this.onUpdateCount, this);
-        // this.btn_followSearch.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.btn_superAgent.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_agent.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
         this.gameManager.addEventListener(EventType.LowerUser_Selected, this.onUpdateFollow, this);
@@ -43,7 +40,6 @@ class AccountPowerScene extends BaseScene {
                 this.gameManager.sceneManager.jumpSceneID = SceneType.account_power;
                 this.gameManager.sceneManager.open(SceneType.follow_search);
                 break;
-            case this.btn_superAgent:
             case this.btn_agent:
                 var uid: string = "" + this.txt_id.text;
                 var gid: string = "" + this.gameManager.dataManager.userVo.getGameId(this.ddm_games.selectedValue);
@@ -56,13 +52,7 @@ class AccountPowerScene extends BaseScene {
                     return;
                 }
 
-                var pow: Power = Power.agentLv2;
-                if (e.currentTarget == this.btn_superAgent) {
-                    pow = Power.agentLv1;
-                }
-                else if (e.currentTarget == this.btn_agent) {
-                    pow = Power.agentLv2;
-                }
+                var pow: Power = Power.agentLv1;
                 this.gameManager.msgManager.power.sendAddAgent(uid, gid, pow);
                 break;
         }

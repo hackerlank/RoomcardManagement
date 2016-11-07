@@ -2,7 +2,7 @@
 <e:Skin class="AgentNoticeSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group right="0" left="0" height="80">
 		<e:Rect right="0" left="0" top="0" fillColor="0xF8F8F8" bottom="0" y="10" x="10"/>
-		<e:Label textColor="0x000000" horizontalCenter="0" text="代理说明" fontFamily="微软雅黑" verticalCenter="0"/>
+		<e:Label textColor="0x000000" horizontalCenter="0" text="代理说明" fontFamily="微软雅黑" verticalCenter="0" size="36"/>
 		<e:Image source="img_line" left="0" bottom="0" right="0" y="10" x="10"/>
 	</e:Group>
 	<e:Label id="lab_description" fontFamily="黑体" size="26" textColor="0x0B0A0A" width="540" multiline="true" wordWrap="true" height="755" top="140" horizontalCenter="0"/>

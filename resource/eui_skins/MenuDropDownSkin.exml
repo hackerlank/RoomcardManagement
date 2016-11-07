@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="skins.MenuDropDownSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="200" height="40">
+<e:Skin class="skins.MenuDropDownSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="200" height="50">
 	<e:Group id="dropdown" left="0" right="0" top="0" bottom="0" touchChildren="false">
 		<e:Image source="img_basemap" left="0" right="0" top="0" bottom="0" scale9Grid="7,7,6,6" x="0" y="0" scaleX="1" scaleY="1"/>
 		<e:Label left="8" fontFamily="黑体" textAlign="center" right="8" bold="true" size="28" verticalAlign="middle" id="labelDisplay" x="8" text="" top="8" bottom="8" textColor="0x868686" y="8" scaleX="1" scaleY="1"/>

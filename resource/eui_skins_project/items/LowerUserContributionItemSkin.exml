@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="JuniorItemSkin" width="640" height="150" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="LowerUserContributionItemSkin" width="640" height="150" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Image id="img_portrait" verticalCenter="0" left="20" source="img_portrait_default" width="120" height="120"/>
 	<e:TextInput id="lab_nick" width="176" height="60" prompt="昵称" enabled="false" scaleX="1" scaleY="1" left="180" top="15"/>
 	<e:TextInput id="lab_id" width="176" height="60" prompt="ID" enabled="false" scaleX="1" scaleY="1" left="180" top="75"/>

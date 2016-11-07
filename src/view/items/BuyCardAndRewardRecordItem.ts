@@ -1,9 +1,9 @@
 /**
- * GetRoomCardRecordItem
+ * BuyCardAndRewardRecordItem
  * @Author Ace.c
  * @Create 2016-11-07 12:17
  */
-class GetRoomCardRecordItem extends GameSprite {
+class BuyCardAndRewardRecordItem extends GameSprite {
 
     private lab_time: eui.Label;
     private lab_event: eui.Label;
@@ -12,7 +12,7 @@ class GetRoomCardRecordItem extends GameSprite {
     public constructor() {
         super();
 
-        this.skinName = "GetRoomCardRecordItemSkin";
+        this.skinName = "BuyCardAndRewardRecordItemSkin";
     }
 
     public childrenCreated() {

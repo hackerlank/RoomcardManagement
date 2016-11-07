@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="TransferSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 	<w:Config id="157ff7990d9"/>
-	<e:Group height="80" left="0" right="0" x="90" locked="true">
+	<e:Group height="80" left="0" right="0" x="90">
 		<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0xF8F8F8"/>
-		<e:Label text="购卡中心" verticalCenter="0" horizontalCenter="0" textColor="0x000000" fontFamily="黑体" size="36"/>
+		<e:Label text="购卡中心" verticalCenter="0" horizontalCenter="0" textColor="0x000000" fontFamily="微软雅黑" size="36"/>
 		<e:Image source="img_line" bottom="0" left="0" right="0"/>
 	</e:Group>
 	<e:Group horizontalCenter="0" top="130">
@@ -36,5 +36,9 @@
 		<e:layout>
 			<e:VerticalLayout horizontalAlign="center" gap="50"/>
 		</e:layout>
+	</e:Group>
+	<e:Group top="591" left="20" right="20" bottom="20">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0xFFFFFF"/>
+		<e:Label id="lab_notice" left="20" right="20" top="20" bottom="20" textAlign="center" verticalAlign="middle" fontFamily="黑体" size="24" textColor="0x000000"/>
 	</e:Group>
 </e:Skin>

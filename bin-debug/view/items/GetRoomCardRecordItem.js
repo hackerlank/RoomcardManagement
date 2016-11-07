@@ -15,4 +15,4 @@ var GetRoomCardRecordItem = (function (_super) {
     };
     return GetRoomCardRecordItem;
 }(GameSprite));
-egret.registerClass(GetRoomCardRecordItem,'GetRoomCardRecordItem');
+egret.registerClass(GetRoomCardRecordItem,'BuyCardAndRewardRecordItem');

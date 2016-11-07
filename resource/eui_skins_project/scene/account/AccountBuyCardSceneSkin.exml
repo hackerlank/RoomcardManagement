@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="AccountBuyCardSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group right="0" left="0" height="80">
+		<e:Rect right="0" left="0" top="0" fillColor="0xF8F8F8" bottom="0" y="10" x="10"/>
+		<e:Label textColor="0x000000" horizontalCenter="0" text="购卡和奖励记录" fontFamily="微软雅黑" verticalCenter="0" size="36"/>
+		<e:Image source="img_line" left="0" bottom="0" right="0" y="10" x="10"/>
+	</e:Group>
+	<ns1:BuyCardAndRewardRecordItem skinName="BuyCardAndRewardRecordItemSkin" top="81" horizontalCenter="0"/>
+	<e:Scroller id="scroller" top="122" horizontalCenter="0" bottom="0">
+		<e:Group id="itemGroup"/>
+	</e:Scroller>
+</e:Skin>

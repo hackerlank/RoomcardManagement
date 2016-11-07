@@ -70,7 +70,7 @@ var game_file_list = [
 	"bin-debug/view/GameSprite.js",
 	"bin-debug/view/alert/BaseAlert.js",
 	"bin-debug/view/alert/NormalAlert.js",
-	"bin-debug/view/items/GetRoomCardRecordItem.js",
+	"bin-debug/view/items/BuyCardAndRewardRecordItem.js",
 	"bin-debug/view/items/LowerUserContributionItem.js",
 	"bin-debug/view/items/RoomUserItem.js",
 	"bin-debug/view/items/SaleCardRewardRuleItem.js",

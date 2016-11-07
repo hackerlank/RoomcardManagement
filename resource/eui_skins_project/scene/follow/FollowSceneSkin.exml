@@ -4,7 +4,7 @@
 	<e:Image source="img_line" left="0" right="0" bottom="52"/>
 	<e:Group right="0" left="0" height="80" x="10">
 		<e:Rect right="0" bottom="0" left="0" top="0" fillColor="0xF8F8F8" x="10" y="10"/>
-		<e:Label verticalCenter="0" textColor="0x000000" text="用户管理" horizontalCenter="0" fontFamily="微软雅黑"/>
+		<e:Label verticalCenter="0" textColor="0x000000" text="用户管理" horizontalCenter="0" fontFamily="微软雅黑" size="36"/>
 		<e:Image source="img_line" bottom="0" left="0" right="0" x="10" y="10"/>
 	</e:Group>
 	<e:Group left="0" right="0" top="80" visible="false">
