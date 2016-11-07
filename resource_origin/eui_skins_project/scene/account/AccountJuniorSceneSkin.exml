@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="AccountJuniorSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="15804ef2660"/>
+	<e:Group right="0" left="0" height="80" x="30">
+		<e:Rect right="0" left="0" top="0" bottom="0" fillColor="0xF8F8F8" y="10" x="10"/>
+		<e:Label verticalCenter="0" textColor="0x000000" text="下级贡献" fontFamily="黑体" horizontalCenter="0" size="36"/>
+		<e:Image source="img_line" left="0" bottom="0" right="0" y="10" x="10"/>
+	</e:Group>
+	<e:TextInput id="lab_total" x="78" height="60" top="110" enabled="false"/>
+	<e:Button id="btn_get" label="领取" x="398" height="60" skinName="skins.Button_WhiteSkin" top="110" width="160"/>
+	<e:Scroller id="scroller" top="200" left="0" right="0" bottom="0">
+		<e:Group id="itemGroup">
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

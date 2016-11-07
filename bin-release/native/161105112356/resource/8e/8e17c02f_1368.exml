@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TransferRecordItemSkin" width="640" height="60" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="15804d4ba2f"/>
+	<e:Rect scaleX="1" scaleY="1" top="0" bottom="0" left="0" fillColor="0xccc5c6" strokeColor="0xccc5c6" fillAlpha="0" strokeWeight="2" right="0" locked="true"/>
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Label id="lab_id" text="用户ID" x="335" y="18" size="24" fontFamily="黑体" textColor="0x848484" width="173" scaleX="1" scaleY="1"/>
+		<e:Rect width="2" height="60" x="5" y="0" fillColor="0xCCC5C6" scaleX="1" scaleY="1"/>
+		<e:Label id="lab_name" text="游戏" x="147" y="9" size="24" fontFamily="黑体" textColor="0x848484" width="136" textAlign="left" verticalAlign="top"/>
+		<e:Rect width="2" height="60" x="616" y="0" fillColor="0xCCC5C6" scaleX="1" scaleY="1"/>
+		<e:Label id="lab_count" text="数量" x="177" y="39" size="24" fontFamily="黑体" textColor="0x848484" width="104"/>
+		<e:Rect width="2" height="60" x="624" y="0" fillColor="0xccc5c6" scaleX="1" scaleY="1"/>
+		<e:Label id="lab_time" text="时间" x="342" y="18" size="24" fontFamily="黑体" textColor="0x848484" width="166" scaleX="1" scaleY="1"/>
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" paddingLeft="5" paddingRight="5"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

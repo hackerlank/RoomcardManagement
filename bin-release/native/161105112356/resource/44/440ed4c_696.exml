@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="AccountRechargeSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="158153e5bbc"/>
+	<e:Group right="0" left="0" height="80" x="40">
+		<e:Rect right="0" left="0" top="0" bottom="0" fillColor="0xF8F8F8" y="10" x="10"/>
+		<e:Label verticalCenter="0" textColor="0x000000" text="在线进货" fontFamily="黑体" horizontalCenter="0" size="36"/>
+		<e:Image source="img_line" left="0" bottom="0" right="0" y="10" x="10"/>
+	</e:Group>
+	<e:Group id="itemGroup" horizontalCenter="0" verticalCenter="0">
+		<e:layout>
+			<e:VerticalLayout gap="50"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

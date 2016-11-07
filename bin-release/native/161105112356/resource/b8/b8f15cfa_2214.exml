@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="TransferSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="157ff7990d9"/>
+	<e:Group height="80" left="0" right="0" x="90">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0xF8F8F8"/>
+		<e:Label text="购卡中心" verticalCenter="0" horizontalCenter="0" textColor="0x000000" fontFamily="黑体" size="36"/>
+		<e:Image source="img_line" bottom="0" left="0" right="0"/>
+	</e:Group>
+	<e:Group horizontalCenter="0" top="220">
+		<e:Group verticalCenter="0" horizontalCenter="0">
+			<e:Group>
+				<e:TextInput x="139" y="745" prompt="用户" width="184" enabled="false" height="60" skinName="skins.TextInput_Center2Skin"/>
+				<e:TextInput id="txt_id" x="149" y="755" skinName="skins.TextInputSkin" prompt="点击输入玩家ID" width="256" height="60"/>
+				<e:Button id="btn_followSearch" x="398" y="6" skinName="skins.Button_UserSkin"/>
+				<e:layout>
+					<e:HorizontalLayout verticalAlign="middle" gap="40"/>
+				</e:layout>
+			</e:Group>
+			<e:Group x="10" y="10">
+				<e:layout>
+					<e:HorizontalLayout gap="40" verticalAlign="middle"/>
+				</e:layout>
+				<e:TextInput x="149" prompt="游戏" y="755" width="184" enabled="false" height="60" skinName="skins.TextInput_Center2Skin"/>
+				<e:TextInput id="lab_game" x="520" y="0" skinName="skins.TextInputSkin" width="256" height="60" scaleX="1" scaleY="1" enabled="true"/>
+			</e:Group>
+			<e:Group x="20" y="20">
+				<e:layout>
+					<e:HorizontalLayout gap="40" verticalAlign="middle"/>
+				</e:layout>
+				<e:TextInput x="159" prompt="数量" y="765" width="184" enabled="false" height="60" skinName="skins.TextInput_Center2Skin"/>
+				<ns1:NumberAdder id="nba_count" x="524" y="10" scaleX="1" scaleY="1" width="257" height="60" skinName="skins.NumberAdderSkin"/>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout horizontalAlign="left" gap="40"/>
+			</e:layout>
+		</e:Group>
+		<e:Button id="btn_confirm" horizontalCenter="0" label="确认转账" skinName="skins.Button_WhiteSkin" width="300" height="60"/>
+		<e:layout>
+			<e:VerticalLayout horizontalAlign="center" gap="50"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

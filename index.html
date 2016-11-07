@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>代理后台</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #f0f0f2;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
+    <!--modules_files_start-->
+	<script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
+	<script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
+	<script egret="lib" src="libs/modules/eui/eui.js" src-release="libs/modules/eui/eui.min.js"></script>
+	<script egret="lib" src="libs/modules/res/res.js" src-release="libs/modules/res/res.min.js"></script>
+	<script egret="lib" src="libs/modules/tween/tween.js" src-release="libs/modules/tween/tween.min.js"></script>
+	<script egret="lib" src="libs/modules/game/game.js" src-release="libs/modules/game/game.min.js"></script>
+	<script egret="lib" src="libs/modules/game/game.web.js" src-release="libs/modules/game/game.web.min.js"></script>
+	<script egret="lib" src="libs/modules/weixinapi/weixinapi.js" src-release="libs/modules/weixinapi/weixinapi.min.js"></script>
+	<!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <!--other_libs_files_end-->
+
+    <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
+    <!--game_files_start-->
+	<script egret="game" src="bin-debug/api/Weixin.js"></script>
+	<script egret="game" src="bin-debug/AssetAdapter.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/component/BaseSprite.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/component/HashMap.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/component/KeyValue.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/constant/CommonConst.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/constant/CommonKey.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/constant/CommonType.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/event/CommonEvent.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/event/CommonEventType.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/H5Core.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/manager/HttpManager.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/CommonUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/CountUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/DirtyWordUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/EffectsUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/FactoryUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/FormulaUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/LogUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/StorageUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/StringUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/TestUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/utils/TextEffectsUtils.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/vo/BaseVo.js"></script>
+	<script egret="game" src="bin-debug/cheng/h5_egret/vo/BaseCharVo.js"></script>
+	<script egret="game" src="bin-debug/component/DropDownMenu.js"></script>
+	<script egret="game" src="bin-debug/component/NumberAdder.js"></script>
+	<script egret="game" src="bin-debug/component/TurningTool.js"></script>
+	<script egret="game" src="bin-debug/constant/Common.js"></script>
+	<script egret="game" src="bin-debug/constant/Lang_CH.js"></script>
+	<script egret="game" src="bin-debug/constant/Lang_EN.js"></script>
+	<script egret="game" src="bin-debug/Core.js"></script>
+	<script egret="game" src="bin-debug/Main.js"></script>
+	<script egret="game" src="bin-debug/manager/BaseManager.js"></script>
+	<script egret="game" src="bin-debug/manager/AlertManager.js"></script>
+	<script egret="game" src="bin-debug/manager/DataManager.js"></script>
+	<script egret="game" src="bin-debug/manager/GameManager.js"></script>
+	<script egret="game" src="bin-debug/manager/MsgManager.js"></script>
+	<script egret="game" src="bin-debug/manager/PanelManager.js"></script>
+	<script egret="game" src="bin-debug/manager/SceneManager.js"></script>
+	<script egret="game" src="bin-debug/manager/UIManager.js"></script>
+	<script egret="game" src="bin-debug/net/BaseMessage.js"></script>
+	<script egret="game" src="bin-debug/net/BuyCardMessage.js"></script>
+	<script egret="game" src="bin-debug/net/FollowMessage.js"></script>
+	<script egret="game" src="bin-debug/net/JuniorMessage.js"></script>
+	<script egret="game" src="bin-debug/net/LoginMessage.js"></script>
+	<script egret="game" src="bin-debug/net/PowerMessage.js"></script>
+	<script egret="game" src="bin-debug/net/RechargeMessage.js"></script>
+	<script egret="game" src="bin-debug/net/RoomMessage.js"></script>
+	<script egret="game" src="bin-debug/net/TransferMessage.js"></script>
+	<script egret="game" src="bin-debug/ThemeAdapter.js"></script>
+	<script egret="game" src="bin-debug/types/AlertType.js"></script>
+	<script egret="game" src="bin-debug/types/Cmd.js"></script>
+	<script egret="game" src="bin-debug/types/EventType.js"></script>
+	<script egret="game" src="bin-debug/types/Lang.js"></script>
+	<script egret="game" src="bin-debug/types/PanelType.js"></script>
+	<script egret="game" src="bin-debug/types/SceneType.js"></script>
+	<script egret="game" src="bin-debug/view/GameSprite.js"></script>
+	<script egret="game" src="bin-debug/view/alert/BaseAlert.js"></script>
+	<script egret="game" src="bin-debug/view/alert/NormalAlert.js"></script>
+	<script egret="game" src="bin-debug/view/items/FollowItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/FollowItemMini.js"></script>
+	<script egret="game" src="bin-debug/view/items/JuniorItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/RewardRuleItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/RoomItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/TransferRecordDetailsItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/TransferRecordItem.js"></script>
+	<script egret="game" src="bin-debug/view/loading/LoadingUI.js"></script>
+	<script egret="game" src="bin-debug/view/panel/BasePanel.js"></script>
+	<script egret="game" src="bin-debug/view/scene/BaseScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/account/AccountJuniorScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/account/AccountPowerScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/account/AccountRechargeScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/account/AccountRecordScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/account/AccountRewardScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/account/AccountRoomScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/account/AccountScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/ErrorScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/follow/FollowDetailsScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/follow/FollowScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/follow/FollowSearchScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/transfer/TransferScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/WelcomScene.js"></script>
+	<script egret="game" src="bin-debug/view/ui/BaseUI.js"></script>
+	<script egret="game" src="bin-debug/view/ui/MenuUI.js"></script>
+	<script egret="game" src="bin-debug/vo/FollowVo.js"></script>
+	<script egret="game" src="bin-debug/vo/JuniorVo.js"></script>
+	<script egret="game" src="bin-debug/vo/RechargeVo.js"></script>
+	<script egret="game" src="bin-debug/vo/RewardRuleVo.js"></script>
+	<script egret="game" src="bin-debug/vo/TransferRecordVo.js"></script>
+	<script egret="game" src="bin-debug/vo/UserVo.js"></script>
+	<!--game_files_end-->
+</head>
+<body>
+
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="portrait"
+         data-scale-mode="fixedWidth"
+         data-frame-rate="30"
+         data-content-width="640"
+         data-content-height="960"
+         data-show-paint-rect="false"
+         data-multi-fingered="2"
+         data-show-fps="false" data-show-log="false"
+         data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    </div>
+    <script>
+        /**
+         * {
+         * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+         * "audioType": "" //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+         * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
+         * }
+         **/
+        egret.runEgret({renderMode:"canvas", audioType:0});
+    </script>
+</body>
+</html>

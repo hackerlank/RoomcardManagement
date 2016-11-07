@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="UserItemSkin" width="640" height="150" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="img_portrait" verticalCenter="0" left="15" source="img_portrait_default" width="120" height="120"/>
+	<e:Group x="142" verticalCenter="0">
+		<e:TextInput id="lab_nick" width="176" height="60" prompt="昵称" enabled="false"/>
+		<e:TextInput id="lab_buy" width="200" height="60" prompt="已购" enabled="false"/>
+		<e:TextInput id="lab_id" width="176" height="60" prompt="ID" enabled="false"/>
+		<e:Button id="btn_transfer" label="给ta充值" x="374" y="82" skinName="skins.Button_WhiteSkin" width="200" height="60"/>
+		<e:layout>
+			<e:TileLayout requestedColumnCount="2" horizontalAlign="left" verticalAlign="top"/>
+		</e:layout>
+	</e:Group>
+	<e:Button id="btn_details" verticalCenter="0" skinName="skins.Button_Arrow_RightSkin" right="30"/>
+	<e:Image source="img_line" bottom="0" left="20" right="20" locked="true"/>
+</e:Skin>

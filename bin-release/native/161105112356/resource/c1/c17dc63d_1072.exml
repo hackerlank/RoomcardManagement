@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="AccountRecordSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<w:Config id="158153cf23c"/>
+	<e:Rect fillColor="0xCCC5C6" scaleX="1" scaleY="1" left="0" right="0" bottom="52" height="2"/>
+	<e:Group right="0" left="0" height="80" x="50">
+		<e:Rect right="0" left="0" top="0" bottom="0" fillColor="0xF8F8F8" y="10" x="10"/>
+		<e:Label verticalCenter="0" textColor="0x000000" text="转账记录" fontFamily="黑体" horizontalCenter="0" size="36"/>
+		<e:Image source="img_line" left="0" bottom="0" right="0" y="10" x="10"/>
+	</e:Group>
+	<ns1:TransferRecordItem horizontalCenter="0" skinName="TransferRecordItemSkin" x="0" scaleX="1" scaleY="1" top="80"/>
+	<e:Scroller id="scroller" left="0" right="0" top="140" bottom="52">
+		<e:Group id="itemGroup">
+			<e:layout>
+				<e:VerticalLayout gap="-2"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+	<ns1:TurningTool id="nba_page" bottom="10" horizontalCenter="0" skinName="skins.TurningToolSkin"/>
+</e:Skin>

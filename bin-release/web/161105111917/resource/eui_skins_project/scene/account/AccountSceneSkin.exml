@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="AccountSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="157fedbd35e"/>
+	<e:Group right="0" left="0" height="80" x="20">
+		<e:Rect right="0" bottom="0" left="0" top="0" fillColor="0xF8F8F8" x="10" y="10"/>
+		<e:Label text="管理中心" verticalCenter="0" horizontalCenter="0" textColor="0x000000" fontFamily="黑体" size="36"/>
+		<e:Image source="img_line" bottom="0" left="0" right="0" x="10" y="10"/>
+	</e:Group>
+	<e:Group horizontalCenter="0" top="140">
+		<e:Image id="img_portrait" verticalCenter="0" source="img_portrait_default" height="120" width="120"/>
+		<e:TextInput id="lab_nick" height="60" width="236" enabled="false" prompt="昵称" left="130"/>
+		<e:TextInput id="lab_card" width="236" height="60" enabled="false" prompt="房卡数量" left="380"/>
+		<e:TextInput id="lab_id" width="236" height="60" enabled="false" prompt="ID" left="130" bottom="0"/>
+		<e:Button id="btn_recharge" label="在线进货" left="380" height="60" skinName="skins.Button_WhiteSkin" width="236" bottom="0"/>
+	</e:Group>
+	<e:Rect height="2" fillColor="0xFFFAFA" left="20" right="20" top="300"/>
+	<e:Scroller horizontalCenter="0" top="360" bottom="10">
+		<e:Group id="menuGroup">
+			<e:Group x="-208" y="0" scaleX="1" scaleY="1">
+				<e:Button id="btn_record" label="转账记录" width="400" height="60" skinName="skins.Button_WhiteSkin"/>
+				<e:Button id="btn_record1" x="525" skinName="skins.Button_Arrow_RightSkin"/>
+				<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="20"/>
+				</e:layout>
+			</e:Group>
+			<e:Group id="powerGroup" x="-208" y="80" scaleX="1" scaleY="1">
+				<e:Button id="btn_power" label="权限管理" width="400" height="60" skinName="skins.Button_WhiteSkin"/>
+				<e:Button id="btn_power1" x="525" skinName="skins.Button_Arrow_RightSkin"/>
+				<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="20"/>
+				</e:layout>
+			</e:Group>
+			<e:Group y="80" x="-104" scaleX="1" scaleY="1">
+				<e:Button id="btn_room" width="400" label="房间管理" height="60" skinName="skins.Button_WhiteSkin"/>
+				<e:Button id="btn_room1" skinName="skins.Button_Arrow_RightSkin"/>
+				<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="20"/>
+				</e:layout>
+			</e:Group>
+			<e:Group id="juniorGroup" y="80" x="-104" scaleX="1" scaleY="1">
+				<e:Button id="btn_junior" width="400" label="下级贡献" height="60" skinName="skins.Button_WhiteSkin"/>
+				<e:Button id="btn_junior1" skinName="skins.Button_Arrow_RightSkin" verticalCenter="0"/>
+				<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="20"/>
+				</e:layout>
+			</e:Group>
+			<e:Group y="80" x="-52" scaleX="1" scaleY="1">
+				<e:Button id="btn_reward" width="400" label="进卡奖励" height="60" skinName="skins.Button_WhiteSkin"/>
+				<e:Button id="btn_reward1" skinName="skins.Button_Arrow_RightSkin" verticalCenter="0"/>
+				<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="20"/>
+				</e:layout>
+			</e:Group>
+			<e:Group y="80" x="-52" scaleX="1" scaleY="1">
+				<e:Button width="400" label="客服QQ:10000" height="60" skinName="skins.Button_WhiteSkin" enabled="true"/>
+				<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="20"/>
+				</e:layout>
+			</e:Group>
+			<e:Group y="80" x="-3" scaleX="1" scaleY="1">
+				<e:Button width="400" label="客服电话:10000" height="60" skinName="skins.Button_WhiteSkin"/>
+				<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="20"/>
+				</e:layout>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout gap="20"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="MenuUISkin" width="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="80">
+	<e:Rect right="0" bottom="0" left="0" top="0" fillColor="0xF8F8F8" x="0" y="0" scaleX="1" scaleY="1"/>
+	<e:Image source="img_line" left="0" right="0" x="0" scaleX="1" scaleY="1"/>
+	<e:Group left="0" right="0" verticalCenter="0">
+		<e:Button id="btn_transfer" verticalCenter="0" left="80" skinName="skins.Button_Add2Skin" width="150" height="80"/>
+		<e:Button id="btn_follow" verticalCenter="0" horizontalCenter="0" skinName="skins.Button_DetailsSkin" width="150" height="80"/>
+		<e:Button id="btn_account" right="80" verticalCenter="0" skinName="skins.Button_UserSkin" width="150" height="80"/>
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="left" verticalAlign="top" gap="95"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>
