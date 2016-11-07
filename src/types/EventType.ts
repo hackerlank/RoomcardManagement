@@ -5,32 +5,32 @@
  */
 class EventType {
 
-    //------------------个人信息--------------------
-    //信息
+    //------------------用户信息--------------------
+    //用户信息
     static User_Info: string = "User_Info";
-    //用户转账列表
-    static User_Record_List: string = "User_Record_List";
 
-    //------------------下线用户--------------------
-    //更新列表
-    static Follow_Update_List: string = "Follow_Update_List";
-    //更新信息
-    static Follow_Update_Info: string = "Follow_Update_Info";
-    //选择一个下线用户
-    static Follow_Selected: string = "Follow_Selected";
+    //------------------转账--------------------
+    //转账列表更新
+    static Transfer_List: string = "Transfer_List";
+
+    //------------------下级用户--------------------
+    //下级用户列表
+    static LowerUser_List: string = "LowerUser_List";
+    //下级用户信息
+    static LowerUser_Info: string = "LowerUser_Info";
+    //下级用户被选中
+    static LowerUser_Selected: string = "LowerUser_Selected";
+    //下级用户贡献数据
+    static LowerUser_Contribution: string = "LowerUser_Contribution";
 
     //------------------房间管理--------------------
-    //更新用户
-    static Room_Update_Users: string = "Room_Update_Users";
-    //解散
+    //房间用户列表
+    static Room_User_List: string = "Room_User_List";
+    //房间解散
     static Room_Dismass: string = "Room_Dismass";
 
-    //------------------下级贡献--------------------
-    //下级贡献数据
-    static Junior_Info: string = "Junior_Info";
-
     //------------------购卡奖励--------------------
-    //信息
+    //购卡信息
     static BuyCard_Info: string = "BuyCard_Info";
 
 }

@@ -29,11 +29,13 @@ class TransferRecordVo extends BaseVo {
     public update(data: any) {
         super.update(data);
 
+        var userVo: UserVo = core.gameManager.dataManager.userVo;
+
         if (data.hasOwnProperty("gid")) {
-            this.gam = core.gameManager.dataManager.getGameName(this.gid);
+            this.gam = userVo.getGameName(this.gid);
         }
         else {
-            this.gam = core.gameManager.dataManager.getGameName(core.gameManager.dataManager.userVo.gid);
+            this.gam = userVo.getGameName(userVo.gid);
         }
     }
 }

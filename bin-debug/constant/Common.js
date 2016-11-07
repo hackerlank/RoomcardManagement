@@ -6,8 +6,9 @@
 var Power;
 (function (Power) {
     Power[Power["superManager"] = 1] = "superManager";
-    Power[Power["superAgent"] = 2] = "superAgent";
-    Power[Power["agent"] = 3] = "agent";
+    Power[Power["agentLv1"] = 2] = "agentLv1";
+    Power[Power["agentLv2"] = 3] = "agentLv2";
+    Power[Power["agentLv3"] = 4] = "agentLv3";
 })(Power || (Power = {}));
 /**
  * Language

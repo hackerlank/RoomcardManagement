@@ -12,14 +12,13 @@ var MsgManager = (function (_super) {
     var d = __define,c=MsgManager,p=c.prototype;
     p.initManager = function () {
         _super.prototype.initManager.call(this);
-        this.login = new LoginMessage();
-        this.transfer = new TransferMessage();
-        this.follow = new FollowMessage();
-        this.power = new PowerMessage();
-        this.room = new RoomMessage();
-        this.junior = new JuniorMessage();
-        this.buyCard = new BuyCardMessage();
-        this.recharge = new RechargeMessage();
+        this.login = new LoginMsg();
+        this.transfer = new TransferMsg();
+        this.lowerUser = new LowerUserMsg();
+        this.power = new PowerMsg();
+        this.room = new RoomMsg();
+        this.buyCard = new BuyCardMsg();
+        this.recharge = new RechargeMsg();
     };
     return MsgManager;
 }(BaseManager));

@@ -16,7 +16,7 @@ var AccountRoomScene = (function (_super) {
         this.txt_search.restrict = "0-9";
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_dismass.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.gameManager.addEventListener(EventType.Room_Update_Users, this.onUpdateUsers, this);
+        this.gameManager.addEventListener(EventType.Room_User_List, this.onUpdateUsers, this);
         this.gameManager.addEventListener(EventType.Room_Dismass, this.onUpdateUsers, this);
     };
     p.clickHandler = function (e) {
@@ -33,11 +33,11 @@ var AccountRoomScene = (function (_super) {
         }
     };
     p.onUpdateUsers = function () {
-        this.roomUsers = this.gameManager.dataManager.roomUsers;
+        this.roomUsers = this.gameManager.dataManager.getRoomUserList();
         this.itemGroup.removeChildren();
         var item;
         for (var i = 0; i < this.roomUsers.length; i++) {
-            item = new RoomItem();
+            item = new RoomUserItem();
             item.update(this.roomUsers[i]);
             this.itemGroup.addChild(item);
         }

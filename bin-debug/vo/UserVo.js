@@ -31,6 +31,36 @@ var UserVo = (function (_super) {
         this.gameMap = {};
     }
     var d = __define,c=UserVo,p=c.prototype;
+    /**
+     * 获取游戏id
+     * @param name
+     * @returns {any}
+     */
+    p.getGameId = function (name) {
+        var gameMap = this.gameMap;
+        var game;
+        for (var key in gameMap) {
+            game = gameMap[key];
+            if (game.name == name) {
+                return game.gameid;
+            }
+        }
+        return null;
+    };
+    /**
+     * 获取游戏name
+     * @param id
+     * @returns {any}
+     */
+    p.getGameName = function (id) {
+        var gameMap = this.gameMap;
+        var game;
+        if (gameMap.hasOwnProperty(id)) {
+            game = gameMap[id];
+            return game.name;
+        }
+        return null;
+    };
     return UserVo;
 }(BaseVo));
 egret.registerClass(UserVo,'UserVo');

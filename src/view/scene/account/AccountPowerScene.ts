@@ -7,7 +7,7 @@ class AccountPowerScene extends BaseScene {
 
     private txt_id: eui.TextInput;
     private btn_followSearch: eui.Button;
-    private ddm_games: DropDownMenu;
+    private ddm_games: MenuDropDown;
     private btn_superAgent: eui.Button;
     private btn_agent: eui.Button;
     private scroller: eui.Scroller;
@@ -24,7 +24,7 @@ class AccountPowerScene extends BaseScene {
     public childrenCreated() {
         super.childrenCreated();
 
-        // this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.recordLength / core.pageLength));
+        // this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferRecordLength / core.pageLength));
 
         this.update();
 
@@ -33,7 +33,7 @@ class AccountPowerScene extends BaseScene {
         this.btn_superAgent.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_agent.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
-        this.gameManager.addEventListener(EventType.Follow_Selected, this.onUpdateFollow, this);
+        this.gameManager.addEventListener(EventType.LowerUser_Selected, this.onUpdateFollow, this);
         this.gameManager.addEventListener(EventType.User_Info, this.onUpdateUserInfo, this);
     }
 
@@ -46,7 +46,7 @@ class AccountPowerScene extends BaseScene {
             case this.btn_superAgent:
             case this.btn_agent:
                 var uid: string = "" + this.txt_id.text;
-                var gid: string = "" + this.gameManager.dataManager.getGameId(this.ddm_games.selectedValue);
+                var gid: string = "" + this.gameManager.dataManager.userVo.getGameId(this.ddm_games.selectedValue);
                 if (uid == "") {
                     this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1001));
                     return;
@@ -56,12 +56,12 @@ class AccountPowerScene extends BaseScene {
                     return;
                 }
 
-                var pow: Power = Power.agent;
+                var pow: Power = Power.agentLv2;
                 if (e.currentTarget == this.btn_superAgent) {
-                    pow = Power.superAgent;
+                    pow = Power.agentLv1;
                 }
                 else if (e.currentTarget == this.btn_agent) {
-                    pow = Power.agent;
+                    pow = Power.agentLv2;
                 }
                 this.gameManager.msgManager.power.sendAddAgent(uid, gid, pow);
                 break;
@@ -70,8 +70,8 @@ class AccountPowerScene extends BaseScene {
 
     private onUpdateCount() {
         // this.page = this.ttl_page.page;
-        // if (this.gameManager.dataManager.recordList.length < this.page * core.pageLength) {
-        //     this.gameManager.msgManager.transfer.sendTransferList("", this.page, core.pageLength);
+        // if (this.gameManager.dataManager.getTransferRecordList.length < this.page * core.pageLength) {
+        //     this.gameManager.msgManager.transfer.sendTransferRecords("", this.page, core.pageLength);
         // }
     }
 

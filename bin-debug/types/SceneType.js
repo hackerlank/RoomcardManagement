@@ -13,12 +13,11 @@ var SceneType = (function () {
     SceneType.follow_search = "2002";
     SceneType.follow_details = "2003";
     SceneType.account = "3001";
-    SceneType.account_record = "3002";
-    SceneType.account_reward = "3003";
-    SceneType.account_junior = "3004";
-    SceneType.account_room = "3005";
-    SceneType.account_recharge = "3006";
-    SceneType.account_power = "3007";
+    SceneType.account_recharge = "3002";
+    SceneType.account_power = "3003";
+    SceneType.account_room = "3004";
+    SceneType.account_sale = "3005";
+    SceneType.account_transfer = "3006";
     SceneType.error = "9999";
     return SceneType;
 }());

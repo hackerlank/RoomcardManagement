@@ -11,8 +11,8 @@ class FollowSearchScene extends BaseScene {
     private itemGroup: eui.Group;
     private ttl_page: TurningTool;
 
-    public followList: FollowVo[];
-    public showList: FollowVo[];
+    public followList: LowerUserVo[];
+    public showList: LowerUserVo[];
     public page: number = 1;
 
     public constructor() {
@@ -25,31 +25,31 @@ class FollowSearchScene extends BaseScene {
     public childrenCreated() {
         super.childrenCreated();
 
-        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.followLength / core.pageLength));
+        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.lowerUserCount / core.pageLength));
         this.onUpdateCount();
 
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.ttl_page.addEventListener(CommonEventType.CHANGED, this.onUpdateCount, this);
 
-        this.gameManager.addEventListener(EventType.Follow_Update_List, this.onUpdateList, this);
+        this.gameManager.addEventListener(EventType.LowerUser_List, this.onUpdateList, this);
     }
 
     private clickHandler(e: egret.TouchEvent) {
         switch (e.currentTarget) {
             case this.btn_search:
-                // this.gameManager.msgManager.follow.sendFollowInfo(this.txt_search.text);
+                // this.gameManager.msgManager.lowerUser.sendFollowInfo(this.txt_search.text);
                 break;
         }
     }
 
     private onUpdateCount() {
         this.page = this.ttl_page.page;
-        if (this.gameManager.dataManager.followList.length < this.page * core.pageLength) {
-            this.gameManager.msgManager.follow.sendFollowList(this.page, core.pageLength);
+        if (this.gameManager.dataManager.getLowerUserList.length < this.page * core.pageLength) {
+            this.gameManager.msgManager.lowerUser.sendLowerUser_List(this.page, core.pageLength);
         }
         else {
-            this.followList = this.gameManager.dataManager.followList;
-            var list: FollowVo[] = [];
+            this.followList = this.gameManager.dataManager.getLowerUserList();
+            var list: LowerUserVo[] = [];
             var start: number = core.pageLength * (this.page - 1);
             for (var i: number = start; i < start + core.pageLength; i++) {
                 if (this.followList[i]) {
@@ -60,17 +60,17 @@ class FollowSearchScene extends BaseScene {
         }
     }
 
-    private onUpdateList(list: FollowVo[] = []) {
-        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.followLength / core.pageLength));
+    private onUpdateList(list: LowerUserVo[] = []) {
+        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.lowerUserCount / core.pageLength));
         this.update(list);
     }
 
-    public update(list: FollowVo[] = []) {
+    public update(list: LowerUserVo[] = []) {
         this.itemGroup.removeChildren();
         if (list) {
-            var item: FollowItem;
+            var item: UserItem;
             for (var i: number = 0; i < list.length; i++) {
-                item = new FollowItem();
+                item = new UserItem();
                 item.update(list[i]);
                 this.itemGroup.addChild(item);
             }

@@ -17,12 +17,11 @@ class SceneManager extends BaseManager {
     public followDetailsScene: FollowDetailsScene;
 
     public accountScene: AccountScene;
-    public accountRecordScene: AccountRecordScene;
-    public accountRewardScene: AccountRewardScene;
-    public accountJuniorScene: AccountJuniorScene;
-    public accountRoomScene: AccountRoomScene;
     public accountRechargeScene: AccountRechargeScene;
     public accountPowerScene: AccountPowerScene;
+    public accountRoomScene: AccountRoomScene;
+    public accountSaleScene: AccountSaleScene;
+    public accountTransferScene: AccountTransferScene;
 
     public constructor() {
         super();
@@ -56,14 +55,11 @@ class SceneManager extends BaseManager {
         this.accountScene = new AccountScene();
         this.addScene(this.accountScene);
 
-        this.accountRecordScene = new AccountRecordScene();
-        this.addScene(this.accountRecordScene);
+        this.accountTransferScene = new AccountTransferScene();
+        this.addScene(this.accountTransferScene);
 
-        this.accountRewardScene = new AccountRewardScene();
-        this.addScene(this.accountRewardScene);
-
-        this.accountJuniorScene = new AccountJuniorScene();
-        this.addScene(this.accountJuniorScene);
+        this.accountSaleScene = new AccountSaleScene();
+        this.addScene(this.accountSaleScene);
 
         this.accountRoomScene = new AccountRoomScene();
         this.addScene(this.accountRoomScene);

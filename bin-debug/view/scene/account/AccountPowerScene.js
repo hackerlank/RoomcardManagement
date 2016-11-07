@@ -13,13 +13,13 @@ var AccountPowerScene = (function (_super) {
     var d = __define,c=AccountPowerScene,p=c.prototype;
     p.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
-        // this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.recordLength / core.pageLength));
+        // this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferRecordLength / core.pageLength));
         this.update();
         this.ttl_page.addEventListener(CommonEventType.CHANGED, this.onUpdateCount, this);
         // this.btn_followSearch.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_superAgent.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_agent.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.gameManager.addEventListener(EventType.Follow_Selected, this.onUpdateFollow, this);
+        this.gameManager.addEventListener(EventType.LowerUser_Selected, this.onUpdateFollow, this);
         this.gameManager.addEventListener(EventType.User_Info, this.onUpdateUserInfo, this);
     };
     p.clickHandler = function (e) {
@@ -31,7 +31,7 @@ var AccountPowerScene = (function (_super) {
             case this.btn_superAgent:
             case this.btn_agent:
                 var uid = "" + this.txt_id.text;
-                var gid = "" + this.gameManager.dataManager.getGameId(this.ddm_games.selectedValue);
+                var gid = "" + this.gameManager.dataManager.userVo.getGameId(this.ddm_games.selectedValue);
                 if (uid == "") {
                     this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1001));
                     return;
@@ -40,12 +40,12 @@ var AccountPowerScene = (function (_super) {
                     this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1002));
                     return;
                 }
-                var pow = Power.agent;
+                var pow = Power.agentLv2;
                 if (e.currentTarget == this.btn_superAgent) {
-                    pow = Power.superAgent;
+                    pow = Power.agentLv1;
                 }
                 else if (e.currentTarget == this.btn_agent) {
-                    pow = Power.agent;
+                    pow = Power.agentLv2;
                 }
                 this.gameManager.msgManager.power.sendAddAgent(uid, gid, pow);
                 break;
@@ -53,8 +53,8 @@ var AccountPowerScene = (function (_super) {
     };
     p.onUpdateCount = function () {
         // this.page = this.ttl_page.page;
-        // if (this.gameManager.dataManager.recordList.length < this.page * core.pageLength) {
-        //     this.gameManager.msgManager.transfer.sendTransferList("", this.page, core.pageLength);
+        // if (this.gameManager.dataManager.getTransferRecordList.length < this.page * core.pageLength) {
+        //     this.gameManager.msgManager.transfer.sendTransferRecords("", this.page, core.pageLength);
         // }
     };
     p.onUpdateUserInfo = function () {

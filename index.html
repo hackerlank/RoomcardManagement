@@ -63,7 +63,8 @@
 	<script egret="game" src="bin-debug/cheng/h5_egret/utils/TextEffectsUtils.js"></script>
 	<script egret="game" src="bin-debug/cheng/h5_egret/vo/BaseVo.js"></script>
 	<script egret="game" src="bin-debug/cheng/h5_egret/vo/BaseCharVo.js"></script>
-	<script egret="game" src="bin-debug/component/DropDownMenu.js"></script>
+	<script egret="game" src="bin-debug/component/MenuDropDown.js"></script>
+	<script egret="game" src="bin-debug/component/MenuPopup.js"></script>
 	<script egret="game" src="bin-debug/component/NumberAdder.js"></script>
 	<script egret="game" src="bin-debug/component/TurningTool.js"></script>
 	<script egret="game" src="bin-debug/constant/Common.js"></script>
@@ -79,15 +80,14 @@
 	<script egret="game" src="bin-debug/manager/PanelManager.js"></script>
 	<script egret="game" src="bin-debug/manager/SceneManager.js"></script>
 	<script egret="game" src="bin-debug/manager/UIManager.js"></script>
-	<script egret="game" src="bin-debug/net/BaseMessage.js"></script>
-	<script egret="game" src="bin-debug/net/BuyCardMessage.js"></script>
-	<script egret="game" src="bin-debug/net/FollowMessage.js"></script>
-	<script egret="game" src="bin-debug/net/JuniorMessage.js"></script>
-	<script egret="game" src="bin-debug/net/LoginMessage.js"></script>
-	<script egret="game" src="bin-debug/net/PowerMessage.js"></script>
-	<script egret="game" src="bin-debug/net/RechargeMessage.js"></script>
-	<script egret="game" src="bin-debug/net/RoomMessage.js"></script>
-	<script egret="game" src="bin-debug/net/TransferMessage.js"></script>
+	<script egret="game" src="bin-debug/net/BaseMsg.js"></script>
+	<script egret="game" src="bin-debug/net/BuyCardMsg.js"></script>
+	<script egret="game" src="bin-debug/net/LoginMsg.js"></script>
+	<script egret="game" src="bin-debug/net/LowerUserMsg.js"></script>
+	<script egret="game" src="bin-debug/net/PowerMsg.js"></script>
+	<script egret="game" src="bin-debug/net/RechargeMsg.js"></script>
+	<script egret="game" src="bin-debug/net/RoomMsg.js"></script>
+	<script egret="game" src="bin-debug/net/TransferMsg.js"></script>
 	<script egret="game" src="bin-debug/ThemeAdapter.js"></script>
 	<script egret="game" src="bin-debug/types/AlertType.js"></script>
 	<script egret="game" src="bin-debug/types/Cmd.js"></script>
@@ -98,33 +98,36 @@
 	<script egret="game" src="bin-debug/view/GameSprite.js"></script>
 	<script egret="game" src="bin-debug/view/alert/BaseAlert.js"></script>
 	<script egret="game" src="bin-debug/view/alert/NormalAlert.js"></script>
-	<script egret="game" src="bin-debug/view/items/FollowItem.js"></script>
-	<script egret="game" src="bin-debug/view/items/FollowItemMini.js"></script>
-	<script egret="game" src="bin-debug/view/items/JuniorItem.js"></script>
-	<script egret="game" src="bin-debug/view/items/RewardRuleItem.js"></script>
-	<script egret="game" src="bin-debug/view/items/RoomItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/GetRoomCardRecordItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/LowerUserContributionItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/RoomUserItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/SaleCardRewardRuleItem.js"></script>
 	<script egret="game" src="bin-debug/view/items/TransferRecordDetailsItem.js"></script>
 	<script egret="game" src="bin-debug/view/items/TransferRecordItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/UserItem.js"></script>
+	<script egret="game" src="bin-debug/view/items/UserItemMini.js"></script>
 	<script egret="game" src="bin-debug/view/loading/LoadingUI.js"></script>
 	<script egret="game" src="bin-debug/view/panel/BasePanel.js"></script>
 	<script egret="game" src="bin-debug/view/scene/BaseScene.js"></script>
-	<script egret="game" src="bin-debug/view/scene/account/AccountJuniorScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/account/AccountBuyCardScene.js"></script>
 	<script egret="game" src="bin-debug/view/scene/account/AccountPowerScene.js"></script>
 	<script egret="game" src="bin-debug/view/scene/account/AccountRechargeScene.js"></script>
-	<script egret="game" src="bin-debug/view/scene/account/AccountRecordScene.js"></script>
-	<script egret="game" src="bin-debug/view/scene/account/AccountRewardScene.js"></script>
 	<script egret="game" src="bin-debug/view/scene/account/AccountRoomScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/account/AccountSaleScene.js"></script>
 	<script egret="game" src="bin-debug/view/scene/account/AccountScene.js"></script>
-	<script egret="game" src="bin-debug/view/scene/ErrorScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/account/AccountTransferScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/agent/AgentNoticeScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/agent/AgentScene.js"></script>
 	<script egret="game" src="bin-debug/view/scene/follow/FollowDetailsScene.js"></script>
 	<script egret="game" src="bin-debug/view/scene/follow/FollowScene.js"></script>
 	<script egret="game" src="bin-debug/view/scene/follow/FollowSearchScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/other/ErrorScene.js"></script>
+	<script egret="game" src="bin-debug/view/scene/other/WelcomScene.js"></script>
 	<script egret="game" src="bin-debug/view/scene/transfer/TransferScene.js"></script>
-	<script egret="game" src="bin-debug/view/scene/WelcomScene.js"></script>
 	<script egret="game" src="bin-debug/view/ui/BaseUI.js"></script>
 	<script egret="game" src="bin-debug/view/ui/MenuUI.js"></script>
-	<script egret="game" src="bin-debug/vo/FollowVo.js"></script>
-	<script egret="game" src="bin-debug/vo/JuniorVo.js"></script>
+	<script egret="game" src="bin-debug/vo/LowerUserContributionVo.js"></script>
+	<script egret="game" src="bin-debug/vo/LowerUserVo.js"></script>
 	<script egret="game" src="bin-debug/vo/RechargeVo.js"></script>
 	<script egret="game" src="bin-debug/vo/RewardRuleVo.js"></script>
 	<script egret="game" src="bin-debug/vo/TransferRecordVo.js"></script>

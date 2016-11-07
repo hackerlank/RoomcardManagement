@@ -78,4 +78,9 @@ class NumberAdder extends BaseSprite {
     public setMaxChars(value: number) {
         this.txt_count.maxChars = value;
     }
+
+    public setNumb(value: number) {
+        this.numb = value;
+        this.update();
+    }
 }

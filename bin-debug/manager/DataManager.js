@@ -7,75 +7,87 @@ var DataManager = (function (_super) {
     __extends(DataManager, _super);
     function DataManager() {
         _super.call(this);
+        //----------------下级用户----------------
+        //下级用户数量
+        this.lowerUserCount = 0;
+        //下级用户集合
+        this.lowerUserMap = {};
+        //下线用户贡献记录
+        this.lowerUserContributions = [];
         this.initManager();
     }
     var d = __define,c=DataManager,p=c.prototype;
-    d(p, "followLength"
-        //下线数量
-        ,function () {
-            return this.gameManager.msgManager.follow.followLength;
-        }
-    );
-    d(p, "followList"
-        //下线列表
-        ,function () {
-            return this.gameManager.msgManager.follow.followList;
-        }
-    );
-    d(p, "roomUsers"
-        //房间信息
-        ,function () {
-            return this.gameManager.msgManager.room.roomUsers;
-        }
-    );
-    d(p, "recordLength"
-        //转账记录长度
-        ,function () {
-            return this.gameManager.msgManager.transfer.recordLength;
-        }
-    );
-    //转账记录
-    p.recordList = function (uid) {
-        if (uid === void 0) { uid = null; }
-        return this.gameManager.msgManager.transfer.recordList(uid);
-    };
-    //下线贡献
-    p.juniorList = function () {
-        return this.gameManager.msgManager.junior.juniorList;
-    };
     p.initManager = function () {
         _super.prototype.initManager.call(this);
         this.userVo = new UserVo();
+        this.lowerUserMap = {};
+        this.transferRecordMap = {};
+        this.roomUserMap = {};
     };
     /**
-     * 获取游戏id
-     * @param name
-     * @returns {any}
+     * 获取下级用户列表
+     * @returns {LowerUserVo[]}
      */
-    p.getGameId = function (name) {
-        var gameMap = this.userVo.gameMap;
-        var game;
-        for (var key in gameMap) {
-            game = gameMap[key];
-            if (game.name == name) {
-                return game.gameid;
+    p.getLowerUserList = function () {
+        var list = [];
+        for (var uid in this.lowerUserMap) {
+            list.push(this.lowerUserMap[uid]);
+        }
+        list.sort(function (a, b) {
+            if (a.zong > b.zong) {
+                return -1;
+            }
+            else {
+                return 1;
+            }
+        });
+        return list;
+    };
+    /**
+     * 获取房间用户列表
+     * @returns {LowerUserVo[]}
+     */
+    p.getRoomUserList = function () {
+        var list = [];
+        for (var uid in this.roomUserMap) {
+            list.push(this.roomUserMap[uid]);
+        }
+        list.sort(function (a, b) {
+            if (a.zong > b.zong) {
+                return -1;
+            }
+            else {
+                return 1;
+            }
+        });
+        return list;
+    };
+    /**
+     * 获取转账记录列表
+     * @param uid
+     * @returns {TransferRecordVo[]}
+     */
+    p.getTransferRecordList = function (uid) {
+        if (uid === void 0) { uid = null; }
+        var list = [];
+        var records;
+        for (var userid in this.transferRecordMap) {
+            records = this.transferRecordMap[userid];
+            if (uid == null || uid == userid) {
+                for (var odr in records) {
+                    list.push(records[odr]);
+                }
             }
         }
-        return null;
-    };
-    /**
-     * 获取游戏name
-     * @param id
-     * @returns {any}
-     */
-    p.getGameName = function (id) {
-        var gameMap = this.userVo.gameMap;
-        var game;
-        if (gameMap.hasOwnProperty(id)) {
-            game = gameMap[id];
-            return game.name;
-        }
-        return null;
+        list.sort(function (a, b) {
+            if (a.ctm > b.ctm) {
+                return -1;
+            }
+            else {
+                return 1;
+            }
+        });
+        return list;
     };
     return DataManager;
 }(BaseManager));

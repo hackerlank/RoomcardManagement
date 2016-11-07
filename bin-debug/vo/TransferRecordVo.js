@@ -15,11 +15,12 @@ var TransferRecordVo = (function (_super) {
     var d = __define,c=TransferRecordVo,p=c.prototype;
     p.update = function (data) {
         _super.prototype.update.call(this, data);
+        var userVo = core.gameManager.dataManager.userVo;
         if (data.hasOwnProperty("gid")) {
-            this.gam = core.gameManager.dataManager.getGameName(this.gid);
+            this.gam = userVo.getGameName(this.gid);
         }
         else {
-            this.gam = core.gameManager.dataManager.getGameName(core.gameManager.dataManager.userVo.gid);
+            this.gam = userVo.getGameName(userVo.gid);
         }
     };
     return TransferRecordVo;

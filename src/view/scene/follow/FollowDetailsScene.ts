@@ -15,7 +15,7 @@ class FollowDetailsScene extends BaseScene {
     private itemGroup: eui.Group;
     private ttl_page: TurningTool;
 
-    public followVo: FollowVo;
+    public followVo: LowerUserVo;
     public recordList: TransferRecordVo[];
     public page: number = 1;
 
@@ -29,7 +29,7 @@ class FollowDetailsScene extends BaseScene {
     public childrenCreated() {
         super.childrenCreated();
 
-        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.recordLength / core.pageLength));
+        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferRecordLength / core.pageLength));
 
         this.ttl_page.addEventListener(CommonEventType.CHANGED, this.onUpdateCount, this);
 
@@ -37,7 +37,7 @@ class FollowDetailsScene extends BaseScene {
 
         this.btn_transfer.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
-        this.gameManager.addEventListener(EventType.User_Record_List, this.onUpdateInfo, this);
+        this.gameManager.addEventListener(EventType.Transfer_List, this.onUpdateInfo, this);
     }
 
     private clickHandler(e: egret.TouchEvent) {
@@ -45,7 +45,7 @@ class FollowDetailsScene extends BaseScene {
             case this.btn_transfer:
                 if (this.followVo) {
                     this.gameManager.sceneManager.open(SceneType.transfer);
-                    this.gameManager.dispatchEvent(EventType.Follow_Selected, this.followVo.uid);
+                    this.gameManager.dispatchEvent(EventType.LowerUser_Selected, this.followVo.uid);
                 }
                 break;
         }
@@ -53,13 +53,13 @@ class FollowDetailsScene extends BaseScene {
 
     private onUpdateCount() {
         this.page = this.ttl_page.page;
-        if (this.gameManager.dataManager.recordList.length < this.page * core.pageLength) {
-            this.gameManager.msgManager.transfer.sendTransferList("", this.page, core.pageLength);
+        if (this.gameManager.dataManager.getTransferRecordList.length < this.page * core.pageLength) {
+            this.gameManager.msgManager.transfer.sendTransferRecords("", this.page, core.pageLength);
         }
     }
 
     private onUpdateInfo() {
-        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.recordLength / core.pageLength));
+        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferRecordLength / core.pageLength));
         this.update();
     }
 
@@ -72,7 +72,7 @@ class FollowDetailsScene extends BaseScene {
             this.lab_id.text = "ID:" + this.followVo.uid;
             this.lab_buy.text = "已购:" + this.followVo.zong;
 
-            this.recordList = this.gameManager.dataManager.recordList(this.followVo.uid);
+            this.recordList = this.gameManager.dataManager.getTransferRecordList(this.followVo.uid);
             if (this.recordList) {
                 var item: TransferRecordDetailsItem;
                 var start: number = core.pageLength * (this.page - 1);
@@ -98,7 +98,7 @@ class FollowDetailsScene extends BaseScene {
         if (this.initComplete) {
             this.followVo = this.gameManager.dataManager.selectedFollow;
             this.page = 1;
-            this.gameManager.msgManager.transfer.sendTransferList(this.followVo.uid, this.page, core.pageLength);
+            this.gameManager.msgManager.transfer.sendTransferRecords(this.followVo.uid, this.page, core.pageLength);
         }
     }
 }

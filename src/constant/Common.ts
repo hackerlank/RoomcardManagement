@@ -4,7 +4,7 @@
  * @Create 2016-10-30 18:03
  */
 enum Power {
-    superManager = 1, superAgent, agent
+    superManager = 1, agentLv1, agentLv2, agentLv3
 }
 
 /**

@@ -5,11 +5,14 @@
  */
 class TransferScene extends BaseScene {
 
-    private txt_id: eui.TextInput;
-    private btn_followSearch: eui.Button;
-    private lab_game: eui.TextInput;
+    private txt_uid: eui.TextInput;
+    private btn_search: eui.Button;
+    private img_portrait: eui.Image;
+    private lab_nick: eui.TextInput;
+    private lab_card: eui.TextInput;
     private nba_count: NumberAdder;
-    private btn_confirm: eui.Button;
+    private btn_recharge: eui.Button;
+    private lab_notice: eui.Label;
 
     public userVo: UserVo;
     public count: number = 0;
@@ -26,41 +29,34 @@ class TransferScene extends BaseScene {
 
         this.userVo = this.gameManager.dataManager.userVo;
 
-        this.txt_id.restrict = "0-9";
-        this.txt_id.maxChars = 10;
+        this.txt_uid.restrict = "0-9";
+        this.txt_uid.maxChars = 10;
 
         this.nba_count.setScope(1, 9999);
 
-        this.btn_followSearch.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.btn_confirm.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_recharge.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.nba_count.addEventListener(CommonEventType.CHANGED, this.onUpdateCount, this);
 
-        this.gameManager.addEventListener(EventType.Follow_Selected, this.onUpdateFollow, this);
+        this.gameManager.addEventListener(EventType.LowerUser_Selected, this.onUpdateFollow, this);
         this.gameManager.addEventListener(EventType.User_Info, this.onUpdateUserInfo, this);
-    }
-
-    private onUpdateUserInfo() {
-        this.lab_game.text = "" + core.gameManager.dataManager.getGameName(this.userVo.gid);
     }
 
     private onUpdateCount() {
         this.count = this.nba_count.numb;
     }
 
-    private onUpdateFollow(data: any) {
-        if (data) {
-            this.txt_id.text = "" + data;
-        }
-    }
-
     private clickHandler(e: egret.TouchEvent) {
         switch (e.currentTarget) {
-            case this.btn_followSearch:
-                this.gameManager.sceneManager.jumpSceneID = SceneType.transfer;
-                this.gameManager.sceneManager.open(SceneType.follow_search);
+            case this.btn_search:
+                var uid: string = "" + this.txt_uid.text;
+                if (uid == "") {
+                    this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1001));
+                    return;
+                }
                 break;
-            case this.btn_confirm:
-                var uid: string = "" + this.txt_id.text;
+            case this.btn_recharge:
+                var uid: string = "" + this.txt_uid.text;
                 if (uid == "") {
                     this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1001));
                     return;
@@ -75,8 +71,20 @@ class TransferScene extends BaseScene {
                     this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1004, 0));
                     return;
                 }
-                this.gameManager.msgManager.transfer.sendTransfer(this.txt_id.text, gid, this.count);
+                this.gameManager.msgManager.transfer.sendTransfer(this.txt_uid.text, gid, this.count);
                 break;
+        }
+    }
+
+    private onUpdateUserInfo() {
+    }
+
+    private onUpdateSearch() {
+    }
+
+    private onUpdateFollow(data: any) {
+        if (data) {
+            this.txt_uid.text = "" + data;
         }
     }
 
@@ -84,7 +92,11 @@ class TransferScene extends BaseScene {
         super.open();
 
         if (this.initComplete) {
-            this.txt_id.text = "";
+            this.txt_uid.text = "";
+            this.img_portrait.source = "img_portrait_default";
+            this.lab_nick.text = "";
+            this.lab_card.text = "";
+            this.nba_count.setNumb(0);
         }
     }
 }

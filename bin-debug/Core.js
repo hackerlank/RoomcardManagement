@@ -30,8 +30,8 @@ var core = (function () {
     //语言
     core.language = Language.ch;
     //登录类型
-    // static loginType: string = "h5";
-    core.loginType = "app";
+    core.loginType = "h5";
+    // static loginType:string = "app";
     //是否可以播放音乐
     core.isBackgroundMusic = true;
     //是否可以播放音效

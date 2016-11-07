@@ -14,30 +14,30 @@ var FollowDetailsScene = (function (_super) {
     var d = __define,c=FollowDetailsScene,p=c.prototype;
     p.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
-        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.recordLength / core.pageLength));
+        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferRecordLength / core.pageLength));
         this.ttl_page.addEventListener(CommonEventType.CHANGED, this.onUpdateCount, this);
         this.update();
         this.btn_transfer.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.gameManager.addEventListener(EventType.User_Record_List, this.onUpdateInfo, this);
+        this.gameManager.addEventListener(EventType.Transfer_List, this.onUpdateInfo, this);
     };
     p.clickHandler = function (e) {
         switch (e.currentTarget) {
             case this.btn_transfer:
                 if (this.followVo) {
                     this.gameManager.sceneManager.open(SceneType.transfer);
-                    this.gameManager.dispatchEvent(EventType.Follow_Selected, this.followVo.uid);
+                    this.gameManager.dispatchEvent(EventType.LowerUser_Selected, this.followVo.uid);
                 }
                 break;
         }
     };
     p.onUpdateCount = function () {
         this.page = this.ttl_page.page;
-        if (this.gameManager.dataManager.recordList.length < this.page * core.pageLength) {
-            this.gameManager.msgManager.transfer.sendTransferList("", this.page, core.pageLength);
+        if (this.gameManager.dataManager.getTransferRecordList.length < this.page * core.pageLength) {
+            this.gameManager.msgManager.transfer.sendTransferRecords("", this.page, core.pageLength);
         }
     };
     p.onUpdateInfo = function () {
-        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.recordLength / core.pageLength));
+        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferRecordLength / core.pageLength));
         this.update();
     };
     p.update = function () {
@@ -47,7 +47,7 @@ var FollowDetailsScene = (function (_super) {
             this.lab_nick.text = this.followVo.nick;
             this.lab_id.text = "ID:" + this.followVo.uid;
             this.lab_buy.text = "已购:" + this.followVo.zong;
-            this.recordList = this.gameManager.dataManager.recordList(this.followVo.uid);
+            this.recordList = this.gameManager.dataManager.getTransferRecordList(this.followVo.uid);
             if (this.recordList) {
                 var item;
                 var start = core.pageLength * (this.page - 1);
@@ -69,7 +69,7 @@ var FollowDetailsScene = (function (_super) {
         if (this.initComplete) {
             this.followVo = this.gameManager.dataManager.selectedFollow;
             this.page = 1;
-            this.gameManager.msgManager.transfer.sendTransferList(this.followVo.uid, this.page, core.pageLength);
+            this.gameManager.msgManager.transfer.sendTransferRecords(this.followVo.uid, this.page, core.pageLength);
         }
     };
     return FollowDetailsScene;

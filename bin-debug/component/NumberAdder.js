@@ -61,6 +61,10 @@ var NumberAdder = (function (_super) {
     p.setMaxChars = function (value) {
         this.txt_count.maxChars = value;
     };
+    p.setNumb = function (value) {
+        this.numb = value;
+        this.update();
+    };
     return NumberAdder;
 }(BaseSprite));
 egret.registerClass(NumberAdder,'NumberAdder');

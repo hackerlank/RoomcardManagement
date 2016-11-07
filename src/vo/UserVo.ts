@@ -5,9 +5,9 @@
  */
 class UserVo extends BaseVo {
 
-    public api_timestamp:number;
-    public api_noncestr:string;
-    public api_sign:string;
+    public api_timestamp: number;
+    public api_noncestr: string;
+    public api_sign: string;
 
     public code: number = 0;
     public sid: number = 0;
@@ -46,5 +46,37 @@ class UserVo extends BaseVo {
         super();
 
         this.gameMap = {};
+    }
+
+    /**
+     * 获取游戏id
+     * @param name
+     * @returns {any}
+     */
+    public getGameId(name: string): string {
+        var gameMap: any = this.gameMap;
+        var game: any;
+        for (var key in gameMap) {
+            game = gameMap[key];
+            if (game.name == name) {
+                return game.gameid;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 获取游戏name
+     * @param id
+     * @returns {any}
+     */
+    public getGameName(id: string): string {
+        var gameMap: any = this.gameMap;
+        var game: any;
+        if (gameMap.hasOwnProperty(id)) {
+            game = gameMap[id];
+            return game.name;
+        }
+        return null;
     }
 }

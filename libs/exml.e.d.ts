@@ -51,10 +51,6 @@ declare module skins{
 	}
 }
 declare module skins{
-	class DropDownMenuSkin extends eui.Skin{
-	}
-}
-declare module skins{
 	class HScrollBarSkin extends eui.Skin{
 	}
 }
@@ -64,6 +60,14 @@ declare module skins{
 }
 declare module skins{
 	class ItemRendererSkin extends eui.Skin{
+	}
+}
+declare module skins{
+	class MenuDropDownSkin extends eui.Skin{
+	}
+}
+declare module skins{
+	class MenuPopupSkin extends eui.Skin{
 	}
 }
 declare module skins{
@@ -144,7 +148,9 @@ declare class AccountRoomSceneSkin extends eui.Skin{
 }
 declare class AccountSceneSkin extends eui.Skin{
 }
-declare class ErrorSceneSkin extends eui.Skin{
+declare class AgentNoticeSceneSkin extends eui.Skin{
+}
+declare class AgentSceneSkin extends eui.Skin{
 }
 declare class FollowDetailsSceneSkin extends eui.Skin{
 }
@@ -152,9 +158,11 @@ declare class FollowSceneSkin extends eui.Skin{
 }
 declare class FollowSearchSceneSkin extends eui.Skin{
 }
-declare class TransferSceneSkin extends eui.Skin{
+declare class ErrorSceneSkin extends eui.Skin{
 }
 declare class WelcomSceneSkin extends eui.Skin{
+}
+declare class TransferSceneSkin extends eui.Skin{
 }
 declare class MenuUISkin extends eui.Skin{
 }

@@ -11,11 +11,6 @@
 			"children":[
 				{
 					"isFolder":false,
-					"key":"bg_jpg",
-					"name":"bg_jpg"
-				},
-				{
-					"isFolder":false,
 					"key":"border_png",
 					"name":"border_png"
 				},
@@ -48,11 +43,6 @@
 					"isFolder":false,
 					"key":"checkbox_unselect_png",
 					"name":"checkbox_unselect_png"
-				},
-				{
-					"isFolder":false,
-					"key":"egret_icon_png",
-					"name":"egret_icon_png"
 				},
 				{
 					"isFolder":false,
@@ -223,6 +213,26 @@
 					"isFolder":false,
 					"key":"img_line",
 					"name":"img_line"
+				},
+				{
+					"isFolder":false,
+					"key":"img_arrow_page_left",
+					"name":"img_arrow_page_left"
+				},
+				{
+					"isFolder":false,
+					"key":"img_arrow_page_right",
+					"name":"img_arrow_page_right"
+				},
+				{
+					"isFolder":false,
+					"key":"img_basemap_alert",
+					"name":"img_basemap_alert"
+				},
+				{
+					"isFolder":false,
+					"key":"img_portrait_default",
+					"name":"img_portrait_default"
 				}
 			]
 		}

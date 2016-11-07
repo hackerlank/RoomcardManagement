@@ -11,7 +11,7 @@ class AccountRoomScene extends BaseScene {
     private scroller: eui.Scroller;
     private itemGroup: eui.Group;
 
-    public roomUsers: FollowVo[];
+    public roomUsers: LowerUserVo[];
 
     public constructor() {
         super();
@@ -28,7 +28,7 @@ class AccountRoomScene extends BaseScene {
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_dismass.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
-        this.gameManager.addEventListener(EventType.Room_Update_Users, this.onUpdateUsers, this);
+        this.gameManager.addEventListener(EventType.Room_User_List, this.onUpdateUsers, this);
         this.gameManager.addEventListener(EventType.Room_Dismass, this.onUpdateUsers, this);
     }
 
@@ -48,13 +48,13 @@ class AccountRoomScene extends BaseScene {
     }
 
     public onUpdateUsers() {
-        this.roomUsers = this.gameManager.dataManager.roomUsers;
+        this.roomUsers = this.gameManager.dataManager.getRoomUserList();
 
         this.itemGroup.removeChildren();
 
-        var item: RoomItem;
+        var item: RoomUserItem;
         for (var i: number = 0; i < this.roomUsers.length; i++) {
-            item = new RoomItem();
+            item = new RoomUserItem();
             item.update(this.roomUsers[i]);
             this.itemGroup.addChild(item);
         }

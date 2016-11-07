@@ -13,12 +13,11 @@ class SceneType {
     public static follow_details: string = "2003";
 
     public static account: string = "3001";
-    public static account_record: string = "3002";
-    public static account_reward: string = "3003";
-    public static account_junior: string = "3004";
-    public static account_room: string = "3005";
-    public static account_recharge: string = "3006";
-    public static account_power: string = "3007";
+    public static account_recharge: string = "3002";
+    public static account_power: string = "3003";
+    public static account_room: string = "3004";
+    public static account_sale: string = "3005";
+    public static account_transfer: string = "3006";
 
     public static error: string = "9999";
 }

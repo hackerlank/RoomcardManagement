@@ -26,12 +26,10 @@ var SceneManager = (function (_super) {
         this.addScene(this.followDetailsScene);
         this.accountScene = new AccountScene();
         this.addScene(this.accountScene);
-        this.accountRecordScene = new AccountRecordScene();
-        this.addScene(this.accountRecordScene);
-        this.accountRewardScene = new AccountRewardScene();
-        this.addScene(this.accountRewardScene);
-        this.accountJuniorScene = new AccountJuniorScene();
-        this.addScene(this.accountJuniorScene);
+        this.accountTransferScene = new AccountTransferScene();
+        this.addScene(this.accountTransferScene);
+        this.accountSaleScene = new AccountSaleScene();
+        this.addScene(this.accountSaleScene);
         this.accountRoomScene = new AccountRoomScene();
         this.addScene(this.accountRoomScene);
         this.accountRechargeScene = new AccountRechargeScene();
