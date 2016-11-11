@@ -62,9 +62,9 @@ class StringUtils {
         var date: Date = new Date();
         date.setTime(timestamp);
 
-        var Y: number = date.getUTCFullYear();
-        var M: number = date.getUTCMonth() + 1;
-        var D: number = date.getUTCDate();
+        var Y: number = date.getFullYear();
+        var M: number = date.getMonth() + 1;
+        var D: number = date.getDate();
         return Y + "-" + (M < 10 ? "0" + M : M) + "-" + (D < 10 ? "0" + D : D);
     }
 
@@ -78,9 +78,9 @@ class StringUtils {
         var date: Date = new Date();
         date.setTime(timestamp);
 
-        var h: number = date.getUTCHours();
-        var m: number = date.getUTCMinutes();
-        var s: number = date.getUTCSeconds();
+        var h: number = date.getHours();
+        var m: number = date.getMinutes();
+        var s: number = date.getSeconds();
         return (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
     }
 

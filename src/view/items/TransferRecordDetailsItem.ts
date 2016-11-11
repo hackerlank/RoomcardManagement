@@ -26,8 +26,8 @@ class TransferRecordDetailsItem extends GameSprite {
     public update(recordVo: TransferRecordVo) {
         if (recordVo) {
             this.recordVo = recordVo;
-            this.lab_order.text = "订 单 号: " + this.recordVo.odr;
-            this.lab_time.text  = "交易时间: " + "" + StringUtils.getYTDByTimestamp(this.recordVo.ctm) + " " + StringUtils.getHMSByTimestamp(this.recordVo.ctm);
+            this.lab_order.text = "订 单 号: " + this.recordVo.orderno;
+            this.lab_time.text  = "交易时间: " + "" + StringUtils.getYTDByTimestamp(this.recordVo.ctime) + " " + StringUtils.getHMSByTimestamp(this.recordVo.ctime);
             this.lab_card.text  = "房卡数量: " + this.recordVo.num;
         }
     }

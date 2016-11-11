@@ -63,9 +63,9 @@ var StringUtils = (function () {
         timestamp = timestamp < 0 ? 0 : timestamp;
         var date = new Date();
         date.setTime(timestamp);
-        var Y = date.getUTCFullYear();
-        var M = date.getUTCMonth() + 1;
-        var D = date.getUTCDate();
+        var Y = date.getFullYear();
+        var M = date.getMonth() + 1;
+        var D = date.getDate();
         return Y + "-" + (M < 10 ? "0" + M : M) + "-" + (D < 10 ? "0" + D : D);
     };
     /**
@@ -76,9 +76,9 @@ var StringUtils = (function () {
         timestamp = timestamp < 0 ? 0 : timestamp;
         var date = new Date();
         date.setTime(timestamp);
-        var h = date.getUTCHours();
-        var m = date.getUTCMinutes();
-        var s = date.getUTCSeconds();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
         return (h < 10 ? "0" + h : h) + ":" + (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
     };
     /**

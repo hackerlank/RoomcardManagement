@@ -7,6 +7,7 @@ class AlertManager extends BaseManager {
     public curAlert: BaseAlert;
 
     public normal: NormalAlert;
+    public protocolAlert: ProtocolAlert;
 
     public constructor() {
         super();
@@ -19,13 +20,16 @@ class AlertManager extends BaseManager {
 
         this.normal = new NormalAlert();
         this.gather[this.normal.id] = this.normal;
+
+        this.protocolAlert = new ProtocolAlert();
+        this.gather[this.protocolAlert.id] = this.protocolAlert;
     }
 
     /**
      * 打开
      * @param id
      */
-    public open(id: any, param: any): void {
+    public open(id: any, param?: any): void {
         var baseAlert: BaseAlert = this.gather[id];
         if (baseAlert) {
             this.curAlert = baseAlert;

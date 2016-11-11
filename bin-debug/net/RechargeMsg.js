@@ -35,13 +35,14 @@ var RechargeMsg = (function (_super) {
     p.sendSynchro = function () {
         var data = {};
         data.s = core.sessionid;
-        this.gameManager.httpManager.send(core.serverUrl + Cmd.Recharge, data, this.readSynchro, this);
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Recharge_Synchro, data, this.readSynchro, this);
     };
     p.readSynchro = function (msg) {
         if (msg.code != 0)
             return;
         var userVO = this.gameManager.dataManager.userVo;
         userVO.cdnum = msg.cdnum;
+        userVO.pow = msg.pow;
         this.gameManager.dispatchEvent(EventType.User_Info);
     };
     return RechargeMsg;

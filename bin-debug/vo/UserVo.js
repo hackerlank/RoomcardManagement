@@ -18,6 +18,10 @@ var UserVo = (function (_super) {
         this.cdnum = 0;
         //权限
         this.pow = 0;
+        //转账人次
+        this.transPopulation = 0;
+        //转账卡数
+        this.transCard = 0;
         //购卡月份标识
         this.cardMonth = 0;
         //每月购卡数量
@@ -28,9 +32,24 @@ var UserVo = (function (_super) {
         this.juniorMonth = 0;
         //每月购卡奖励
         this.juniorReward = 0;
+        //1级代理奖励
+        this.agentLv1Reward = 0;
+        //2级代理奖励
+        this.agentLv2Reward = 0;
         this.gameMap = {};
     }
     var d = __define,c=UserVo,p=c.prototype;
+    /**
+     * 获取全部游戏
+     * @returns {string[]}
+     */
+    p.getGames = function () {
+        var list = [];
+        for (var key in this.gameMap) {
+            list.push(this.gameMap[key].name);
+        }
+        return list;
+    };
     /**
      * 获取游戏id
      * @param name

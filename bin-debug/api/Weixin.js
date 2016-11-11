@@ -8,13 +8,27 @@ var Weixin = (function () {
     }
     var d = __define,c=Weixin,p=c.prototype;
     /**
-     * 获取授权code
+     * 获取授权code, 对应支付
      */
-    Weixin.getAccessCode = function (appid, gameUrl) {
+    Weixin.getAccessCodeForPay = function (appid, gameUrl) {
         var url = "" +
             "https://open.weixin.qq.com/connect/oauth2/authorize?" +
             "appid=" + appid +
             "&redirect_uri=" + encodeURIComponent(gameUrl) +
+            "&response_type=code" +
+            "&scope=snsapi_base" +
+            "&state=1" +
+            "#wechat_redirect";
+        location.href = url;
+    };
+    /**
+     * 获取授权code, 对应登陆
+     */
+    Weixin.getAccessCodeForLogin = function (appid, gameUrl, pcode) {
+        var url = "" +
+            "https://open.weixin.qq.com/connect/oauth2/authorize?" +
+            "appid=" + appid +
+            "&redirect_uri=" + encodeURIComponent(gameUrl) + "?pc=" + pcode +
             "&response_type=code" +
             "&scope=snsapi_userinfo" +
             "&state=1" +

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ProtocolAlertSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="640" height="960">
+	<w:Config id="1581526c932"/>
+	<e:Rect id="btn_close" left="0" right="0" top="0" bottom="0" fillAlpha="0.5"/>
+	<e:Group height="90%" width="90%" horizontalCenter="0" verticalCenter="0">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0xFFFFFF"/>
+		<e:Scroller id="scroller" left="0" right="0" top="0" bottom="60">
+			<e:Group>
+				<e:Label id="lab_title" text="" fontFamily="微软雅黑" textColor="0x000000" textAlign="center" size="36" scaleX="1" scaleY="1" left="0" right="0" top="0" bottom="0" wordWrap="true" multiline="true" bold="true"/>
+				<e:Label id="lab_description" left="0" textColor="0x000000" text="" fontFamily="微软雅黑" scaleX="1" right="0" scaleY="1" wordWrap="true" size="26" top="0" textAlign="left" bottom="0" multiline="true" x="10" y="10"/>
+				<e:layout>
+					<e:VerticalLayout horizontalAlign="justify" gap="20"/>
+				</e:layout>
+			</e:Group>
+		</e:Scroller>
+		<e:Button id="btn_confirm" label="确定" skinName="skins.Button_WhiteSkin" scaleX="1" scaleY="1" left="0" right="0" bottom="0"/>
+	</e:Group>
+</e:Skin>

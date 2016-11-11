@@ -13,6 +13,7 @@ var UIManager = (function (_super) {
     p.initManager = function () {
         _super.prototype.initManager.call(this);
         this.menuUI = new MenuUI();
+        this.menuUI.close();
     };
     return UIManager;
 }(BaseManager));

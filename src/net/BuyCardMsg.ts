@@ -43,5 +43,11 @@ class BuyCardMsg extends BaseMsg {
     public readCard_GetReward(msg: any) {
         if (msg.code != 0)return;
 
+        var userVo: UserVo = this.gameManager.dataManager.userVo;
+        userVo.cardMonth = msg.month;
+        userVo.cardBuy = msg.sum;
+        userVo.cardReward = msg.rew;
+
+        this.gameManager.dispatchEvent(EventType.BuyCard_Info);
     }
 }

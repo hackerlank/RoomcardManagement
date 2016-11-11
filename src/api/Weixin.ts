@@ -6,13 +6,29 @@
 class Weixin {
 
     /**
-     * 获取授权code
+     * 获取授权code, 对应支付
      */
-    static getAccessCode(appid: string, gameUrl: string) {
+    static getAccessCodeForPay(appid: string, gameUrl: string) {
         var url: string = "" +
             "https://open.weixin.qq.com/connect/oauth2/authorize?" +
             "appid=" + appid +
             "&redirect_uri=" + encodeURIComponent(gameUrl) +
+            "&response_type=code" +
+            "&scope=snsapi_base" +
+            "&state=1" +
+            "#wechat_redirect";
+
+        location.href = url;
+    }
+
+    /**
+     * 获取授权code, 对应登陆
+     */
+    static getAccessCodeForLogin(appid: string, gameUrl: string, pcode:string) {
+        var url: string = "" +
+            "https://open.weixin.qq.com/connect/oauth2/authorize?" +
+            "appid=" + appid +
+            "&redirect_uri=" + encodeURIComponent(gameUrl) + "?pc=" + pcode +
             "&response_type=code" +
             "&scope=snsapi_userinfo" +
             "&state=1" +

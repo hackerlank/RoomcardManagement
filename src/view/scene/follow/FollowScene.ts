@@ -11,9 +11,10 @@ class FollowScene extends BaseScene {
     private itemGroup: eui.Group;
     private ttl_page: TurningTool;
 
-    public followList: LowerUserVo[];
-    public showList: LowerUserVo[];
-    public page: number = 1;
+    private page: number = 1;
+
+    public lowerUserVoList: LowerUserVo[];
+    public lowerUserVoShowList: LowerUserVo[];
 
     public constructor() {
         super();
@@ -26,7 +27,7 @@ class FollowScene extends BaseScene {
         super.childrenCreated();
 
         this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.lowerUserCount / core.pageLength));
-        this.onUpdateCount();
+        this.update();
 
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.ttl_page.addEventListener(CommonEventType.CHANGED, this.onUpdateCount, this);
@@ -48,12 +49,12 @@ class FollowScene extends BaseScene {
             this.gameManager.msgManager.lowerUser.sendLowerUser_List(this.page, core.pageLength);
         }
         else {
-            this.followList = this.gameManager.dataManager.getLowerUserList();
+            this.lowerUserVoList = this.gameManager.dataManager.getLowerUserList();
             var list: LowerUserVo[] = [];
             var start: number = core.pageLength * (this.page - 1);
             for (var i: number = start; i < start + core.pageLength; i++) {
-                if (this.followList[i]) {
-                    list.push(this.followList[i]);
+                if (this.lowerUserVoList[i]) {
+                    list.push(this.lowerUserVoList[i]);
                 }
             }
             this.update(list);
@@ -78,7 +79,7 @@ class FollowScene extends BaseScene {
             this.scroller.viewport.scrollV = 0;
             this.scroller.validateNow();
 
-            this.showList = list;
+            this.lowerUserVoShowList = list;
         }
     }
 
@@ -86,7 +87,7 @@ class FollowScene extends BaseScene {
         super.open();
 
         if (this.initComplete) {
-            this.update(this.showList);
+            this.gameManager.msgManager.lowerUser.sendLowerUser_List(1, core.pageLength);
         }
     }
 }

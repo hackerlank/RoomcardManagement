@@ -20,5 +20,6 @@ class UIManager extends BaseManager {
         super.initManager();
 
         this.menuUI = new MenuUI();
+        this.menuUI.close();
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.NumberAdderSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Button id="btn_cut" skinName="skins.Button_CutSkin" scaleX="1" scaleY="1" verticalCenter="0"/>
+	<e:Button id="btn_add" skinName="skins.Button_AddSkin" scaleX="1" scaleY="1" right="0" verticalCenter="0"/>
+	<e:Group scaleX="1" scaleY="1" top="0" bottom="0" left="45" right="45">
+		<e:Image source="img_basemap" left="0" right="0" top="0" bottom="0" scale9Grid="7,7,6,6"/>
+		<e:EditableText id="txt_count" text="0" textAlign="center" verticalAlign="top" fontFamily="黑体" promptColor="0x868686" size="28" multiline="false" wordWrap="false" verticalCenter="0" left="10" right="10" textColor="0x868686"/>
+	</e:Group>
+</e:Skin>

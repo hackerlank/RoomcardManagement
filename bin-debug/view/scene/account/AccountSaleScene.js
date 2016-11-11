@@ -45,7 +45,8 @@ var AccountSaleScene = (function (_super) {
     };
     p.update = function () {
         this.userVo = this.gameManager.dataManager.userVo;
-        this.txt_total.text = "" + this.userVo.cardMonth + "月售卡总计:" + this.userVo.cardBuy;
+        // this.txt_total.text = this.userVo.cardMonth + "月售卡总计:" + this.userVo.cardBuy;
+        this.txt_total.text = "售卡总计:" + this.userVo.cardBuy;
         this.txt_reward.text = "售卡奖励:" + this.userVo.cardReward;
     };
     p.open = function () {

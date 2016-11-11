@@ -15,7 +15,7 @@ var FollowScene = (function (_super) {
     p.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
         this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.lowerUserCount / core.pageLength));
-        this.onUpdateCount();
+        this.update();
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.ttl_page.addEventListener(CommonEventType.CHANGED, this.onUpdateCount, this);
         this.gameManager.addEventListener(EventType.LowerUser_List, this.onUpdateList, this);
@@ -33,12 +33,12 @@ var FollowScene = (function (_super) {
             this.gameManager.msgManager.lowerUser.sendLowerUser_List(this.page, core.pageLength);
         }
         else {
-            this.followList = this.gameManager.dataManager.getLowerUserList();
+            this.lowerUserVoList = this.gameManager.dataManager.getLowerUserList();
             var list = [];
             var start = core.pageLength * (this.page - 1);
             for (var i = start; i < start + core.pageLength; i++) {
-                if (this.followList[i]) {
-                    list.push(this.followList[i]);
+                if (this.lowerUserVoList[i]) {
+                    list.push(this.lowerUserVoList[i]);
                 }
             }
             this.update(list);
@@ -61,13 +61,13 @@ var FollowScene = (function (_super) {
             }
             this.scroller.viewport.scrollV = 0;
             this.scroller.validateNow();
-            this.showList = list;
+            this.lowerUserVoShowList = list;
         }
     };
     p.open = function () {
         _super.prototype.open.call(this);
         if (this.initComplete) {
-            this.update(this.showList);
+            this.gameManager.msgManager.lowerUser.sendLowerUser_List(1, core.pageLength);
         }
     };
     return FollowScene;

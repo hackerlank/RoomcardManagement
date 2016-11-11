@@ -18,8 +18,8 @@ var LowerUserContributionItem = (function (_super) {
         this.img_portrait.source = "" + this.juniorVo.pic;
         this.lab_nick.text = "" + this.juniorVo.nick;
         this.lab_id.text = "ID:" + this.juniorVo.uid;
-        this.lab_buyCard.text = "本月购卡:" + this.juniorVo.sum;
-        this.lab_contribution.text = "本月贡献:" + this.juniorVo.rew;
+        this.lab_buyCard.text = "累计购卡:" + this.juniorVo.sum;
+        this.lab_contribution.text = "累计贡献:" + this.juniorVo.rew;
     };
     return LowerUserContributionItem;
 }(GameSprite));

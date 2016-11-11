@@ -15,17 +15,17 @@ var MenuDropDown = (function (_super) {
     var d = __define,c=MenuDropDown,p=c.prototype;
     p.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
-        this.removeChild(this.listDisplay);
+        this.removeChild(this.list);
         this.updateList();
-        this.listDisplay.addEventListener(egret.TouchEvent.TOUCH_TAP, this.listHandler, this);
-        this.dropdown.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dropdownHandler, this);
+        this.list.addEventListener(egret.TouchEvent.TOUCH_TAP, this.listHandler, this);
+        this.button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dropdownHandler, this);
         this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.stageHandler, this);
     };
     p.listHandler = function (e) {
         e.stopImmediatePropagation();
         e.stopPropagation();
-        this.selectedIndex = this.listDisplay.selectedIndex;
-        this.labelDisplay.text = "" + this.selectedItems[this.selectedIndex];
+        this.selectedIndex = this.list.selectedIndex;
+        this.label.text = "" + this.selectedItems[this.selectedIndex];
         this.isShowList = false;
         this.updateList();
     };
@@ -42,29 +42,29 @@ var MenuDropDown = (function (_super) {
     p.update = function (list) {
         this.selectedItems = list;
         if (list && list.length) {
-            this.listDisplay.dataProvider = new eui.ArrayCollection(this.selectedItems);
+            this.list.dataProvider = new eui.ArrayCollection(this.selectedItems);
             this.selectedIndex = 0;
-            this.labelDisplay.text = "" + this.selectedItems[this.selectedIndex];
-            this.iconDisplay.visible = true;
+            this.label.text = "" + this.selectedItems[this.selectedIndex];
+            this.icon.visible = true;
         }
         else {
-            this.listDisplay.removeChildren();
-            this.labelDisplay.text = "";
-            this.iconDisplay.visible = false;
+            this.list.removeChildren();
+            this.label.text = "";
+            this.icon.visible = false;
         }
     };
     p.updateList = function () {
         if (this.isShowList) {
-            this.iconDisplay.source = "img_arrow_up2";
-            this.listDisplay.x = this.localToGlobal(this.dropdown.x, this.dropdown.y).x;
-            this.listDisplay.y = this.localToGlobal(this.dropdown.x, this.dropdown.y).y + this.dropdown.height;
-            this.listDisplay.width = this.dropdown.width;
-            this.stage.addChild(this.listDisplay);
+            this.icon.source = "img_arrow_up2";
+            this.list.x = this.localToGlobal(this.button.x, this.button.y).x;
+            this.list.y = this.localToGlobal(this.button.x, this.button.y).y + this.button.height;
+            this.list.width = this.button.width;
+            this.stage.addChild(this.list);
         }
         else {
-            this.iconDisplay.source = "img_arrow_down2";
-            if (this.listDisplay.parent && this.listDisplay.parent.contains(this.listDisplay)) {
-                this.listDisplay.parent.removeChild(this.listDisplay);
+            this.icon.source = "img_arrow_down2";
+            if (this.list.parent && this.list.parent.contains(this.list)) {
+                this.list.parent.removeChild(this.list);
             }
         }
     };

@@ -8,19 +8,29 @@ class core {
     //客户端地址
     static clientUrl: string = "http://mj.h5sd.com/gm/index.html";
     //服务器地址
-    static serverUrl: string = "http://192.168.2.88:8880/CardRoomManager";
-    // static serverUrl: string = "http://wishstart-cs-009.chinacloudapp.cn";
+    // static serverUrl: string = "http://192.168.2.88:8880/CardRoomManager";
+    static serverUrl: string = "http://121.42.209.249";
     //游戏列表
     static gameList: string[] = [];
     //游戏管理
     static gameManager: GameManager;
     //每页显示长度
-    static pageLength: number = 20;
+    static pageLength: number = 40;
+    //手机验证码重置时间
+    static PhoneCodeReTime:number = 60;
+    //GM登录验证
+    static GmCode = "cLGGRh2b4sMeRy";
 
-    //应用id
+    //gm登录
+    static gm: any = "";
+    //登录公众号appid
     static appid: string = "wxb6349744356b5312";
-    //微信授权code
+    //登录公众号登录code
     static code: any = "";
+    //支付公众号appid
+    static appid_p: string = "wx39cf3f150220635d";
+    //支付公众号支付code
+    static code_p: any = "";
     //服务器分配id
     static sessionid: any;
     //语言

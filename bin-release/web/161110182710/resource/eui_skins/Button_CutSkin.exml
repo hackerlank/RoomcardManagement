@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="skins.Button_CutSkin" states="up,down,disabled" xmlns:e="http://ns.egret.com/eui">
+    <e:Image alpha.disabled="0.5"
+
+             source="ico_cut"/>
+</e:Skin>

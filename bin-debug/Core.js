@@ -17,16 +17,26 @@ var core = (function () {
     //客户端地址
     core.clientUrl = "http://mj.h5sd.com/gm/index.html";
     //服务器地址
-    core.serverUrl = "http://192.168.2.88:8880/CardRoomManager";
-    // static serverUrl: string = "http://wishstart-cs-009.chinacloudapp.cn";
+    // static serverUrl: string = "http://192.168.2.88:8880/CardRoomManager";
+    core.serverUrl = "http://121.42.209.249";
     //游戏列表
     core.gameList = [];
     //每页显示长度
-    core.pageLength = 20;
-    //应用id
+    core.pageLength = 40;
+    //手机验证码重置时间
+    core.PhoneCodeReTime = 60;
+    //GM登录验证
+    core.GmCode = "cLGGRh2b4sMeRy";
+    //gm登录
+    core.gm = "";
+    //登录公众号appid
     core.appid = "wxb6349744356b5312";
-    //微信授权code
+    //登录公众号登录code
     core.code = "";
+    //支付公众号appid
+    core.appid_p = "wx39cf3f150220635d";
+    //支付公众号支付code
+    core.code_p = "";
     //语言
     core.language = Language.ch;
     //登录类型

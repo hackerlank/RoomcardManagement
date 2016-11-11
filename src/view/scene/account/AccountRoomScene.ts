@@ -5,13 +5,16 @@
  */
 class AccountRoomScene extends BaseScene {
 
-    private txt_search: eui.TextInput;
+    private menu_game: MenuPopup;
+    private txt_roomid: eui.TextInput;
     private btn_search: eui.Button;
     private btn_dismass: eui.Button;
     private scroller: eui.Scroller;
     private itemGroup: eui.Group;
 
-    public roomUsers: LowerUserVo[];
+    private roomUsers: LowerUserVo[];
+
+    private userVo: UserVo;
 
     public constructor() {
         super();
@@ -23,7 +26,20 @@ class AccountRoomScene extends BaseScene {
     public childrenCreated() {
         super.childrenCreated();
 
-        this.txt_search.restrict = "0-9";
+        this.txt_roomid.restrict = "0-9";
+
+        this.userVo = this.gameManager.dataManager.userVo;
+        switch (this.userVo.pow) {
+            case Power.gm:
+                this.menu_game.enabled = true;
+                this.menu_game.update(this.userVo.getGames());
+                break;
+            case Power.agent:
+            case Power.agent_new:
+                this.menu_game.enabled = false;
+                this.menu_game.update([this.userVo.getGameName(this.userVo.gid)]);
+                break;
+        }
 
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_dismass.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
@@ -33,16 +49,16 @@ class AccountRoomScene extends BaseScene {
     }
 
     private clickHandler(e: egret.TouchEvent) {
-        if (this.txt_search.text == "") {
+        if (this.txt_roomid.text == "") {
             return;
         }
 
         switch (e.currentTarget) {
             case this.btn_search:
-                this.gameManager.msgManager.room.sendRoomSearch(this.txt_search.text);
+                this.gameManager.msgManager.room.sendRoomSearch(this.txt_roomid.text, this.userVo.getGameId(this.menu_game.getSelectedValue()));
                 break;
             case this.btn_dismass:
-                this.gameManager.msgManager.room.sendRoomDismass(this.txt_search.text);
+                this.gameManager.msgManager.room.sendRoomDismass(this.txt_roomid.text, this.userVo.getGameId(this.menu_game.getSelectedValue()));
                 break;
         }
     }
@@ -68,6 +84,7 @@ class AccountRoomScene extends BaseScene {
 
         if (this.initComplete) {
             this.itemGroup.removeChildren();
+            this.txt_roomid.text = "";
         }
     }
 }

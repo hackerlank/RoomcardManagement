@@ -233,6 +233,11 @@
 					"isFolder":false,
 					"key":"img_portrait_default",
 					"name":"img_portrait_default"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_agent",
+					"name":"ico_agent"
 				}
 			]
 		}

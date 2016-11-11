@@ -9,6 +9,11 @@ var LowerUserContributionVo = (function (_super) {
         _super.call(this);
     }
     var d = __define,c=LowerUserContributionVo,p=c.prototype;
+    p.update = function (data) {
+        _super.prototype.update.call(this, data);
+        this.sum = data.cur;
+        this.rew = data.zong;
+    };
     return LowerUserContributionVo;
 }(BaseVo));
 egret.registerClass(LowerUserContributionVo,'LowerUserContributionVo');

@@ -14,11 +14,11 @@ var FollowDetailsScene = (function (_super) {
     var d = __define,c=FollowDetailsScene,p=c.prototype;
     p.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
-        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferRecordLength / core.pageLength));
+        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferOutRecordLength / core.pageLength));
         this.ttl_page.addEventListener(CommonEventType.CHANGED, this.onUpdateCount, this);
         this.update();
         this.btn_transfer.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.gameManager.addEventListener(EventType.Transfer_List, this.onUpdateInfo, this);
+        this.gameManager.addEventListener(EventType.Transfer_Record_Out, this.onUpdateInfo, this);
     };
     p.clickHandler = function (e) {
         switch (e.currentTarget) {
@@ -32,22 +32,26 @@ var FollowDetailsScene = (function (_super) {
     };
     p.onUpdateCount = function () {
         this.page = this.ttl_page.page;
-        if (this.gameManager.dataManager.getTransferRecordList.length < this.page * core.pageLength) {
-            this.gameManager.msgManager.transfer.sendTransferRecords("", this.page, core.pageLength);
+        if (this.gameManager.dataManager.getTransferOutRecordList.length < this.page * core.pageLength) {
+            this.gameManager.msgManager.transfer.transferOutRecord("", this.page, core.pageLength);
+        }
+        else {
+            this.update();
         }
     };
     p.onUpdateInfo = function () {
-        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferRecordLength / core.pageLength));
+        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferOutRecordLength / core.pageLength));
         this.update();
     };
     p.update = function () {
         this.itemGroup.removeChildren();
-        this.followVo = this.gameManager.dataManager.selectedFollow;
+        this.followVo = this.gameManager.dataManager.chooseLower;
         if (this.followVo) {
+            this.img_portrait.source = this.followVo.pic;
             this.lab_nick.text = this.followVo.nick;
             this.lab_id.text = "ID:" + this.followVo.uid;
             this.lab_buy.text = "已购:" + this.followVo.zong;
-            this.recordList = this.gameManager.dataManager.getTransferRecordList(this.followVo.uid);
+            this.recordList = this.gameManager.dataManager.getTransferOutRecordList(this.followVo.uid);
             if (this.recordList) {
                 var item;
                 var start = core.pageLength * (this.page - 1);
@@ -67,9 +71,9 @@ var FollowDetailsScene = (function (_super) {
     p.open = function () {
         _super.prototype.open.call(this);
         if (this.initComplete) {
-            this.followVo = this.gameManager.dataManager.selectedFollow;
+            this.followVo = this.gameManager.dataManager.chooseLower;
             this.page = 1;
-            this.gameManager.msgManager.transfer.sendTransferRecords(this.followVo.uid, this.page, core.pageLength);
+            this.gameManager.msgManager.transfer.transferOutRecord(this.followVo.uid, this.page, core.pageLength);
         }
     };
     return FollowDetailsScene;

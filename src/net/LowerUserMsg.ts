@@ -83,10 +83,16 @@ class LowerUserMsg extends BaseMsg {
 
     /**
      * 下级贡献领取
+     * @param type
+     * @param page
+     * @param count
      */
-    public sendLowerUser_Contribution_Get() {
+    public sendLowerUser_Contribution_Get(type: number, page: number, count: number) {
         var data: any = {};
         data.s = core.sessionid;
+        data.t = type;
+        data.p = page;
+        data.n = count;
 
         this.gameManager.httpManager.send(core.serverUrl + Cmd.LowerUser_Contribution_Get, data, this.readLowerUser_Contribution, this);
     }
@@ -108,27 +114,53 @@ class LowerUserMsg extends BaseMsg {
             userVo.cdnum = msg.cdnum;
         }
 
-        if (msg.hasOwnProperty("ros")) {
-            var list: LowerUserContributionVo[] = [];
-            var junior: LowerUserContributionVo;
-            for (var i: number = 0; i < msg.ros.length; i++) {
-                junior = new LowerUserContributionVo();
-                junior.update(msg.ros[i]);
-                list.push(junior);
-            }
+        if (msg.hasOwnProperty("st")) {
+            userVo.agentLv1Reward = msg.st;
+        }
 
-            list.sort(function (a: LowerUserContributionVo, b: LowerUserContributionVo) {
-                if (a.rew > b.rew) {
-                    return -1;
-                }
-                else {
-                    return 1;
-                }
-            });
-
-            this.gameManager.dataManager.lowerUserContributions = list;
+        if (msg.hasOwnProperty("sst")) {
+            userVo.agentLv2Reward = msg.sst;
         }
 
         this.gameManager.dispatchEvent(EventType.LowerUser_Contribution);
+
+        if (msg.hasOwnProperty("t")) {
+            var map: any;
+            switch (msg.t) {
+                case 3:
+                    map = this.gameManager.dataManager.agentLv1RecordMap;
+                    this.gameManager.dataManager.agentLv1RecordLength = msg.total;
+                    break;
+                case 4:
+                    map = this.gameManager.dataManager.agentLv2RecordMap;
+                    this.gameManager.dataManager.agentLv2RecordLength = msg.total;
+                    break;
+            }
+
+            var list: LowerUserContributionVo[] = [];
+            if (msg.hasOwnProperty("roles")) {
+                var data: any;
+                var contributionVo: LowerUserContributionVo;
+                for (var i: number = 0; i < msg.roles.length; i++) {
+                    data = msg.roles[i];
+
+                    contributionVo = new LowerUserContributionVo();
+                    contributionVo.update(data);
+
+                    list.push(contributionVo);
+                    map[data.uid] = contributionVo;
+                }
+
+                list.sort(function (a: LowerUserContributionVo, b: LowerUserContributionVo) {
+                    if (a.sum > b.sum) {
+                        return -1;
+                    }
+                    else {
+                        return 1;
+                    }
+                });
+            }
+            this.gameManager.dispatchEvent(EventType.LowerUser_Contribution_List, {type: msg.t, list: list});
+        }
     }
 }

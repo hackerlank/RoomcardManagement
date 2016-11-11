@@ -7,6 +7,8 @@ class AlertType {
 
     public static Normal:string = "1001";
 
+    public static Protocol:string = "1002";
+
     public constructor() {
     }
 }

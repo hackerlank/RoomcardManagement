@@ -9,7 +9,7 @@ class MsgManager extends BaseManager {
     public transfer: TransferMsg;
     public lowerUser: LowerUserMsg;
     public recharge: RechargeMsg;
-    public power: PowerMsg;
+    public agent: AgentMsg;
     public room: RoomMsg;
     public buyCard: BuyCardMsg;
 
@@ -25,7 +25,7 @@ class MsgManager extends BaseManager {
         this.login = new LoginMsg();
         this.transfer = new TransferMsg();
         this.lowerUser = new LowerUserMsg();
-        this.power = new PowerMsg();
+        this.agent = new AgentMsg();
         this.room = new RoomMsg();
         this.buyCard = new BuyCardMsg();
         this.recharge = new RechargeMsg();

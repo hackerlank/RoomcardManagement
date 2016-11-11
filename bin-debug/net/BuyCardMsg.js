@@ -37,6 +37,11 @@ var BuyCardMsg = (function (_super) {
     p.readCard_GetReward = function (msg) {
         if (msg.code != 0)
             return;
+        var userVo = this.gameManager.dataManager.userVo;
+        userVo.cardMonth = msg.month;
+        userVo.cardBuy = msg.sum;
+        userVo.cardReward = msg.rew;
+        this.gameManager.dispatchEvent(EventType.BuyCard_Info);
     };
     return BuyCardMsg;
 }(BaseMsg));

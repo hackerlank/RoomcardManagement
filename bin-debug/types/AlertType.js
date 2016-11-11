@@ -8,6 +8,7 @@ var AlertType = (function () {
     }
     var d = __define,c=AlertType,p=c.prototype;
     AlertType.Normal = "1001";
+    AlertType.Protocol = "1002";
     return AlertType;
 }());
 egret.registerClass(AlertType,'AlertType');

@@ -36,9 +36,18 @@ var Main = (function (_super) {
     var d = __define,c=Main,p=c.prototype;
     p.createChildren = function () {
         _super.prototype.createChildren.call(this);
-        core.code = StringUtils.getUrlParams("code");
-        if (!core.code || core.code == "") {
-            Weixin.getAccessCode(core.appid, core.clientUrl);
+        core.gm = StringUtils.getUrlParams("gm");
+        if (core.gm != core.GmCode) {
+            core.code_p = StringUtils.getUrlParams("pc");
+            core.code = StringUtils.getUrlParams("code");
+            if (core.code_p == "" && core.code == "") {
+                Weixin.getAccessCodeForPay(core.appid_p, core.clientUrl);
+                return;
+            }
+            if (core.code_p == "" && core.code != "") {
+                Weixin.getAccessCodeForLogin(core.appid, core.clientUrl, core.code);
+                return;
+            }
         }
         //inject the custom material parser
         //注入自定义的素材解析器
@@ -131,9 +140,16 @@ var Main = (function (_super) {
      */
     p.startCreateScene = function () {
         core.init(this.stage);
-        if (core.code && core.code != "") {
-            core.gameManager.msgManager.login.sendLogin();
+        if (!core.gm || core.gm == "") {
+            if (core.code && core.code != "") {
+                core.gameManager.msgManager.login.sendLogin();
+            }
         }
+        else {
+            core.gameManager.sceneManager.open(SceneType.login);
+        }
+        // core.gameManager.sceneManager.open(SceneType.transfer);
+        // core.gameManager.uiManager.menuUI.open();
     };
     return Main;
 }(eui.UILayer));

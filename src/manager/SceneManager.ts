@@ -4,10 +4,9 @@
 class SceneManager extends BaseManager {
 
     public gather: any = {};
-    public curScene: BaseScene;
-    public jumpSceneID: string;
 
-    public welcomScene:WelcomScene;
+    public welcomScene: WelcomScene;
+    public loginScene: LoginScene;
     public errorScene: ErrorScene;
 
     public transferScene: TransferScene;
@@ -16,12 +15,25 @@ class SceneManager extends BaseManager {
     public followSearchScene: FollowSearchScene;
     public followDetailsScene: FollowDetailsScene;
 
+    public agentScene: AgentScene;
+    public agentAppendScene: AgentAppendScene;
+    public agentNoticeScene: AgentNoticeScene;
+    public agentLv1RecordScene: AgentLv1RecordScene;
+    public agentLv2RecordScene: AgentLv2RecordScene;
+
     public accountScene: AccountScene;
     public accountRechargeScene: AccountRechargeScene;
     public accountPowerScene: AccountPowerScene;
     public accountRoomScene: AccountRoomScene;
     public accountSaleScene: AccountSaleScene;
-    public accountTransferScene: AccountTransferScene;
+    public accountTransOutScene: AccountTransOutScene;
+    public accountTransInScene: AccountTransInScene;
+    public accountAgentScene: AccountAgentScene;
+    public accountAgentRecordScene: AccountAgentRecordScene;
+
+    public curScene: BaseScene;
+    public curSceneId: string;
+    public jumpSceneID: string;
 
     public constructor() {
         super();
@@ -36,6 +48,9 @@ class SceneManager extends BaseManager {
 
         this.welcomScene = new WelcomScene();
         this.addScene(this.welcomScene);
+
+        this.loginScene = new LoginScene();
+        this.addScene(this.loginScene);
 
         this.errorScene = new ErrorScene();
         this.addScene(this.errorScene);
@@ -52,23 +67,47 @@ class SceneManager extends BaseManager {
         this.followDetailsScene = new FollowDetailsScene();
         this.addScene(this.followDetailsScene);
 
+        this.agentScene = new AgentScene();
+        this.addScene(this.agentScene);
+
+        this.agentAppendScene = new AgentAppendScene();
+        this.addScene(this.agentAppendScene);
+
+        this.agentNoticeScene = new AgentNoticeScene();
+        this.addScene(this.agentNoticeScene);
+
+        this.agentLv1RecordScene = new AgentLv1RecordScene();
+        this.addScene(this.agentLv1RecordScene);
+
+        this.agentLv2RecordScene = new AgentLv2RecordScene();
+        this.addScene(this.agentLv2RecordScene);
+
         this.accountScene = new AccountScene();
         this.addScene(this.accountScene);
-
-        this.accountTransferScene = new AccountTransferScene();
-        this.addScene(this.accountTransferScene);
-
-        this.accountSaleScene = new AccountSaleScene();
-        this.addScene(this.accountSaleScene);
-
-        this.accountRoomScene = new AccountRoomScene();
-        this.addScene(this.accountRoomScene);
 
         this.accountRechargeScene = new AccountRechargeScene();
         this.addScene(this.accountRechargeScene);
 
         this.accountPowerScene = new AccountPowerScene();
         this.addScene(this.accountPowerScene);
+
+        this.accountRoomScene = new AccountRoomScene();
+        this.addScene(this.accountRoomScene);
+
+        this.accountSaleScene = new AccountSaleScene();
+        this.addScene(this.accountSaleScene);
+
+        this.accountTransOutScene = new AccountTransOutScene();
+        this.addScene(this.accountTransOutScene);
+
+        this.accountTransInScene = new AccountTransInScene();
+        this.addScene(this.accountTransInScene);
+
+        this.accountAgentScene = new AccountAgentScene();
+        this.addScene(this.accountAgentScene);
+
+        this.accountAgentRecordScene = new AccountAgentRecordScene();
+        this.addScene(this.accountAgentRecordScene);
     }
 
     public addScene(scene: BaseScene) {
@@ -83,7 +122,7 @@ class SceneManager extends BaseManager {
      * @param id
      */
     public open(id: any = null): void {
-        if (!id || !this.gather[id]) {
+        if (!id || !this.gather[id] || id == this.curSceneId) {
             return;
         }
 
@@ -94,7 +133,9 @@ class SceneManager extends BaseManager {
         this.curScene = this.gather[id];
         this.curScene.open();
 
-        if(id == SceneType.welcom || id == SceneType.error){
+        this.curSceneId = id;
+
+        if (id == SceneType.welcom || id == SceneType.error || id == SceneType.login) {
             this.gameManager.uiManager.menuUI.close();
         }
         else {

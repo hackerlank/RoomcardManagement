@@ -12,6 +12,7 @@ class GameManager extends CommonEvent {
         return this._instance;
     }
 
+    public timerManager: TimerManager;
     public httpManager: HttpManager;
     public dataManager: DataManager;
     public msgManager: MsgManager;
@@ -42,6 +43,7 @@ class GameManager extends CommonEvent {
     }
 
     public initManager(): void {
+        this.timerManager = TimerManager.getInstance();
         this.httpManager = HttpManager.getInstance();
         this.dataManager = new DataManager();
         this.msgManager = new MsgManager();
@@ -61,5 +63,77 @@ class GameManager extends CommonEvent {
         layer.touchEnabled = false;
         core.stage.addChild(layer);
         return layer;
+    }
+
+    /**
+     * 获取全国省份列表
+     * @returns {string[]}
+     */
+    public getProvinces(): string[] {
+        var config: any[] = RES.getRes("area_cn");
+        var list: string[] = [];
+        if (config && config.length) {
+            var province: any;
+            for (var i: number = 0; i < config.length; i++) {
+                province = config[i];
+                list.push(province.name);
+            }
+        }
+        return list;
+    }
+
+    /**
+     * 获取省份对应的城市列表
+     * @param provinceName 省份名称
+     * @returns {string[]}
+     */
+    public getCitys(provinceName: string): string[] {
+        var config: any[] = RES.getRes("area_cn");
+        var list: string[] = [];
+        if (config && config.length) {
+            var province: any;
+            var city: any;
+            for (var i: number = 0; i < config.length; i++) {
+                province = config[i];
+                if (province.name == provinceName) {
+                    for (var j: number = 0; j < province.city.length; j++) {
+                        city = province.city[j];
+                        list.push(city.name);
+                    }
+                }
+            }
+        }
+        return list;
+    }
+
+    /**
+     * 获取城市对应的区域列表
+     * @param provinceName 省份名称
+     * @param cityName 城市名称
+     * @returns {string[]}
+     */
+    public getAreas(provinceName: string, cityName: string): string[] {
+        var config: any[] = RES.getRes("area_cn");
+        var list: string[] = [];
+        if (config && config.length) {
+            var province: any;
+            var city: any;
+            var area: string;
+            for (var i: number = 0; i < config.length; i++) {
+                province = config[i];
+                if (province.name == provinceName) {
+                    for (var j: number = 0; j < province.city.length; j++) {
+                        city = province.city[j];
+                        if (city.name == cityName) {
+                            for (var k: number = 0; k < city.area.length; k++) {
+                                area = city.area[k];
+                                list.push(area);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return list;
     }
 }

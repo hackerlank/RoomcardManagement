@@ -11,6 +11,10 @@ declare module skins{
 	}
 }
 declare module skins{
+	class Button_AgentSkin extends eui.Skin{
+	}
+}
+declare module skins{
 	class Button_Arrow_Page_LeftSkin extends eui.Skin{
 	}
 }
@@ -120,11 +124,17 @@ declare module skins{
 }
 declare class NormalAlertSkin extends eui.Skin{
 }
-declare class JuniorItemSkin extends eui.Skin{
+declare class ProtocolAlertSkin extends eui.Skin{
 }
-declare class RewardRuleItemSkin extends eui.Skin{
+declare class LowerUserContributionItemSkin extends eui.Skin{
+}
+declare class RecordGmItemSkin extends eui.Skin{
 }
 declare class RoomItemSkin extends eui.Skin{
+}
+declare class SaleCardRewardRuleItemSkin extends eui.Skin{
+}
+declare class TransferInRecordItemSkin extends eui.Skin{
 }
 declare class TransferRecordDetailsItemSkin extends eui.Skin{
 }
@@ -134,19 +144,29 @@ declare class UserItemMiniSkin extends eui.Skin{
 }
 declare class UserItemSkin extends eui.Skin{
 }
-declare class AccountJuniorSceneSkin extends eui.Skin{
+declare class AccountAgentRecordSceneSkin extends eui.Skin{
+}
+declare class AccountAgentSceneSkin extends eui.Skin{
 }
 declare class AccountPowerSceneSkin extends eui.Skin{
 }
 declare class AccountRechargeSceneSkin extends eui.Skin{
 }
-declare class AccountRecordSceneSkin extends eui.Skin{
-}
-declare class AccountRewardSceneSkin extends eui.Skin{
-}
 declare class AccountRoomSceneSkin extends eui.Skin{
 }
+declare class AccountSaleSceneSkin extends eui.Skin{
+}
 declare class AccountSceneSkin extends eui.Skin{
+}
+declare class AccountTransInSceneSkin extends eui.Skin{
+}
+declare class AccountTransOutSceneSkin extends eui.Skin{
+}
+declare class AgentAppendSceneSkin extends eui.Skin{
+}
+declare class AgentLv1RecordSceneSkin extends eui.Skin{
+}
+declare class AgentLv2RecordSceneSkin extends eui.Skin{
 }
 declare class AgentNoticeSceneSkin extends eui.Skin{
 }
@@ -159,6 +179,8 @@ declare class FollowSceneSkin extends eui.Skin{
 declare class FollowSearchSceneSkin extends eui.Skin{
 }
 declare class ErrorSceneSkin extends eui.Skin{
+}
+declare class LoginSceneSkin extends eui.Skin{
 }
 declare class WelcomSceneSkin extends eui.Skin{
 }

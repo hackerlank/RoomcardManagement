@@ -12,10 +12,11 @@ var RoomMsg = (function (_super) {
     /**
      * 房间查询
      */
-    p.sendRoomSearch = function (id) {
+    p.sendRoomSearch = function (id, gid) {
         var data = {};
         data.s = core.sessionid;
         data.r = id;
+        data.g = gid;
         this.gameManager.httpManager.send(core.serverUrl + Cmd.Room_Search, data, this.readRoomSearch, this);
     };
     /**
@@ -47,10 +48,11 @@ var RoomMsg = (function (_super) {
     /**
      * 房间解散
      */
-    p.sendRoomDismass = function (id) {
+    p.sendRoomDismass = function (id, gid) {
         var data = {};
         data.s = core.sessionid;
         data.r = id;
+        data.g = gid;
         this.gameManager.httpManager.send(core.serverUrl + Cmd.Room_Dismass, data, this.readRoomDismass, this);
     };
     /**

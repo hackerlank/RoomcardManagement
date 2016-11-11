@@ -7,58 +7,62 @@ var TransferScene = (function (_super) {
     __extends(TransferScene, _super);
     function TransferScene() {
         _super.call(this);
-        this.count = 0;
         this.skinName = "TransferSceneSkin";
         this.id = SceneType.transfer;
     }
     var d = __define,c=TransferScene,p=c.prototype;
     p.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
-        this.userVo = this.gameManager.dataManager.userVo;
         this.txt_uid.restrict = "0-9";
         this.txt_uid.maxChars = 10;
-        this.nba_count.setScope(1, 9999);
+        this.userVo = this.gameManager.dataManager.userVo;
+        switch (this.userVo.pow) {
+            case Power.gm:
+                this.menu_game.enabled = true;
+                this.menu_game.update(this.userVo.getGames());
+                break;
+            case Power.agent:
+            case Power.agent_new:
+                this.menu_game.enabled = false;
+                this.menu_game.update([this.userVo.getGameName(this.userVo.gid)]);
+                break;
+        }
+        this.nba_count.setMaxChars(6);
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_recharge.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.nba_count.addEventListener(CommonEventType.CHANGED, this.onUpdateCount, this);
         this.gameManager.addEventListener(EventType.LowerUser_Selected, this.onUpdateFollow, this);
-        this.gameManager.addEventListener(EventType.User_Info, this.onUpdateUserInfo, this);
-    };
-    p.onUpdateCount = function () {
-        this.count = this.nba_count.numb;
+        this.gameManager.addEventListener(EventType.Transfer_Search, this.onUpdateSearch, this);
+        this.gameManager.addEventListener(EventType.Transfer_Success, this.onUpdateSuccess, this);
     };
     p.clickHandler = function (e) {
+        if (this.txt_uid.text == "") {
+            this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1001));
+            return;
+        }
+        var gid;
+        if (this.userVo.pow == Power.gm) {
+            gid = this.userVo.getGameId(this.menu_game.getSelectedValue());
+        }
+        else {
+            gid = this.userVo.gid;
+        }
         switch (e.currentTarget) {
             case this.btn_search:
-                var uid = "" + this.txt_uid.text;
-                if (uid == "") {
-                    this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1001));
-                    return;
-                }
+                this.gameManager.msgManager.transfer.searchUser(this.txt_uid.text, gid);
                 break;
             case this.btn_recharge:
-                var uid = "" + this.txt_uid.text;
-                if (uid == "") {
-                    this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1001));
-                    return;
-                }
-                var gid = "" + this.gameManager.dataManager.userVo.gid;
-                if (gid == null || gid == "") {
-                    this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1002));
-                    return;
-                }
-                this.count = this.nba_count.numb;
-                if (this.count <= 0) {
-                    this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1004, 0));
-                    return;
-                }
-                this.gameManager.msgManager.transfer.sendTransfer(this.txt_uid.text, gid, this.count);
+                this.gameManager.msgManager.transfer.sendTransfer(this.txt_uid.text, gid, this.nba_count.numb);
                 break;
         }
     };
-    p.onUpdateUserInfo = function () {
+    p.onUpdateSuccess = function (addNum) {
+        var zong = Number(this.lab_card.text.split(":")[1]) + addNum;
+        this.lab_card.text = "房卡:" + zong;
     };
-    p.onUpdateSearch = function () {
+    p.onUpdateSearch = function (data) {
+        this.img_portrait.source = "" + data.pic;
+        this.lab_nick.text = "" + data.nick;
+        this.lab_card.text = "房卡:" + data.cur;
     };
     p.onUpdateFollow = function (data) {
         if (data) {

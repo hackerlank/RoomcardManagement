@@ -7,7 +7,7 @@ var MenuPopup = (function (_super) {
     __extends(MenuPopup, _super);
     function MenuPopup() {
         _super.call(this);
-        this.isShowList = false;
+        this.status = Status.closed;
         this.selectedItems = [];
         this.selectedIndex = 0;
         this.skinName = "MenuPopupSkin";
@@ -15,64 +15,91 @@ var MenuPopup = (function (_super) {
     var d = __define,c=MenuPopup,p=c.prototype;
     p.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
-        this.removeChild(this.listDisplay);
-        this.updateList();
-        this.listDisplay.addEventListener(egret.TouchEvent.TOUCH_TAP, this.listHandler, this);
-        this.dropdown.addEventListener(egret.TouchEvent.TOUCH_TAP, this.dropdownHandler, this);
-        this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.stageHandler, this);
+        this.removeChild(this.popup);
+        this.openOrClose();
+        this.background.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
     };
-    p.listHandler = function (e) {
-        e.stopImmediatePropagation();
-        e.stopPropagation();
-        this.selectedIndex = this.listDisplay.selectedIndex;
-        this.labelDisplay.text = "" + this.selectedItems[this.selectedIndex];
-        this.isShowList = false;
-        this.updateList();
-    };
-    p.dropdownHandler = function (e) {
-        e.stopImmediatePropagation();
-        e.stopPropagation();
-        this.isShowList = !this.isShowList;
-        this.updateList();
-    };
-    p.stageHandler = function (e) {
-        this.isShowList = false;
-        this.updateList();
-    };
-    p.update = function (list) {
-        this.selectedItems = list;
-        if (list && list.length) {
-            this.listDisplay.dataProvider = new eui.ArrayCollection(this.selectedItems);
-            this.selectedIndex = 0;
-            this.labelDisplay.text = "" + this.selectedItems[this.selectedIndex];
-            this.iconDisplay.visible = true;
-        }
-        else {
-            this.listDisplay.removeChildren();
-            this.labelDisplay.text = "";
-            this.iconDisplay.visible = false;
+    p.clickHandler = function (e) {
+        switch (e.currentTarget) {
+            case this.button:
+                this.status = this.status == Status.opened ? Status.closed : Status.opened;
+                this.openOrClose();
+                break;
+            case this.background:
+                this.status = Status.closed;
+                this.openOrClose();
+                break;
         }
     };
-    p.updateList = function () {
-        if (this.isShowList) {
-            this.iconDisplay.source = "img_arrow_up2";
-            this.listDisplay.x = this.localToGlobal(this.dropdown.x, this.dropdown.y).x;
-            this.listDisplay.y = this.localToGlobal(this.dropdown.x, this.dropdown.y).y + this.dropdown.height;
-            this.listDisplay.width = this.dropdown.width;
-            this.stage.addChild(this.listDisplay);
+    p.update = function (selectedItems) {
+        this.selectedItems = selectedItems;
+        this.selectedIndex = 0;
+        this.label.text = "";
+        this.icon.visible = false;
+        this.group.removeChildren();
+        if (selectedItems && selectedItems.length) {
+            var groupName = String(FormulaUtils.getRandomBetween(0, 100000));
+            var radioButton;
+            for (var i = 0; i < selectedItems.length; i++) {
+                radioButton = new eui.RadioButton();
+                radioButton.groupName = groupName;
+                radioButton.value = i;
+                radioButton.label = selectedItems[i];
+                this.group.addChild(radioButton);
+                radioButton.addEventListener(egret.Event.CHANGE, this.radioHandler, this);
+            }
+            this.scroller.viewport.scrollV = 0;
+            this.scroller.validateNow();
+            this.updateView();
         }
-        else {
-            this.iconDisplay.source = "img_arrow_down2";
-            if (this.listDisplay.parent && this.listDisplay.parent.contains(this.listDisplay)) {
-                this.listDisplay.parent.removeChild(this.listDisplay);
+    };
+    p.radioHandler = function (e) {
+        var radio = e.target;
+        this.selectedIndex = radio.value;
+        this.status = Status.closed;
+        this.openOrClose();
+        this.updateView();
+    };
+    p.updateView = function () {
+        this.icon.visible = true;
+        this.label.text = "" + this.selectedItems[this.selectedIndex];
+        this.dispatchEventWith(MenuPopup.CHANGE, false, this);
+    };
+    p.openOrClose = function () {
+        switch (this.status) {
+            case Status.opened:
+                this.icon.source = "img_arrow_up2";
+                // this.popup.left = this.popup.right = this.popup.top = this.popup.bottom = 0;
+                this.popup.x = 0;
+                this.popup.y = 0;
+                this.popup.width = core.stage.stageWidth;
+                this.popup.height = core.stage.stageHeight;
+                this.stage && this.stage.addChild(this.popup);
+                break;
+            case Status.closed:
+                this.icon.source = "img_arrow_down2";
+                if (this.popup.parent && this.popup.parent.contains(this.popup)) {
+                    this.popup.parent.removeChild(this.popup);
+                }
+                break;
+        }
+    };
+    p.getSelectedIndex = function () {
+        return this.selectedIndex;
+    };
+    p.setSelectedValue = function (value) {
+        for (var i = 0; i < this.selectedItems.length; i++) {
+            if (value == this.selectedItems[i]) {
+                this.selectedIndex = i;
             }
         }
+        this.updateView();
     };
-    d(p, "selectedValue"
-        ,function () {
-            return this.selectedItems[this.selectedIndex];
-        }
-    );
+    p.getSelectedValue = function () {
+        return this.selectedItems[this.selectedIndex];
+    };
+    MenuPopup.CHANGE = "CHANGE";
     return MenuPopup;
 }(BaseSprite));
 egret.registerClass(MenuPopup,'MenuPopup');

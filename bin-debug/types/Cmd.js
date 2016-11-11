@@ -9,10 +9,16 @@ var Cmd = (function () {
     var d = __define,c=Cmd,p=c.prototype;
     //登录
     Cmd.Login = "/login/wxLogin.vo";
-    //转账房卡
+    //登录gm
+    Cmd.Login_gm = "/login/admLogin.vo";
+    //转账-对象查询
+    Cmd.Transfer_Search = "/under/searchUser.vo";
+    //转账
     Cmd.Transfer = "/under/transfer.vo";
-    //转账信息
-    Cmd.Transfer_Record_List = "/under/getUnderRecord.vo";
+    //转账-转出记录
+    Cmd.Transfer_Record_Out = "/under/getShellRecord.vo";
+    //转账-转入记录
+    Cmd.Transfer_Record_In = "/under/getBuyRecord.vo";
     //下级信息
     Cmd.LowerUser_List = "/under/getUnderRole.vo";
     //下级贡献
@@ -27,8 +33,20 @@ var Cmd = (function () {
     Cmd.Room_Search = "/room/getInfo.vo";
     //房间解散
     Cmd.Room_Dismass = "/room/dismiss.vo";
-    //添加代理人
-    Cmd.Add_Agent = "/admin/addUser.vo";
+    //代理-获取验证码
+    Cmd.Agent_GetPhoneCode = "/admin/getVerCode.vo";
+    //代理添加
+    Cmd.Agent_Append = "/admin/addUser.vo";
+    //查找代理
+    Cmd.Agent_Search = "/admin/searchUser.vo";
+    //代理充值
+    Cmd.Agent_Recharge = "/admin/transfer.vo";
+    //代理扣卡
+    Cmd.Agent_Deduct = "/admin/reduceCard.vo";
+    //代理开关
+    Cmd.Agent_OffOn = "/admin/agentOnOff.vo";
+    //操作记录
+    Cmd.Agent_Record = "/admin/getOpRecord.vo";
     //充值订单
     Cmd.Recharge = "/pay/unifiedorder.vo";
     //充值同步

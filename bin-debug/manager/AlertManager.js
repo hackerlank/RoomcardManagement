@@ -13,6 +13,8 @@ var AlertManager = (function (_super) {
         _super.prototype.initManager.call(this);
         this.normal = new NormalAlert();
         this.gather[this.normal.id] = this.normal;
+        this.protocolAlert = new ProtocolAlert();
+        this.gather[this.protocolAlert.id] = this.protocolAlert;
     };
     /**
      * 打开

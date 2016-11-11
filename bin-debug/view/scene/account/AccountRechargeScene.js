@@ -24,11 +24,11 @@ var AccountRechargeScene = (function (_super) {
             for (var i = 0; i < this.rechargeList.length; i++) {
                 rechargeVo = this.rechargeList[i];
                 btn = new eui.Button();
-                btn.skinName = "skins.Button_WhiteSkin";
+                btn.skinName = "skins.Button_GreenSkin";
                 btn.width = 600;
                 btn.height = 60;
                 btn.label = "充值" + rechargeVo.card + "房卡";
-                btn.label = rechargeVo.card + "房卡+赠送" + rechargeVo.rebate + "房卡=" + Math.floor(rechargeVo.pay / 100) + "元";
+                btn.label = rechargeVo.card + "房卡+赠送" + rechargeVo.rebate + "房卡=" + (rechargeVo.pay / 100) + "元";
                 this.itemGroup.addChild(btn);
                 btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.buttonHandler, this);
             }

@@ -10,22 +10,31 @@ class LoginMsg extends BaseMsg {
     }
 
     /**
+     * 登录Gm
+     */
+    public loginGm(phone, phoneCode) {
+        var data: any = {};
+        data.p = phone;
+        data.v = phoneCode;
+
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Login_gm, data, this.loginHandler, this);
+    }
+
+    /**
      * 登录
      */
     public sendLogin() {
         var data: any = {};
         data.code = core.code;
+        data.pcode = core.code_p;
         data.url = location.href.split("#")[0];
         data.t = core.loginType;
 
-        this.gameManager.httpManager.send(core.serverUrl + Cmd.Login, data, this.readLogin, this);
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Login, data, this.loginHandler, this);
     }
 
-    public readLogin(msg: any) {
+    public loginHandler(msg: any) {
         if (msg.code != 0)return;
-
-        this.gameManager.sceneManager.open(SceneType.transfer);
-        this.gameManager.uiManager.menuUI.open();
 
         var userVo: UserVo = this.gameManager.dataManager.userVo;
 
@@ -34,7 +43,9 @@ class LoginMsg extends BaseMsg {
 
             core.sessionid = userVo.sid;
 
-            Weixin.config(core.appid, userVo.api_timestamp, userVo.api_noncestr, userVo.api_sign, ['chooseWXPay']);
+            if (!core.gm || core.gm == "") {
+                Weixin.config(core.appid_p, userVo.api_timestamp, userVo.api_noncestr, userVo.api_sign, ['chooseWXPay']);
+            }
         }
 
         var gameTpl: any[] = msg.gameTpl;
@@ -91,8 +102,9 @@ class LoginMsg extends BaseMsg {
             });
         }
 
-        this.gameManager.msgManager.lowerUser.sendLowerUser_List(1);
-
         this.gameManager.dispatchEvent(EventType.User_Info);
+
+        this.gameManager.sceneManager.open(SceneType.transfer);
+        this.gameManager.uiManager.menuUI.open();
     }
 }

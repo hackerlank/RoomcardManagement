@@ -37,7 +37,6 @@ class HttpManager extends CommonEvent {
             console.log("ReadData <=== " + loader.data);
 
             var data: any = JSON.parse(loader.data.toString());
-
             if (data && data.hasOwnProperty("code") && data.code > 0) {
                 switch (data.code) {
                     case 1999:

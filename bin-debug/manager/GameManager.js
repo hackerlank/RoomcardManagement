@@ -22,6 +22,7 @@ var GameManager = (function (_super) {
         this.layerTop = this.getNewLayer();
     };
     p.initManager = function () {
+        this.timerManager = TimerManager.getInstance();
         this.httpManager = HttpManager.getInstance();
         this.dataManager = new DataManager();
         this.msgManager = new MsgManager();
@@ -39,6 +40,75 @@ var GameManager = (function (_super) {
         layer.touchEnabled = false;
         core.stage.addChild(layer);
         return layer;
+    };
+    /**
+     * 获取全国省份列表
+     * @returns {string[]}
+     */
+    p.getProvinces = function () {
+        var config = RES.getRes("area_cn");
+        var list = [];
+        if (config && config.length) {
+            var province;
+            for (var i = 0; i < config.length; i++) {
+                province = config[i];
+                list.push(province.name);
+            }
+        }
+        return list;
+    };
+    /**
+     * 获取省份对应的城市列表
+     * @param provinceName 省份名称
+     * @returns {string[]}
+     */
+    p.getCitys = function (provinceName) {
+        var config = RES.getRes("area_cn");
+        var list = [];
+        if (config && config.length) {
+            var province;
+            var city;
+            for (var i = 0; i < config.length; i++) {
+                province = config[i];
+                if (province.name == provinceName) {
+                    for (var j = 0; j < province.city.length; j++) {
+                        city = province.city[j];
+                        list.push(city.name);
+                    }
+                }
+            }
+        }
+        return list;
+    };
+    /**
+     * 获取城市对应的区域列表
+     * @param provinceName 省份名称
+     * @param cityName 城市名称
+     * @returns {string[]}
+     */
+    p.getAreas = function (provinceName, cityName) {
+        var config = RES.getRes("area_cn");
+        var list = [];
+        if (config && config.length) {
+            var province;
+            var city;
+            var area;
+            for (var i = 0; i < config.length; i++) {
+                province = config[i];
+                if (province.name == provinceName) {
+                    for (var j = 0; j < province.city.length; j++) {
+                        city = province.city[j];
+                        if (city.name == cityName) {
+                            for (var k = 0; k < city.area.length; k++) {
+                                area = city.area[k];
+                                list.push(area);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return list;
     };
     return GameManager;
 }(CommonEvent));

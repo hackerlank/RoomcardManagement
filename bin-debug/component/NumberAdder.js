@@ -7,8 +7,6 @@ var NumberAdder = (function (_super) {
     __extends(NumberAdder, _super);
     function NumberAdder() {
         _super.call(this);
-        this.mini = 0;
-        this.maxi = -1;
         this.numb = 0;
         this.skinName = "skins.NumberAdderSkin";
     }
@@ -23,14 +21,12 @@ var NumberAdder = (function (_super) {
     p.clickHandler = function (e) {
         switch (e.currentTarget) {
             case this.btn_add:
-                if (this.maxi == 0 || this.numb < this.maxi) {
-                    this.numb++;
-                    this.update();
-                    this.dispatchEventWith(CommonEventType.CHANGED);
-                }
+                this.numb++;
+                this.update();
+                this.dispatchEventWith(CommonEventType.CHANGED);
                 break;
             case this.btn_cut:
-                if (this.numb > this.mini) {
+                if (this.numb > 0) {
                     this.numb--;
                     this.update();
                     this.dispatchEventWith(CommonEventType.CHANGED);
@@ -44,19 +40,7 @@ var NumberAdder = (function (_super) {
         this.dispatchEventWith(CommonEventType.CHANGED);
     };
     p.update = function () {
-        if (this.maxi != -1) {
-            this.numb = this.numb > this.maxi ? this.maxi : this.numb;
-        }
-        this.numb = this.numb < this.mini ? this.mini : this.numb;
         this.txt_count.text = "" + this.numb;
-    };
-    p.setScope = function (mini, maxi) {
-        if (mini === void 0) { mini = 0; }
-        if (maxi === void 0) { maxi = -1; }
-        this.mini = mini;
-        this.maxi = maxi;
-        this.numb = mini;
-        this.update();
     };
     p.setMaxChars = function (value) {
         this.txt_count.maxChars = value;

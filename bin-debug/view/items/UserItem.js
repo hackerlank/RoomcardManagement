@@ -14,7 +14,6 @@ var UserItem = (function (_super) {
         _super.prototype.childrenCreated.call(this);
         this.img_portrait.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_transfer.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.btn_details.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.gameManager.addEventListener(EventType.LowerUser_Info, this.onUpdate, this);
     };
     p.clickHandler = function (e) {
@@ -26,8 +25,7 @@ var UserItem = (function (_super) {
                 }
                 break;
             case this.img_portrait:
-            case this.btn_details:
-                this.gameManager.dataManager.selectedFollow = this.followVo;
+                this.gameManager.dataManager.chooseLower = this.followVo;
                 this.gameManager.sceneManager.open(SceneType.follow_details);
                 break;
         }

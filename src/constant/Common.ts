@@ -1,17 +1,20 @@
 /**
- * Common
- * @Author Ace.c
- * @Create 2016-10-30 18:03
- */
-enum Power {
-    superManager = 1, agentLv1, agentLv2, agentLv3
+* 语言
+*/
+enum Language {
+    ch, en
 }
 
 /**
- * Language
- * @Author Ace.c
- * @Create 2016-11-01 10:27
+* 状态
+*/
+enum Status {
+    closed, opened
+}
+
+/**
+ * 权限
  */
-enum Language {
-    ch, en
+enum Power {
+    gm = 1, agent, agent_new
 }

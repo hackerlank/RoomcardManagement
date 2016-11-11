@@ -5,6 +5,7 @@
  */
 class UserVo extends BaseVo {
 
+    public api_appid: string;
     public api_timestamp: number;
     public api_noncestr: string;
     public api_sign: string;
@@ -23,6 +24,11 @@ class UserVo extends BaseVo {
     //权限
     public pow: number = 0;
 
+    //转账人次
+    public transPopulation:number = 0;
+    //转账卡数
+    public transCard:number = 0;
+
     //购卡月份标识
     public cardMonth: number = 0;
     //每月购卡数量
@@ -35,6 +41,11 @@ class UserVo extends BaseVo {
     //每月购卡奖励
     public juniorReward: number = 0;
 
+    //1级代理奖励
+    public agentLv1Reward:number = 0;
+    //2级代理奖励
+    public agentLv2Reward:number = 0;
+
     //游戏
     public gameMap: any;
     //充值档位列表
@@ -46,6 +57,18 @@ class UserVo extends BaseVo {
         super();
 
         this.gameMap = {};
+    }
+
+    /**
+     * 获取全部游戏
+     * @returns {string[]}
+     */
+    public getGames(): string[] {
+        var list: string[] = [];
+        for (var key in this.gameMap) {
+            list.push(this.gameMap[key].name);
+        }
+        return list;
     }
 
     /**

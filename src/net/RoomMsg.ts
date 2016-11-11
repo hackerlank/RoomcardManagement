@@ -12,10 +12,11 @@ class RoomMsg extends BaseMsg {
     /**
      * 房间查询
      */
-    public sendRoomSearch(id: string) {
+    public sendRoomSearch(id: string, gid) {
         var data: any = {};
         data.s = core.sessionid;
         data.r = id;
+        data.g = gid;
 
         this.gameManager.httpManager.send(core.serverUrl + Cmd.Room_Search, data, this.readRoomSearch, this);
     }
@@ -54,10 +55,11 @@ class RoomMsg extends BaseMsg {
     /**
      * 房间解散
      */
-    public sendRoomDismass(id: string) {
+    public sendRoomDismass(id: string, gid) {
         var data: any = {};
         data.s = core.sessionid;
         data.r = id;
+        data.g = gid;
 
         this.gameManager.httpManager.send(core.serverUrl + Cmd.Room_Dismass, data, this.readRoomDismass, this);
     }

@@ -37,11 +37,21 @@ class Main extends eui.UILayer {
     protected createChildren(): void {
         super.createChildren();
 
-        core.code = StringUtils.getUrlParams("code");
+        core.gm = StringUtils.getUrlParams("gm");
+        if (core.gm != core.GmCode) {
+            core.code_p = StringUtils.getUrlParams("pc");
+            core.code = StringUtils.getUrlParams("code");
 
-        if (!core.code || core.code == "") {
-            Weixin.getAccessCode(core.appid, core.clientUrl);
+            if (core.code_p == "" && core.code == "") {
+                Weixin.getAccessCodeForPay(core.appid_p, core.clientUrl);
+                return;
+            }
+            if (core.code_p == "" && core.code != "") {
+                Weixin.getAccessCodeForLogin(core.appid, core.clientUrl, core.code);
+                return;
+            }
         }
+
 
         //inject the custom material parser
         //注入自定义的素材解析器
@@ -148,8 +158,16 @@ class Main extends eui.UILayer {
     protected startCreateScene(): void {
         core.init(this.stage);
 
-        if (core.code && core.code != "") {
-            core.gameManager.msgManager.login.sendLogin();
+        if (!core.gm || core.gm == "") {
+            if (core.code && core.code != "") {
+                core.gameManager.msgManager.login.sendLogin();
+            }
         }
+        else {
+            core.gameManager.sceneManager.open(SceneType.login);
+        }
+
+        // core.gameManager.sceneManager.open(SceneType.transfer);
+        // core.gameManager.uiManager.menuUI.open();
     }
 }

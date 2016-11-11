@@ -10,7 +10,6 @@ class UserItem extends GameSprite {
     public lab_id: eui.TextInput;
     public lab_buy: eui.TextInput;
     public btn_transfer: eui.Button;
-    public btn_details: eui.Button;
 
     public followVo: LowerUserVo;
 
@@ -25,7 +24,6 @@ class UserItem extends GameSprite {
 
         this.img_portrait.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_transfer.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.btn_details.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
         this.gameManager.addEventListener(EventType.LowerUser_Info, this.onUpdate, this);
     }
@@ -39,8 +37,7 @@ class UserItem extends GameSprite {
                 }
                 break;
             case this.img_portrait:
-            case this.btn_details:
-                this.gameManager.dataManager.selectedFollow = this.followVo;
+                this.gameManager.dataManager.chooseLower = this.followVo;
                 this.gameManager.sceneManager.open(SceneType.follow_details);
                 break;
         }

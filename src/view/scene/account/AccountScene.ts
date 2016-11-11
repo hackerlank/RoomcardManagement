@@ -12,6 +12,7 @@ class AccountScene extends BaseScene {
     public btn_recharge: eui.Button;
     public menuGroup: eui.Group;
     public btn_power: eui.Button;
+    public btn_agent: eui.Button;
     public btn_room: eui.Button;
     public btn_sale: eui.Button;
     public btn_buy: eui.Button;
@@ -32,21 +33,22 @@ class AccountScene extends BaseScene {
         this.userVo = this.gameManager.dataManager.userVo;
 
         switch (this.userVo.pow) {
-            case Power.superManager:
+            case Power.gm:
                 break;
-            case Power.agentLv1:
-            case Power.agentLv2:
-            case Power.agentLv3:
+            case Power.agent:
+            case Power.agent_new:
                 this.menuGroup.removeChild(this.btn_power);
+                this.menuGroup.removeChild(this.btn_agent);
                 this.menuGroup.removeChild(this.btn_room);
                 break;
         }
 
-        this.update();
+        this.onUpdateInfo();
 
         this.btn_recharge.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_power.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_room.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_agent.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_sale.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_buy.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_transfer.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
@@ -65,18 +67,32 @@ class AccountScene extends BaseScene {
             case this.btn_room:
                 this.gameManager.sceneManager.open(SceneType.account_room);
                 break;
+            case this.btn_agent:
+                this.gameManager.sceneManager.open(SceneType.account_agent);
+                break;
             case this.btn_sale:
                 this.gameManager.sceneManager.open(SceneType.account_sale);
                 break;
-            case this.btn_buy:
-                break;
             case this.btn_transfer:
-                this.gameManager.sceneManager.open(SceneType.account_transfer);
+                this.gameManager.sceneManager.open(SceneType.account_trans_out);
+                break;
+            case this.btn_buy:
+                this.gameManager.sceneManager.open(SceneType.account_trans_in);
                 break;
         }
     }
 
     public onUpdateInfo() {
+        switch (this.userVo.pow) {
+            case Power.gm:
+            case Power.agent:
+                this.btn_power.visible = this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = true;
+                break;
+            case Power.agent_new:
+                this.btn_power.visible = this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = false;
+                break;
+        }
+
         this.update();
     }
 
@@ -85,5 +101,13 @@ class AccountScene extends BaseScene {
         this.lab_nick.text = "" + this.userVo.nick;
         this.lab_uid.text = "ID:" + this.userVo.uid;
         this.lab_card.text = "房卡:" + this.userVo.cdnum;
+    }
+
+    public open() {
+        super.open();
+
+        if (this.initComplete) {
+            this.gameManager.msgManager.recharge.sendSynchro();
+        }
     }
 }

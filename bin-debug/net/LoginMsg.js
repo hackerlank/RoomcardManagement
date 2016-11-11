@@ -10,25 +10,35 @@ var LoginMsg = (function (_super) {
     }
     var d = __define,c=LoginMsg,p=c.prototype;
     /**
+     * 登录Gm
+     */
+    p.loginGm = function (phone, phoneCode) {
+        var data = {};
+        data.p = phone;
+        data.v = phoneCode;
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Login_gm, data, this.loginHandler, this);
+    };
+    /**
      * 登录
      */
     p.sendLogin = function () {
         var data = {};
         data.code = core.code;
+        data.pcode = core.code_p;
         data.url = location.href.split("#")[0];
         data.t = core.loginType;
-        this.gameManager.httpManager.send(core.serverUrl + Cmd.Login, data, this.readLogin, this);
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Login, data, this.loginHandler, this);
     };
-    p.readLogin = function (msg) {
+    p.loginHandler = function (msg) {
         if (msg.code != 0)
             return;
-        this.gameManager.sceneManager.open(SceneType.transfer);
-        this.gameManager.uiManager.menuUI.open();
         var userVo = this.gameManager.dataManager.userVo;
         if (msg.data) {
             userVo.update(msg.data);
             core.sessionid = userVo.sid;
-            Weixin.config(core.appid, userVo.api_timestamp, userVo.api_noncestr, userVo.api_sign, ['chooseWXPay']);
+            if (!core.gm || core.gm == "") {
+                Weixin.config(core.appid_p, userVo.api_timestamp, userVo.api_noncestr, userVo.api_sign, ['chooseWXPay']);
+            }
         }
         var gameTpl = msg.gameTpl;
         if (gameTpl) {
@@ -77,8 +87,9 @@ var LoginMsg = (function (_super) {
                 }
             });
         }
-        this.gameManager.msgManager.lowerUser.sendLowerUser_List(1);
         this.gameManager.dispatchEvent(EventType.User_Info);
+        this.gameManager.sceneManager.open(SceneType.transfer);
+        this.gameManager.uiManager.menuUI.open();
     };
     return LoginMsg;
 }(BaseMsg));

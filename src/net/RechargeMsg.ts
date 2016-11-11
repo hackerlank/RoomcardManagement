@@ -39,7 +39,7 @@ class RechargeMsg extends BaseMsg {
         var data: any = {};
         data.s = core.sessionid;
 
-        this.gameManager.httpManager.send(core.serverUrl + Cmd.Recharge, data, this.readSynchro, this);
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Recharge_Synchro, data, this.readSynchro, this);
     }
 
     public readSynchro(msg: any) {
@@ -47,6 +47,7 @@ class RechargeMsg extends BaseMsg {
 
         var userVO: UserVo = this.gameManager.dataManager.userVo;
         userVO.cdnum = msg.cdnum;
+        userVO.pow = msg.pow;
         this.gameManager.dispatchEvent(EventType.User_Info);
     }
 }

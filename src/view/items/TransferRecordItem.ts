@@ -28,10 +28,10 @@ class TransferRecordItem extends GameSprite {
         var userVo: UserVo = this.gameManager.dataManager.userVo;
 
         if (this.recordVo) {
-            this.lab_id.text = "" + this.recordVo.uid;
-            this.lab_name.text = "" + userVo.getGameName(this.recordVo.gid);
+            this.lab_id.text = "" + this.recordVo.tarid;
+            this.lab_name.text = "" + userVo.getGameName(this.recordVo.gameid);
             this.lab_count.text = "" + this.recordVo.num;
-            this.lab_time.text = "" + StringUtils.getYTDByTimestamp(this.recordVo.ctm) + "\n" + StringUtils.getHMSByTimestamp(this.recordVo.ctm);
+            this.lab_time.text = "" + StringUtils.getYTDByTimestamp(this.recordVo.ctime) + "\n" + StringUtils.getHMSByTimestamp(this.recordVo.ctime);
         }
     }
 }

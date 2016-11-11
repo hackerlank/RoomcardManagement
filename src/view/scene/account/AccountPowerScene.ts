@@ -23,7 +23,7 @@ class AccountPowerScene extends BaseScene {
     public childrenCreated() {
         super.childrenCreated();
 
-        // this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferRecordLength / core.pageLength));
+        // this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferOutRecordLength / core.pageLength));
 
         this.update();
 
@@ -52,16 +52,16 @@ class AccountPowerScene extends BaseScene {
                     return;
                 }
 
-                var pow: Power = Power.agentLv1;
-                this.gameManager.msgManager.power.sendAddAgent(uid, gid, pow);
+                var pow: Power = Power.agent;
+                // this.gameManager.msgManager.agent.appent(uid, gid, pow);
                 break;
         }
     }
 
     private onUpdateCount() {
         // this.page = this.ttl_page.page;
-        // if (this.gameManager.dataManager.getTransferRecordList.length < this.page * core.pageLength) {
-        //     this.gameManager.msgManager.transfer.sendTransferRecords("", this.page, core.pageLength);
+        // if (this.gameManager.dataManager.getTransferOutRecordList.length < this.page * core.pageLength) {
+        //     this.gameManager.msgManager.transfer.transferOutRecord("", this.page, core.pageLength);
         // }
     }
 
