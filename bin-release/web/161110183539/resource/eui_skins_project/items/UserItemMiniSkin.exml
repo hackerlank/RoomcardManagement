@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="UserItemMiniSkin" width="640" height="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image id="img_portrait" left="35" verticalCenter="0" x="10" y="10" scaleX=".6" scaleY=".6" source="img_portrait_default" width="120" height="120"/>
-	<e:TextInput id="lab_nick" prompt="昵称" enabled="false" width="209" height="60" verticalCenter="0" left="125"/>
-	<e:TextInput id="lab_id" prompt="ID" enabled="false" width="242" height="60" verticalCenter="0" left="360"/>
-	<e:Image source="img_line" left="20" right="20" bottom="0"/>
-</e:Skin>

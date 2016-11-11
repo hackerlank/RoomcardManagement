@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<e:Skin class="skins.Button_DetailsSkin" states="up,down,disabled" xmlns:e="http://ns.egret.com/eui">
-	<e:Rect left="0" right="0" top="0" bottom="0" fillAlpha="0" strokeAlpha="0"/>
-    <e:Image alpha.disabled="0.5"
-
-             source="ico_details" verticalCenter="0" horizontalCenter="0"/>
-</e:Skin>

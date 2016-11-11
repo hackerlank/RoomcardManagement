@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="skins.TurningToolSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" height="40" width="181">
-	<e:Group scaleX="1" scaleY="1" top="0" bottom="0" left="30" right="30">
-		<e:Image source="img_basemap" left="0" right="0" top="0" bottom="0" scale9Grid="7,7,6,6"/>
-		<e:Label id="labelDisplay" text="1/1" textAlign="center" verticalAlign="middle" verticalCenter="0" left="10" right="10" textColor="0x000000" fontFamily="黑体" size="24" wordWrap="false" multiline="false"/>
-	</e:Group>
-	<e:Button id="leftBtnDisplay" verticalCenter="0" left="0" skinName="skins.Button_Arrow_Page_LeftSkin"/>
-	<e:Button id="rightBtnDisplay" scaleX="1" scaleY="1" right="0" verticalCenter="0" skinName="skins.Button_Arrow_Page_RightSkin"/>
-</e:Skin>
