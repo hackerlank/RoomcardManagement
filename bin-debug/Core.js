@@ -19,14 +19,16 @@ var core = (function () {
     //服务器地址
     // static serverUrl: string = "http://192.168.2.88:8880/CardRoomManager";
     core.serverUrl = "http://121.42.209.249";
-    //游戏列表
-    core.gameList = [];
     //每页显示长度
     core.pageLength = 40;
     //手机验证码重置时间
     core.PhoneCodeReTime = 60;
     //GM登录验证
     core.GmCode = "cLGGRh2b4sMeRy";
+    //公告1(转账)
+    core.Notice01 = "http://119.29.75.66:9001/cardroom/notice.php?t=1";
+    //公告2(代理)
+    core.Notice02 = "http://119.29.75.66:9001/cardroom/notice.php?t=2";
     //gm登录
     core.gm = "";
     //登录公众号appid
@@ -42,6 +44,8 @@ var core = (function () {
     //登录类型
     core.loginType = "h5";
     // static loginType:string = "app";
+    //游戏列表
+    core.gameList = [];
     //是否可以播放音乐
     core.isBackgroundMusic = true;
     //是否可以播放音效

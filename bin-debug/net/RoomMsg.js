@@ -62,6 +62,7 @@ var RoomMsg = (function (_super) {
     p.readRoomDismass = function (msg) {
         if (msg.code != 0)
             return;
+        this.gameManager.alertManager.open(AlertType.Normal, "解散房间成功");
         this.gameManager.dataManager.roomUserMap = {};
         this.gameManager.dispatchEvent(EventType.Room_Dismass);
     };

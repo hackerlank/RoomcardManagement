@@ -63,10 +63,10 @@ var AccountScene = (function (_super) {
         switch (this.userVo.pow) {
             case Power.gm:
             case Power.agent:
-                this.btn_power.visible = this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = true;
+                this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = true;
                 break;
             case Power.agent_new:
-                this.btn_power.visible = this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = false;
+                this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = false;
                 break;
         }
         this.update();

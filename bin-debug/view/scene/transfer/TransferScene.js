@@ -13,6 +13,7 @@ var TransferScene = (function (_super) {
     var d = __define,c=TransferScene,p=c.prototype;
     p.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
+        this.onUpdateNotice();
         this.txt_uid.restrict = "0-9";
         this.txt_uid.maxChars = 10;
         this.userVo = this.gameManager.dataManager.userVo;
@@ -68,6 +69,39 @@ var TransferScene = (function (_super) {
         if (data) {
             this.txt_uid.text = "" + data;
         }
+    };
+    p.onUpdateNotice = function () {
+        this.container.removeChildren();
+        var _this = this;
+        this.gameManager.httpManager.send(core.Notice01, null, function (msg) {
+            var data;
+            for (var id in msg) {
+                if (!msg[id])
+                    continue;
+                data = msg[id];
+                var arr = [];
+                var style = {};
+                style.textAlign = data.align ? data.align : "left";
+                style.fontFamily = data.font ? data.font : "微软雅黑";
+                style.textColor = data.color ? data.color : 0x000000;
+                style.bold = data.bold ? data.bold : false;
+                style.size = data.size ? data.size : 24;
+                style.lineSpacing = data.lineSpacing ? data.lineSpacing : 5;
+                arr.push({
+                    text: data["txt"],
+                    style: style
+                });
+                var label = FactoryUtils.getLabel(style.textAlign);
+                label.lineSpacing = style.lineSpacing;
+                label.multiline = true;
+                label.wordWrap = true;
+                label.width = 550;
+                label.textFlow = arr;
+                _this.container.addChild(label);
+            }
+            _this.scroller.viewport.scrollV = 0;
+            _this.scroller.validateNow();
+        });
     };
     p.open = function () {
         _super.prototype.open.call(this);

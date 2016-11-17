@@ -15,7 +15,7 @@ class RoomUserItem extends GameSprite {
     public constructor() {
         super();
 
-        this.skinName = "RoomUserItemSkin";
+        this.skinName = "RoomItemSkin";
     }
 
     public childrenCreated() {

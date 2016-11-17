@@ -9,6 +9,8 @@ class AgentScene extends BaseScene {
     private btn_notice: eui.Button;
     private btn_lv1: eui.Button;
     private btn_lv2: eui.Button;
+    private scroller: eui.Scroller;
+    private container: eui.Group;
 
     public constructor() {
         super();
@@ -19,6 +21,8 @@ class AgentScene extends BaseScene {
 
     public childrenCreated() {
         super.childrenCreated();
+
+        this.onUpdateNotice();
 
         this.btn_add.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_notice.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
@@ -43,6 +47,45 @@ class AgentScene extends BaseScene {
                 this.gameManager.sceneManager.open(SceneType.agent_lv2Record);
                 break;
         }
+    }
+
+    private onUpdateNotice() {
+        this.container.removeChildren();
+
+        var _this = this;
+        this.gameManager.httpManager.send(core.Notice02, null, function (msg: any) {
+            var data: any;
+            for (var id in msg) {
+                if (!msg[id])continue;
+
+                data = msg[id];
+
+                var arr: Array<any> = [];
+                var style: any = {};
+                style.textAlign = data.align ? data.align : "left";
+                style.fontFamily = data.font ? data.font : "微软雅黑";
+                style.textColor = data.color ? data.color : 0x000000;
+                style.bold = data.bold ? data.bold : false;
+                style.size = data.size ? data.size : 24;
+                style.lineSpacing = data.lineSpacing ? data.lineSpacing : 5;
+
+                arr.push({
+                    text: data["txt"],
+                    style: style
+                });
+
+                var label: eui.Label = FactoryUtils.getLabel(style.textAlign);
+                label.lineSpacing = style.lineSpacing;
+                label.multiline = true;
+                label.wordWrap = true;
+                label.width = 550;
+                label.textFlow = arr;
+                _this.container.addChild(label);
+            }
+
+            _this.scroller.viewport.scrollV = 0;
+            _this.scroller.validateNow();
+        });
     }
 
     private onUpdate() {

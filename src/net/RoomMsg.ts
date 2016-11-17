@@ -71,6 +71,8 @@ class RoomMsg extends BaseMsg {
     public readRoomDismass(msg: any) {
         if (msg.code != 0)return;
 
+        this.gameManager.alertManager.open(AlertType.Normal, "解散房间成功");
+
         this.gameManager.dataManager.roomUserMap = {};
 
         this.gameManager.dispatchEvent(EventType.Room_Dismass);

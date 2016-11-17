@@ -46,9 +46,11 @@
 	</e:Group>
 	<e:Group top="560" left="20" right="20" bottom="20">
 		<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0xFFFFFF"/>
-		<e:Scroller left="20" right="20" top="20" bottom="20">
-			<e:Group>
-				<e:Label id="lab_notice" left="0" right="0" top="0" bottom="0" textAlign="center" verticalAlign="middle" fontFamily="黑体" size="24" textColor="0x000000" wordWrap="true" multiline="true"/>
+		<e:Scroller id="scroller" left="20" right="20" top="20" bottom="20">
+			<e:Group id="container">
+				<e:layout>
+					<e:VerticalLayout horizontalAlign="center"/>
+				</e:layout>
 			</e:Group>
 		</e:Scroller>
 	</e:Group>

@@ -13,7 +13,8 @@ class TransferScene extends BaseScene {
     private menu_game: MenuPopup;
     private nba_count: NumberAdder;
     private btn_recharge: eui.Button;
-    private lab_notice: eui.Label;
+    private scroller: eui.Scroller;
+    private container: eui.Group;
 
     private userVo: UserVo;
 
@@ -26,6 +27,8 @@ class TransferScene extends BaseScene {
 
     public childrenCreated() {
         super.childrenCreated();
+
+        this.onUpdateNotice();
 
         this.txt_uid.restrict = "0-9";
         this.txt_uid.maxChars = 10;
@@ -94,6 +97,45 @@ class TransferScene extends BaseScene {
         if (data) {
             this.txt_uid.text = "" + data;
         }
+    }
+
+    private onUpdateNotice() {
+        this.container.removeChildren();
+
+        var _this = this;
+        this.gameManager.httpManager.send(core.Notice01, null, function (msg: any) {
+            var data: any;
+            for (var id in msg) {
+                if (!msg[id])continue;
+
+                data = msg[id];
+
+                var arr: Array<any> = [];
+                var style: any = {};
+                style.textAlign = data.align ? data.align : "left";
+                style.fontFamily = data.font ? data.font : "微软雅黑";
+                style.textColor = data.color ? data.color : 0x000000;
+                style.bold = data.bold ? data.bold : false;
+                style.size = data.size ? data.size : 24;
+                style.lineSpacing = data.lineSpacing ? data.lineSpacing : 5;
+
+                arr.push({
+                    text: data["txt"],
+                    style: style
+                });
+
+                var label: eui.Label = FactoryUtils.getLabel(style.textAlign);
+                label.lineSpacing = style.lineSpacing;
+                label.multiline = true;
+                label.wordWrap = true;
+                label.width = 550;
+                label.textFlow = arr;
+                _this.container.addChild(label);
+            }
+
+            _this.scroller.viewport.scrollV = 0;
+            _this.scroller.validateNow();
+        });
     }
 
     public open() {

@@ -7,7 +7,7 @@ var RoomUserItem = (function (_super) {
     __extends(RoomUserItem, _super);
     function RoomUserItem() {
         _super.call(this);
-        this.skinName = "RoomUserItemSkin";
+        this.skinName = "RoomItemSkin";
     }
     var d = __define,c=RoomUserItem,p=c.prototype;
     p.childrenCreated = function () {
