@@ -22,8 +22,9 @@ class LoginScene extends BaseScene {
     public childrenCreated() {
         super.childrenCreated();
 
-        this.lab_phone.text = "15801595550";
-        this.lab_phoneCode.text = "x.8088";
+        if (StorageUtils.getData("phone")) {
+            this.lab_phone.text = "" + StorageUtils.getData("phone");
+        }
 
         this.btn_phoneCode.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_login.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
@@ -59,6 +60,8 @@ class LoginScene extends BaseScene {
                 }
                 //TODO 登录
                 this.gameManager.msgManager.login.loginGm(this.lab_phone.text, this.lab_phoneCode.text);
+
+                StorageUtils.setData("phone", this.lab_phone.text);
                 break;
         }
     }

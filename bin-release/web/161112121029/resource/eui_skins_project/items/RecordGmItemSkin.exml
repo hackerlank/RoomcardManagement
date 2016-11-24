@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="RecordGmItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="640">
-	<e:Image source="img_basemap" left="0" right="0" top="0" bottom="0" scale9Grid="7,7,6,6"/>
-	<e:Label id="lab_description" left="10" right="10" top="5" bottom="5" fontFamily="微软雅黑" size="24" textColor="0x000000"/>
-</e:Skin>

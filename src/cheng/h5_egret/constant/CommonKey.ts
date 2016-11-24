@@ -6,7 +6,7 @@
 class CommonKey {
 
     //游戏名称
-    public static GameName: string = "GameOfPower";
+    public static GameName: string = "laoyoumajiang";
     //分享
     public static Share: string = "share";
 

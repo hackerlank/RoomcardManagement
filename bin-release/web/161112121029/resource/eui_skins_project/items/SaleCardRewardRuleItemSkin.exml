@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="SaleCardRewardRuleItemSkin" width="500" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image source="img_basemap" left="0" right="0" top="0" bottom="0" scale9Grid="7,7,6,6"/>
-	<e:Label id="lab_rule" text="月购卡1-100" scaleX="1" scaleY="1" fontFamily="微软雅黑" size="26" textColor="0x000000" left="10" top="10" bottom="10"/>
-	<e:Label id="lab_reward" text="奖励5%" scaleX="1" scaleY="1" fontFamily="微软雅黑" size="26" textColor="0x000000" right="0" width="161" top="10" bottom="10"/>
-</e:Skin>
