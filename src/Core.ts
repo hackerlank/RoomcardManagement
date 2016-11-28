@@ -4,7 +4,7 @@
 class core {
 
     //版本号
-    static version: string = "1.3.103";
+    static version: string = "1.4.103";
     //TODO 测试地址
     //客户端地址
     // static clientUrl: string = "http://mj.h5sd.com/gmtest/index.html";
