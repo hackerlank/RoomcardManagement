@@ -18,6 +18,8 @@ class Cmd {
     static Transfer_Record_Out: string = "/under/getShellRecord.vo";
     //转账-转入记录
     static Transfer_Record_In: string = "/under/getBuyRecord.vo";
+    //转账-撤销
+    static Transfer_Cancel: string = "/under/backOutTrs.vo";
 
     //下级信息
     static LowerUser_List: string = "/under/getUnderRole.vo";

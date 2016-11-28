@@ -18,6 +18,8 @@ class EventType {
     static Transfer_Record_Out: string = "Transfer_Record_Out";
     //转账-转入记录
     static Transfer_Record_In: string = "Transfer_Record_In";
+    //转账-撤销
+    static Transfer_Cancel: string = "Transfer_Cancel";
 
     //------------------下级用户--------------------
     //下级用户-列表

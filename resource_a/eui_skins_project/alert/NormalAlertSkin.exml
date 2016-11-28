@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="NormalAlertSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="640" height="960">
+<e:Skin class="NormalAlertSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="640" height="960" states="normal,ask" >
 	<w:Config id="1581526c932"/>
 	<e:Rect left="0" right="0" top="0" bottom="0" alpha="0.1"/>
 	<e:Group width="500" verticalCenter="0" horizontalCenter="-0.5">
 		<e:Image source="img_basemap_alert" left="0" right="0" top="0" bottom="0" scale9Grid="51,34,312,204" x="0" y="0" scaleX="1" scaleY="1"/>
 		<e:Label id="lab_description" text="" fontFamily="微软雅黑" textColor="0x000000" size="26" scaleX="1" scaleY="1" top="40" left="20" right="20" bottom="120" wordWrap="true" multiline="true" textAlign="center" verticalAlign="middle"/>
-		<e:Button id="btn_confirm" label="确定" bottom="30" horizontalCenter="0" skinName="skins.Button_WhiteSkin" width="148" x="127" y="228" scaleX="1" scaleY="1"/>
+		<e:Button id="btn_confirm" label="确定" bottom="30" horizontalCenter="0" skinName="skins.Button_WhiteSkin" width="148" x="127" y="228" scaleX="1" scaleY="1" horizontalCenter.ask="100" label.ask="确定"/>
+		<e:Button id="btn_cancel" y="238" skinName="skins.Button_WhiteSkin" scaleX="1" bottom="30" width="148" label="取消" scaleY="1" horizontalCenter="-100" x="137" includeIn="ask"/>
 	</e:Group>
 </e:Skin>

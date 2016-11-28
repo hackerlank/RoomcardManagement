@@ -23,6 +23,8 @@ class TransferRecordVo extends BaseVo {
     public orderno: string;
     //时间
     public ctime: number;
+    //状态(1成功 3取消)
+    public status:number;
 
     public constructor() {
         super();

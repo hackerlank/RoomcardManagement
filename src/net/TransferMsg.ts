@@ -14,7 +14,7 @@ class TransferMsg extends BaseMsg {
      * @param uid
      * @param gid
      */
-    public searchUser(uid: string, gid:string) {
+    public searchUser(uid: string, gid: string) {
         var data: any = {};
         data.s = core.sessionid;
         data.u = uid;
@@ -75,7 +75,7 @@ class TransferMsg extends BaseMsg {
     }
 
     /**
-     * 转账记录
+     * 转出记录
      */
     public transferOutRecord(uid: string = "", p: number = 1, n: number = 20) {
         var data: any = {};
@@ -103,6 +103,10 @@ class TransferMsg extends BaseMsg {
             this.gameManager.dataManager.userVo.transCard = msg.cdsum;
         }
 
+        if (msg.hasOwnProperty("svtm")) {
+            core.svtm = msg.svtm;
+        }
+
         var list: any[] = msg.data;
         if (list) {
             var map: any = this.gameManager.dataManager.transferOutRecordMap;
@@ -111,12 +115,12 @@ class TransferMsg extends BaseMsg {
             for (var i: number = 0; i < list.length; i++) {
                 data = list[i];
 
-                if (map.hasOwnProperty(data.id)) {
-                    recordVo = map[data.id];
+                if (map.hasOwnProperty(data.orderno)) {
+                    recordVo = map[data.orderno];
                 }
                 else {
                     recordVo = new TransferRecordVo();
-                    map[data.id] = recordVo;
+                    map[data.orderno] = recordVo;
                 }
 
                 recordVo.update(data);
@@ -126,7 +130,7 @@ class TransferMsg extends BaseMsg {
     }
 
     /**
-     * 转账记录
+     * 转入记录
      */
     public transferInRecord(p: number = 1, n: number = 20) {
         var data: any = {};
@@ -156,17 +160,41 @@ class TransferMsg extends BaseMsg {
             for (var i: number = 0; i < list.length; i++) {
                 data = list[i];
 
-                if (map.hasOwnProperty(data.id)) {
-                    recordVo = map[data.id];
+                if (map.hasOwnProperty(data.orderno)) {
+                    recordVo = map[data.orderno];
                 }
                 else {
                     recordVo = new TransferRecordVo();
-                    map[data.id] = recordVo;
+                    map[data.orderno] = recordVo;
                 }
 
                 recordVo.update(data);
             }
         }
         this.gameManager.dispatchEvent(EventType.Transfer_Record_In);
+    }
+
+    /**
+     * 撤销
+     */
+    public transferCancel(o: string) {
+        var data: any = {};
+        data.s = core.sessionid;
+        data.o = o;
+
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Transfer_Cancel, data, this.transferCancelHandler, this);
+    }
+
+    /**
+     * {code:0, add:10, orn:orderno}
+     * @param msg
+     */
+    public transferCancelHandler(msg: any) {
+        if (msg.code != 0)return;
+
+        this.gameManager.dataManager.userVo.cdnum += msg.add;
+        this.gameManager.dataManager.chooseLower.zong -= msg.add;
+
+        this.gameManager.dispatchEvent(EventType.Transfer_Cancel, msg.orn);
     }
 }

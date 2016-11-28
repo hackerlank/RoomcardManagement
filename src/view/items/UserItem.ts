@@ -22,21 +22,20 @@ class UserItem extends GameSprite {
     public childrenCreated() {
         super.childrenCreated();
 
-        this.img_portrait.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.btn_transfer.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
         this.gameManager.addEventListener(EventType.LowerUser_Info, this.onUpdate, this);
     }
 
     private clickHandler(e: egret.TouchEvent) {
-        switch (e.currentTarget) {
+        switch (e.target) {
             case this.btn_transfer:
                 if (this.followVo) {
                     this.gameManager.sceneManager.open(SceneType.transfer);
                     this.gameManager.dispatchEvent(EventType.LowerUser_Selected, this.followVo.uid);
                 }
                 break;
-            case this.img_portrait:
+            default:
                 this.gameManager.dataManager.chooseLower = this.followVo;
                 this.gameManager.sceneManager.open(SceneType.follow_details);
                 break;

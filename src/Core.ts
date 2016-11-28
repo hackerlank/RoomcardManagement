@@ -3,21 +3,28 @@
  */
 class core {
 
+    //版本号
+    static version: string = "1.3.103";
+    //TODO 测试地址
     //客户端地址
-    static clientUrl: string = "http://mj.h5sd.com/gm/index.html";
+    // static clientUrl: string = "http://mj.h5sd.com/gmtest/index.html";
     //服务器地址
     // static serverUrl: string = "http://192.168.2.88:8880/CardRoomManager";
+    //TODO 正式地址
+    // //客户端地址
+    static clientUrl: string = "http://mj.h5sd.com/gm/index.html";
+    // //服务器地址
     static serverUrl: string = "http://121.42.209.249";
     //每页显示长度
     static pageLength: number = 40;
     //手机验证码重置时间
-    static PhoneCodeReTime:number = 60;
+    static PhoneCodeReTime: number = 60;
     //GM登录验证
     static GmCode = "cLGGRh2b4sMeRy";
     //公告1(转账)
-    static Notice01:string = "http://119.29.75.66:9001/cardroom/notice.php?t=1";
+    static Notice01: string = "http://119.29.75.66:9001/cardroom/notice.php?t=1";
     //公告2(代理)
-    static Notice02:string = "http://119.29.75.66:9001/cardroom/notice.php?t=2";
+    static Notice02: string = "http://119.29.75.66:9001/cardroom/notice.php?t=2";
 
     //gm登录
     static gm: any = "";
@@ -47,6 +54,8 @@ class core {
     static isBackgroundMusic: boolean = true;
     //是否可以播放音效
     static isSoundEffect: boolean = true;
+    //服务器时间
+    static svtm: number;
 
     //初始化
     static init(stage: egret.Stage): void {
@@ -58,5 +67,38 @@ class core {
         core.gameManager.initManager();
 
         core.gameManager.sceneManager.open(SceneType.welcom);
+    }
+
+    static wxAccess(): boolean {
+        core.gm = StringUtils.getUrlParams("gm");
+        if (core.gm == core.GmCode) return;
+
+        core.code_p = StringUtils.getUrlParams("pc");
+        core.code = StringUtils.getUrlParams("code");
+
+        var isAccess: boolean;
+
+        if (core.code_p == "") {
+            isAccess = true;
+
+            if (core.code == "") {
+                Weixin.getAccessCodeForPay(core.appid_p, core.clientUrl);
+            }
+            else {
+                Weixin.getAccessCodeForLogin(core.appid, core.clientUrl, core.code);
+            }
+        }
+        else {
+            if (core.code == StorageUtils.getData("code") && core.code_p == StorageUtils.getData("pc")) {
+                isAccess = true;
+
+                Weixin.getAccessCodeForPay(core.appid_p, core.clientUrl);
+            }
+        }
+        if (!isAccess) {
+            StorageUtils.setData("code", core.code);
+            StorageUtils.setData("pc", core.code_p);
+        }
+        return isAccess;
     }
 }

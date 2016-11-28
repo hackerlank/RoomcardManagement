@@ -11,7 +11,7 @@ class StorageUtils {
      * @returns {any|string}
      */
     public static getData(key: string): any {
-        return egret.localStorage.getItem(CommonKey.GameName + "@" + key);
+        return egret.localStorage.getItem(CommonKey.GameName + core.version + "@" + key);
     }
 
     /**
@@ -20,6 +20,6 @@ class StorageUtils {
      * @param value
      */
     public static setData(key: string, value) {
-        egret.localStorage.setItem(CommonKey.GameName + "@" + key, value);
+        egret.localStorage.setItem(CommonKey.GameName + core.version + "@" + key, value);
     }
 }

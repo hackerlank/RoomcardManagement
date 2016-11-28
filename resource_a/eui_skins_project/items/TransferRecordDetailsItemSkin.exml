@@ -9,4 +9,5 @@
 			<e:VerticalLayout/>
 		</e:layout>
 	</e:Group>
+	<e:Button id="btn_cancel" label="撤销" bottom="0" right="0" skinName="skins.Button_GreenSkin"/>
 </e:Skin>

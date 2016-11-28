@@ -77,7 +77,13 @@ class TransferScene extends BaseScene {
                 this.gameManager.msgManager.transfer.searchUser(this.txt_uid.text, gid);
                 break;
             case this.btn_recharge:
-                this.gameManager.msgManager.transfer.sendTransfer(this.txt_uid.text, gid, this.nba_count.numb);
+                var _this = this;
+                this.gameManager.alertManager.open(AlertType.Normal, {
+                    des: "确定为<<" + this.lab_nick.text + ">>(ID:" + this.txt_uid.text + ")充值" + this.nba_count.numb + "张房卡吗?",
+                    callback: function () {
+                        _this.gameManager.msgManager.transfer.sendTransfer(_this.txt_uid.text, gid, _this.nba_count.numb);
+                    }
+                });
                 break;
         }
     }

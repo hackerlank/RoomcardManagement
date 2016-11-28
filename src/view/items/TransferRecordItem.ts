@@ -9,6 +9,7 @@ class TransferRecordItem extends GameSprite {
     public lab_name: eui.Label;
     public lab_count: eui.Label;
     public lab_time: eui.Label;
+    public lab_status: eui.Label;
 
     public recordVo: TransferRecordVo;
 
@@ -32,6 +33,7 @@ class TransferRecordItem extends GameSprite {
             this.lab_name.text = "" + userVo.getGameName(this.recordVo.gameid);
             this.lab_count.text = "" + this.recordVo.num;
             this.lab_time.text = "" + StringUtils.getYTDByTimestamp(this.recordVo.ctime) + "\n" + StringUtils.getHMSByTimestamp(this.recordVo.ctime);
+            this.lab_status.text = "" + (this.recordVo.status == 1 ? "成功" : "撤销");
         }
     }
 }

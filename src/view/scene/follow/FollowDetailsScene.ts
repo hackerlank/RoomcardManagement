@@ -38,6 +38,7 @@ class FollowDetailsScene extends BaseScene {
         this.btn_transfer.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
         this.gameManager.addEventListener(EventType.Transfer_Record_Out, this.onUpdateInfo, this);
+        this.gameManager.addEventListener(EventType.Transfer_Cancel, this.onUpdateCancel, this);
     }
 
     private clickHandler(e: egret.TouchEvent) {
@@ -64,6 +65,10 @@ class FollowDetailsScene extends BaseScene {
     private onUpdateInfo() {
         this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.transferOutRecordLength / core.pageLength));
         this.update();
+    }
+
+    private onUpdateCancel() {
+        this.lab_buy.text = "已购:" + this.followVo.zong;
     }
 
     public update() {

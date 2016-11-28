@@ -58,7 +58,13 @@ class AccountRoomScene extends BaseScene {
                 this.gameManager.msgManager.room.sendRoomSearch(this.txt_roomid.text, this.userVo.getGameId(this.menu_game.getSelectedValue()));
                 break;
             case this.btn_dismass:
-                this.gameManager.msgManager.room.sendRoomDismass(this.txt_roomid.text, this.userVo.getGameId(this.menu_game.getSelectedValue()));
+                var _this = this;
+                this.gameManager.alertManager.open(AlertType.Normal, {
+                    des: "确定要解散房间么?",
+                    callback: function () {
+                        _this.gameManager.msgManager.room.sendRoomDismass(_this.txt_roomid.text, _this.userVo.getGameId(_this.menu_game.getSelectedValue()));
+                    }
+                });
                 break;
         }
     }

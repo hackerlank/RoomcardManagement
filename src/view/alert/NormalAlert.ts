@@ -7,6 +7,9 @@ class NormalAlert extends BaseAlert {
 
     private lab_description: eui.Label;
     private btn_confirm: eui.Button;
+    private btn_cancel: eui.Button;
+
+    private param: any;
 
     public constructor() {
         super();
@@ -22,10 +25,24 @@ class NormalAlert extends BaseAlert {
     }
 
     private clickHandler(e: egret.TouchEvent) {
-        this.gameManager.alertManager.close(this.id);
+        if (e.target == this.btn_confirm && this.currentState == "ask") {
+            this.param.callback && this.param.callback();
+        }
+        else {
+            this.gameManager.alertManager.close(this.id);
+        }
     }
 
     public update(param: any) {
-        this.lab_description.text = "" + param;
+        this.param = param;
+
+        if (typeof (this.param) == "object") {
+            this.skinState = "ask";
+            this.lab_description.text = "" + this.param.des;
+        }
+        else {
+            this.skinState = "normal";
+            this.lab_description.text = "" + String(this.param);
+        }
     }
 }

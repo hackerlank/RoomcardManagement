@@ -30,8 +30,7 @@ class RoomMsg extends BaseMsg {
 
         var list: any = msg.roles;
         if (list) {
-            var roomUserMap = this.gameManager.dataManager.roomUserMap;
-
+            var roomUserMap:any = {};
             var role: any;
             var followVo: LowerUserVo;
             for (var i: number = 0; i < list.length; i++) {
@@ -47,6 +46,7 @@ class RoomMsg extends BaseMsg {
 
                 followVo.update(role);
             }
+            this.gameManager.dataManager.roomUserMap = roomUserMap;
 
             this.gameManager.dispatchEvent(EventType.Room_User_List);
         }

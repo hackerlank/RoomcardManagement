@@ -165,7 +165,7 @@ class DataManager extends BaseManager {
             recordVo = this.transferOutRecordMap[id];
 
             if (!uid || uid == recordVo.tarid) {
-                list.unshift(recordVo);
+                list.push(recordVo);
             }
         }
 
