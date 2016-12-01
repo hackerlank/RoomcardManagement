@@ -5,6 +5,7 @@
  */
 class AgentAppendScene extends BaseScene {
 
+    private scroller: eui.Scroller;
     private lab_uid: eui.TextInput;
     private lab_weixin: eui.TextInput;
     private lab_phone: eui.TextInput;
@@ -122,6 +123,8 @@ class AgentAppendScene extends BaseScene {
         super.open();
         if (this.initComplete) {
             this.menu_province.update(this.gameManager.getProvinces());
+            this.scroller.viewport.scrollV = 0;
+            this.scroller.validateNow();
         }
     }
 
