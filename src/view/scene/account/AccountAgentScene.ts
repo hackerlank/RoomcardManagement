@@ -7,6 +7,7 @@ class AccountAgentScene extends BaseScene {
 
     private lab_phone: eui.TextInput;
     private btn_search: eui.Button;
+    private menu_game: MenuPopup;
     private img_portrait: eui.Image;
     private lab_nick: eui.TextInput;
     private lab_card: eui.TextInput;
@@ -18,6 +19,9 @@ class AccountAgentScene extends BaseScene {
     private btn_on: eui.Button;
     private btn_record: eui.Button;
 
+    private userVo: UserVo;
+    private searchUserGid: any;
+
     public constructor() {
         super();
 
@@ -27,6 +31,11 @@ class AccountAgentScene extends BaseScene {
 
     public childrenCreated() {
         super.childrenCreated();
+
+        this.userVo = this.gameManager.dataManager.userVo;
+
+        this.menu_game.enabled = true;
+        this.menu_game.update(this.userVo.getGames());
 
         this.nba_count.setMaxChars(6);
 
@@ -43,38 +52,52 @@ class AccountAgentScene extends BaseScene {
     private recordHandler(e: egret.TouchEvent) {
         this.gameManager.sceneManager.open(SceneType.account_agent_record);
     }
+
     private clickHandler(e: egret.TouchEvent) {
         var phone: string = "" + this.lab_phone.text;
         if (phone == "") {
             this.gameManager.alertManager.open(AlertType.Normal, "请填写手机号码");
             return;
         }
+
         switch (e.currentTarget) {
             case this.btn_search:
                 //TODO 查询房卡
-                this.gameManager.msgManager.agent.search(phone);
+                this.searchUserGid = null;
+                this.gameManager.msgManager.agent.search(phone, this.userVo.getGameId(this.menu_game.getSelectedValue()));
                 break;
             case this.btn_recharge:
                 //TODO 充值房卡
-                this.gameManager.msgManager.agent.recharge(phone, this.nba_count.numb);
+                if (this.searchUserGid) {
+                    this.gameManager.msgManager.agent.recharge(phone, this.nba_count.numb, this.searchUserGid);
+                }
                 break;
             case this.btn_deduct:
                 //TODO 扣除房卡
-                this.gameManager.msgManager.agent.deduct(phone, this.nba_count.numb);
+                if (this.searchUserGid) {
+                    this.gameManager.msgManager.agent.deduct(phone, this.nba_count.numb, this.searchUserGid);
+                }
                 break;
             case this.btn_off:
                 //TODO 取消代理
-                this.gameManager.msgManager.agent.offOn(phone, 0);
+                if (this.searchUserGid) {
+                    this.gameManager.msgManager.agent.offOn(phone, 0, this.searchUserGid);
+                }
                 break;
             case this.btn_on:
                 //TODO 开启代理
-                this.gameManager.msgManager.agent.offOn(phone, 1);
+                if (this.searchUserGid) {
+                    this.gameManager.msgManager.agent.offOn(phone, 1, this.searchUserGid);
+                }
                 break;
         }
     }
 
     private onUpdateInfo(data: any) {
-        var userVo: UserVo = this.gameManager.dataManager.userVo;
+
+        if (data.hasOwnProperty("gid")) {
+            this.searchUserGid = data.gid;
+        }
 
         if (data.hasOwnProperty("pic")) {
             this.img_portrait.source = "" + data.pic;
@@ -83,7 +106,7 @@ class AccountAgentScene extends BaseScene {
             this.lab_nick.text = "" + data.nick;
         }
         if (data.hasOwnProperty("gid")) {
-            this.lab_game.text = "" + userVo.getGameName(data.gid);
+            this.lab_game.text = "" + this.userVo.getGameName(data.gid);
         }
         if (data.hasOwnProperty("cdnum")) {
             this.lab_card.text = "房卡:" + data.cdnum;

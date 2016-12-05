@@ -66,7 +66,7 @@ class AccountPowerScene extends BaseScene {
     }
 
     private onUpdateUserInfo() {
-        this.ddm_games.update(core.gameList);
+        this.ddm_games.update(core.gameTpl);
     }
 
     private onUpdateFollow(data: any) {
@@ -77,7 +77,7 @@ class AccountPowerScene extends BaseScene {
 
     public update() {
         this.txt_id.text = "";
-        this.ddm_games.update(core.gameList);
+        this.ddm_games.update(core.gameTpl);
 
         this.itemGroup.removeChildren();
 

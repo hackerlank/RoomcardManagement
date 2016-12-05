@@ -13,10 +13,12 @@ class AccountScene extends BaseScene {
     public menuGroup: eui.Group;
     public btn_power: eui.Button;
     public btn_agent: eui.Button;
+    public btn_logingame: eui.Button;
     public btn_room: eui.Button;
     public btn_sale: eui.Button;
     public btn_buy: eui.Button;
     public btn_transfer: eui.Button;
+    public btn_checkRecord: eui.Button;
 
     public userVo: UserVo;
 
@@ -52,6 +54,8 @@ class AccountScene extends BaseScene {
         this.btn_sale.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_buy.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_transfer.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_logingame.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_checkRecord.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
         this.gameManager.addEventListener(EventType.User_Info, this.onUpdateInfo, this);
     }
@@ -79,6 +83,12 @@ class AccountScene extends BaseScene {
             case this.btn_buy:
                 this.gameManager.sceneManager.open(SceneType.account_trans_in);
                 break;
+            case this.btn_logingame:
+                this.gameManager.sceneManager.open(SceneType.loginGame);
+                break;
+            case this.btn_checkRecord:
+                this.gameManager.sceneManager.open(SceneType.account_agent_checkrecord);
+                break;
         }
     }
 
@@ -86,12 +96,14 @@ class AccountScene extends BaseScene {
         switch (this.userVo.pow) {
             case Power.gm:
             case Power.agent:
-                this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = true;
+                this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = this.btn_checkRecord.visible = true;
                 break;
             case Power.agent_new:
-                this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = false;
+                this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = this.btn_checkRecord.visible = false;
                 break;
         }
+
+        this.btn_logingame.visible = this.userVo.pow != Power.gm;
 
         this.update();
     }

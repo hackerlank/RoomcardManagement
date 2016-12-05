@@ -6,13 +6,20 @@
 		<e:Label verticalCenter="0" textColor="0x000000" text="代理管理" fontFamily="微软雅黑" size="36" horizontalCenter="0"/>
 		<e:Image source="img_line" left="0" bottom="0" right="0" y="10" x="10"/>
 	</e:Group>
-	<e:Group horizontalCenter="0" top="120">
+	<e:Group horizontalCenter="0" top="110">
 		<e:Group y="-106.99999999999996" top="150" scaleX="1" scaleY="1" horizontalCenter="0" x="-60">
 			<e:TextInput y="745" skinName="skins.TextInput_Center2Skin" width="160" anchorOffsetX="0" prompt="用户" enabled="false" x="139"/>
 			<e:TextInput id="lab_phone" y="755" x="149" width="260" skinName="skins.TextInputSkin" prompt="点击输入手机号"/>
 			<e:Button id="btn_search" skinName="skins.Button_GreenSkin" anchorOffsetX="0" width="100" y="15" label="查询" x="455"/>
 			<e:layout>
 				<e:HorizontalLayout gap="40" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group y="-96.99999999999996" horizontalCenter="0" top="150" scaleX="1" scaleY="1" x="-50">
+			<e:TextInput y="745" skinName="skins.TextInput_Center2Skin" anchorOffsetX="0" prompt="游戏" width="160" enabled="false" x="139"/>
+			<ns1:MenuPopup id="menu_game" x="666" y="259" skinName="skins.MenuPopupSkin" width="260"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="40"/>
 			</e:layout>
 		</e:Group>
 		<e:Group scaleX="1" scaleY="1" y="377" x="10">
@@ -35,7 +42,7 @@
 			</e:layout>
 		</e:Group>
 		<e:layout>
-			<e:VerticalLayout gap="40"/>
+			<e:VerticalLayout gap="20"/>
 		</e:layout>
 	</e:Group>
 	<e:Group horizontalCenter="0" top="545">

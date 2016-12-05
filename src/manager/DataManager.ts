@@ -33,6 +33,10 @@ class DataManager extends BaseManager {
     public agentLv2RecordLength: number = 0;
     //二级代理记录集合
     public agentLv2RecordMap: any = {};
+    //结算记录数量
+    public agentCehckRecordLength: number = 0;
+    //结算记录集合
+    public agentCehckRecordMap: any = {};
 
     //----------------超管记录----------------
     //记录长度
@@ -114,18 +118,32 @@ class DataManager extends BaseManager {
     public getAgentLv2List(): LowerUserContributionVo[] {
         var list: LowerUserContributionVo[] = [];
 
-        for (var uid in this.agentLv1RecordMap) {
-            list.push(this.agentLv1RecordMap[uid]);
+        for (var uid in this.agentLv2RecordMap) {
+            list.push(this.agentLv2RecordMap[uid]);
         }
 
-        // list.sort(function (a: LowerUserContributionVo, b: LowerUserContributionVo) {
-        //     if (a.zong > b.zong) {
-        //         return -1;
-        //     }
-        //     else {
-        //         return 1;
-        //     }
-        // });
+        return list;
+    }
+
+    /**
+     * 获取结算记录列表
+     * @returns {LowerUserVo[]}
+     */
+    public getAgentCheckRecordList(): any[] {
+        var list: any[] = [];
+
+        for (var key in this.agentCehckRecordMap) {
+            list.push(this.agentCehckRecordMap[key]);
+        }
+
+        list.sort(function (a: any, b: any) {
+            if (a.ctime > b.ctime) {
+                return -1;
+            }
+            else {
+                return 1;
+            }
+        });
 
         return list;
     }

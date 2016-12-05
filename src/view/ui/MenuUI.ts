@@ -62,7 +62,6 @@ class MenuUI extends BaseUI {
                 break;
             case Power.agent_new:
                 this.btn_transfer.visible = this.btn_lower.visible = this.btn_agent.visible = false;
-
                 this.gameManager.sceneManager.open(SceneType.account);
                 break;
         }

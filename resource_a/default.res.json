@@ -1,6 +1,6 @@
 {
 	"groups":[{
-			"keys":"button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,ico_add,ico_add2,ico_cut,ico_details,ico_user,img_arrow_down,img_arrow_down2,img_arrow_page_left,img_arrow_page_right,img_arrow_right,img_arrow_right2,img_arrow_up,img_arrow_up2,img_basemap,img_basemap_alert,img_basemap2,img_basemap3,img_basemap4,img_green,img_green_unable,img_line,img_portrait_default,area_cn,ico_agent",
+			"keys":"button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,ico_add,ico_add2,ico_cut,ico_details,ico_user,img_arrow_down,img_arrow_down2,img_arrow_page_left,img_arrow_page_right,img_arrow_right,img_arrow_right2,img_arrow_up,img_arrow_up2,img_basemap,img_basemap_alert,img_basemap2,img_basemap3,img_basemap4,img_green,img_green_unable,img_line,img_portrait_default,area_cn,ico_agent,btn_green,btn_red,btn_gray",
 			"name":"preload"
 		}],
 	"resources":[
@@ -238,6 +238,21 @@
 			"name":"ico_agent",
 			"type":"image",
 			"url":"assets/ico_agent.png"
+		},
+		{
+			"name":"btn_green",
+			"type":"image",
+			"url":"assets/btn_green.png"
+		},
+		{
+			"name":"btn_red",
+			"type":"image",
+			"url":"assets/btn_red.png"
+		},
+		{
+			"name":"btn_gray",
+			"type":"image",
+			"url":"assets/btn_gray.png"
 		}
 	]
 }

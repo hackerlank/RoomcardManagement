@@ -1,4 +1,16 @@
 declare module skins{
+	class ButtonGray01Skin extends eui.Skin{
+	}
+}
+declare module skins{
+	class ButtonGreen01Skin extends eui.Skin{
+	}
+}
+declare module skins{
+	class ButtonRed01Skin extends eui.Skin{
+	}
+}
+declare module skins{
 	class ButtonSkin extends eui.Skin{
 	}
 }
@@ -126,6 +138,10 @@ declare class NormalAlertSkin extends eui.Skin{
 }
 declare class ProtocolAlertSkin extends eui.Skin{
 }
+declare class CheckListItemSkin extends eui.Skin{
+}
+declare class CheckRecordListItemSkin extends eui.Skin{
+}
 declare class LowerUserContributionItemSkin extends eui.Skin{
 }
 declare class RecordGmItemSkin extends eui.Skin{
@@ -148,6 +164,8 @@ declare class AccountAgentRecordSceneSkin extends eui.Skin{
 }
 declare class AccountAgentSceneSkin extends eui.Skin{
 }
+declare class AccountCheckRecordSceneSkin extends eui.Skin{
+}
 declare class AccountPowerSceneSkin extends eui.Skin{
 }
 declare class AccountRechargeSceneSkin extends eui.Skin{
@@ -164,6 +182,8 @@ declare class AccountTransOutSceneSkin extends eui.Skin{
 }
 declare class AgentAppendSceneSkin extends eui.Skin{
 }
+declare class AgentCheckCenterSceneSkin extends eui.Skin{
+}
 declare class AgentLv1RecordSceneSkin extends eui.Skin{
 }
 declare class AgentLv2RecordSceneSkin extends eui.Skin{
@@ -179,6 +199,8 @@ declare class FollowSceneSkin extends eui.Skin{
 declare class FollowSearchSceneSkin extends eui.Skin{
 }
 declare class ErrorSceneSkin extends eui.Skin{
+}
+declare class LoginGameSceneSkin extends eui.Skin{
 }
 declare class LoginSceneSkin extends eui.Skin{
 }

@@ -13,7 +13,7 @@ class EventType {
     //转账-ID查询结果
     static Transfer_Search: string = "Transfer_Search";
     //转账-成功
-    static Transfer_Success:string = "Transfer_Success";
+    static Transfer_Success: string = "Transfer_Success";
     //转账-转出记录
     static Transfer_Record_Out: string = "Transfer_Record_Out";
     //转账-转入记录
@@ -50,5 +50,8 @@ class EventType {
     static Agent_Update: string = "Agent_Recharge";
     //代理管理-记录
     static Agent_Record: string = "Agent_Record";
-
+    //代理管理-结算
+    static Agent_Check_List: string = "Agent_Check_List";
+    //代理管理-结算记录列表
+    static Agent_CheckRecord_List: string = "Agent_CheckRecord_List";
 }

@@ -25,7 +25,7 @@ class FollowSearchScene extends BaseScene {
     public childrenCreated() {
         super.childrenCreated();
 
-        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.lowerUserCount / core.pageLength));
+        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.lowerUserCount / core.lowerUserLength));
         this.onUpdateCount();
 
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
@@ -44,14 +44,14 @@ class FollowSearchScene extends BaseScene {
 
     private onUpdateCount() {
         this.page = this.ttl_page.page;
-        if (this.gameManager.dataManager.getLowerUserList.length < this.page * core.pageLength) {
-            this.gameManager.msgManager.lowerUser.sendLowerUser_List(this.page, core.pageLength);
+        if (this.gameManager.dataManager.getLowerUserList.length < this.page * core.lowerUserLength) {
+            this.gameManager.msgManager.lowerUser.sendLowerUser_List(this.page, core.lowerUserLength);
         }
         else {
             this.followList = this.gameManager.dataManager.getLowerUserList();
             var list: LowerUserVo[] = [];
-            var start: number = core.pageLength * (this.page - 1);
-            for (var i: number = start; i < start + core.pageLength; i++) {
+            var start: number = core.lowerUserLength * (this.page - 1);
+            for (var i: number = start; i < start + core.lowerUserLength; i++) {
                 if (this.followList[i]) {
                     list.push(this.followList[i]);
                 }
@@ -61,7 +61,7 @@ class FollowSearchScene extends BaseScene {
     }
 
     private onUpdateList(list: LowerUserVo[] = []) {
-        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.lowerUserCount / core.pageLength));
+        this.ttl_page.setScope(1, Math.ceil(this.gameManager.dataManager.lowerUserCount / core.lowerUserLength));
         this.update(list);
     }
 

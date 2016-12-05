@@ -9,6 +9,8 @@ class Cmd {
     static Login: string = "/login/wxLogin.vo";
     //登录gm
     static Login_gm: string = "/login/admLogin.vo";
+    //登录-指定游戏
+    static Login_game: string = "/login/appoint.vo";
 
     //转账-对象查询
     static Transfer_Search: string = "/under/searchUser.vo";
@@ -52,6 +54,14 @@ class Cmd {
     static Agent_OffOn: string = "/admin/agentOnOff.vo";
     //操作记录
     static Agent_Record: string = "/admin/getOpRecord.vo";
+    //结算中心
+    static Agent_Check: string = "/depop/getinfo.vo";
+    //结算中心-微信
+    static Agent_Check_Weixin: string = "/depop/apply.vo";
+    //结算中心-账户
+    static Agent_Check_Account: string = "/depop/extractcard.vo";
+    //结算中心-记录
+    static Agent_Check_Record: string = "/depop/getrecord.vo";
 
     //充值订单
     static Recharge: string = "/pay/unifiedorder.vo";

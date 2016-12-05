@@ -48,15 +48,48 @@ class LoginMsg extends BaseMsg {
             }
         }
 
+        if (msg.hasOwnProperty("gl")) {
+            core.gameDatas = msg.gl;
+            if (core.gameDatas.length == 1) {
+                this.sendLoginGame(core.gameDatas[0].gid);
+            }
+            else {
+                core.gameManager.sceneManager.open(SceneType.loginGame);
+            }
+        }
+        else {
+            this.loginGameHandler(msg);
+        }
+    }
+
+    /**
+     * 登录指定游戏
+     */
+    public sendLoginGame(g: string) {
+        var data: any = {};
+        data.s = core.sessionid;
+        data.g = g;
+
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Login_game, data, this.loginGameHandler, this);
+    }
+
+    public loginGameHandler(msg: any) {
+        if (msg.code != 0)return;
+
+        var userVo: UserVo = this.gameManager.dataManager.userVo;
+        if (msg.data) {
+            userVo.update(msg.data);
+        }
+
         var gameTpl: any[] = msg.gameTpl;
         if (gameTpl) {
             userVo.gameMap = {};
-            core.gameList = [];
+            core.gameTpl = [];
             var game: any;
             for (var i: number = 0; i < gameTpl.length; i++) {
                 game = gameTpl[i];
                 userVo.gameMap[game.gameid] = game;
-                core.gameList.push(game.name);
+                core.gameTpl.push(game.name);
             }
         }
 
@@ -101,10 +134,9 @@ class LoginMsg extends BaseMsg {
                 }
             });
         }
-
-        this.gameManager.dispatchEvent(EventType.User_Info);
-
         this.gameManager.sceneManager.open(SceneType.transfer);
         this.gameManager.uiManager.menuUI.open();
+
+        this.gameManager.dispatchEvent(EventType.User_Info);
     }
 }

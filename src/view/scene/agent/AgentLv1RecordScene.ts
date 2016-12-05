@@ -78,7 +78,7 @@ class AgentLv1RecordScene extends BaseScene {
         super.open();
 
         if (this.initComplete) {
-            this.update(this.contributionVoShowList);
+            this.gameManager.msgManager.lowerUser.sendLowerUser_Contribution_Get(3, this.page, core.pageLength);
         }
     }
 }

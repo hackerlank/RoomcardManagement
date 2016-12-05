@@ -9,6 +9,7 @@ class AgentScene extends BaseScene {
     private btn_notice: eui.Button;
     private btn_lv1: eui.Button;
     private btn_lv2: eui.Button;
+    private btn_check: eui.Button;
     private scroller: eui.Scroller;
     private container: eui.Group;
 
@@ -28,6 +29,7 @@ class AgentScene extends BaseScene {
         this.btn_notice.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_lv1.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_lv2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_check.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
         this.gameManager.addEventListener(EventType.LowerUser_Contribution, this.onUpdate, this);
     }
@@ -45,6 +47,9 @@ class AgentScene extends BaseScene {
                 break;
             case this.btn_lv2:
                 this.gameManager.sceneManager.open(SceneType.agent_lv2Record);
+                break;
+            case this.btn_check:
+                this.gameManager.sceneManager.open(SceneType.agent_checkcenter);
                 break;
         }
     }
@@ -89,16 +94,16 @@ class AgentScene extends BaseScene {
     }
 
     private onUpdate() {
-        this.btn_lv1.label = "一级代理返卡:" + this.gameManager.dataManager.userVo.agentLv1Reward;
-        this.btn_lv2.label = "二级代理返卡:" + this.gameManager.dataManager.userVo.agentLv2Reward;
+        this.btn_lv1.label = "总监绩效:" + this.gameManager.dataManager.userVo.agentLv1Reward;
+        this.btn_lv2.label = "经理绩效:" + this.gameManager.dataManager.userVo.agentLv2Reward;
     }
 
     public open() {
         super.open();
 
         if (this.initComplete) {
-            this.btn_lv1.label = "一级代理";
-            this.btn_lv2.label = "二级代理";
+            this.btn_lv1.label = "总监绩效";
+            this.btn_lv2.label = "经理绩效";
             this.gameManager.msgManager.lowerUser.sendLowerUser_Contribution();
         }
     }

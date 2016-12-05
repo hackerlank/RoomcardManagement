@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="LoginGameSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group right="0" left="0" height="80" x="100" locked="true">
+		<e:Rect right="0" bottom="0" left="0" fillColor="0xF8F8F8" top="0"/>
+		<e:Label verticalCenter="0" textColor="0x000000" text="请选择区域" fontFamily="微软雅黑" size="36" horizontalCenter="0"/>
+		<e:Image source="img_line" bottom="0" left="0" right="0"/>
+	</e:Group>
+	<e:Scroller id="areaScroller" width="250" top="80" bottom="0">
+		<e:Group id="areaGroup">
+			<e:layout>
+				<e:VerticalLayout horizontalAlign="contentJustify" paddingLeft="20" paddingRight="20" paddingTop="20" paddingBottom="20"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+	<e:Rect width="3" left="250" top="80" bottom="0" fillColor="0x737373" strokeAlpha="1"/>
+	<e:Scroller id="gameScroller" top="80" bottom="0" right="0" left="250">
+		<e:Group id="gameGroup">
+			<e:layout>
+				<e:VerticalLayout paddingTop="20" paddingBottom="20" horizontalAlign="contentJustify" paddingLeft="20" paddingRight="20"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

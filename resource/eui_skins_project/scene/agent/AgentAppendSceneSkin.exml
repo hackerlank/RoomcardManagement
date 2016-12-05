@@ -5,7 +5,7 @@
 		<e:Label textColor="0x000000" text="添加代理" fontFamily="微软雅黑" horizontalCenter="0" size="36" verticalCenter="0"/>
 		<e:Image source="img_line" left="0" bottom="0" right="0" y="10" x="10"/>
 	</e:Group>
-	<e:Scroller id="scroller" top="120" bottom="20" horizontalCenter="0">
+	<e:Scroller id="scroller" top="95" bottom="20" horizontalCenter="0">
 		<e:Group>
 			<e:Group horizontalCenter="0">
 				<e:Group x="313" y="362">
@@ -76,7 +76,7 @@
 					<e:VerticalLayout horizontalAlign="right" gap="20"/>
 				</e:layout>
 			</e:Group>
-			<e:Button id="btn_confirm" skinName="skins.Button_GreenSkin" label="确认开通" height="60" width="200" horizontalCenter="0" top="730"/>
+			<e:Button id="btn_confirm" skinName="skins.Button_GreenSkin" label="确认开通" height="60" width="200" horizontalCenter="0" top="700"/>
 		</e:Group>
 	</e:Scroller>
 </e:Skin>

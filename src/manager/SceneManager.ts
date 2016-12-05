@@ -7,6 +7,7 @@ class SceneManager extends BaseManager {
 
     public welcomScene: WelcomScene;
     public loginScene: LoginScene;
+    public loginGameScene: LoginGameScene;
     public errorScene: ErrorScene;
 
     public transferScene: TransferScene;
@@ -20,6 +21,7 @@ class SceneManager extends BaseManager {
     public agentNoticeScene: AgentNoticeScene;
     public agentLv1RecordScene: AgentLv1RecordScene;
     public agentLv2RecordScene: AgentLv2RecordScene;
+    public agentCheckCenterScene: AgentCheckCenterScene;
 
     public accountScene: AccountScene;
     public accountRechargeScene: AccountRechargeScene;
@@ -30,6 +32,7 @@ class SceneManager extends BaseManager {
     public accountTransInScene: AccountTransInScene;
     public accountAgentScene: AccountAgentScene;
     public accountAgentRecordScene: AccountAgentRecordScene;
+    public accountCheckRecordScene: AccountCheckRecordScene;
 
     public curScene: BaseScene;
     public curSceneId: string;
@@ -51,6 +54,9 @@ class SceneManager extends BaseManager {
 
         this.loginScene = new LoginScene();
         this.addScene(this.loginScene);
+
+        this.loginGameScene = new LoginGameScene();
+        this.addScene(this.loginGameScene);
 
         this.errorScene = new ErrorScene();
         this.addScene(this.errorScene);
@@ -82,6 +88,9 @@ class SceneManager extends BaseManager {
         this.agentLv2RecordScene = new AgentLv2RecordScene();
         this.addScene(this.agentLv2RecordScene);
 
+        this.agentCheckCenterScene = new AgentCheckCenterScene();
+        this.addScene(this.agentCheckCenterScene);
+
         this.accountScene = new AccountScene();
         this.addScene(this.accountScene);
 
@@ -108,6 +117,9 @@ class SceneManager extends BaseManager {
 
         this.accountAgentRecordScene = new AccountAgentRecordScene();
         this.addScene(this.accountAgentRecordScene);
+
+        this.accountCheckRecordScene = new AccountCheckRecordScene();
+        this.addScene(this.accountCheckRecordScene);
     }
 
     public addScene(scene: BaseScene) {
@@ -135,7 +147,7 @@ class SceneManager extends BaseManager {
 
         this.curSceneId = id;
 
-        if (id == SceneType.welcom || id == SceneType.error || id == SceneType.login) {
+        if (id == SceneType.welcom || id == SceneType.error || id == SceneType.login || id == SceneType.loginGame) {
             this.gameManager.uiManager.menuUI.close();
         }
         else {

@@ -25,11 +25,10 @@ class NormalAlert extends BaseAlert {
     }
 
     private clickHandler(e: egret.TouchEvent) {
+        this.gameManager.alertManager.close(this.id);
+
         if (e.target == this.btn_confirm && this.currentState == "ask") {
             this.param.callback && this.param.callback();
-        }
-        else {
-            this.gameManager.alertManager.close(this.id);
         }
     }
 

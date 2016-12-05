@@ -4,19 +4,15 @@
 class core {
 
     //版本号
-    static version: string = "1.4.104";
-    //TODO 测试地址
+    static version: string = "1.4.107";
     //客户端地址
-    // static clientUrl: string = "http://mj.h5sd.com/gmtest/index.html";
-    //服务器地址
-    // static serverUrl: string = "http://192.168.2.88:8880/CardRoomManager";
-    //TODO 正式地址
-    // //客户端地址
     static clientUrl: string = "http://mj.h5sd.com/gm/index.html";
-    // //服务器地址
+    //服务器地址
     static serverUrl: string = "http://121.42.209.249";
-    //每页显示长度
+    //默认每页显示长度
     static pageLength: number = 40;
+    //充卡记录显示长度
+    static lowerUserLength: number = 20;
     //手机验证码重置时间
     static PhoneCodeReTime: number = 60;
     //GM登录验证
@@ -26,6 +22,8 @@ class core {
     //公告2(代理)
     static Notice02: string = "http://119.29.75.66:9001/cardroom/notice.php?t=2";
 
+    //登录类型
+    static lt: any = "";
     //gm登录
     static gm: any = "";
     //登录公众号appid
@@ -44,8 +42,10 @@ class core {
     static loginType: string = "h5";
     // static loginType:string = "app";
 
-    //游戏列表
-    static gameList: string[] = [];
+    //游戏开通数据列表
+    static gameDatas: any[] = [];
+    //游戏名称列表
+    static gameTpl: string[] = [];
     //舞台
     static stage: egret.Stage;
     //游戏管理
@@ -70,6 +70,18 @@ class core {
     }
 
     static wxAccess(): boolean {
+
+        core.lt = StringUtils.getUrlParams("lt");
+        switch (core.lt) {
+            case "1":
+                core.clientUrl = "http://mj.h5sd.com/gm/indexTest.html";
+                break;
+            case "2":
+                core.clientUrl = "http://mj.h5sd.com/gm/indexTest.html";
+                core.serverUrl = "http://192.168.2.88:8880/CardRoomManager";
+                break;
+        }
+
         core.gm = StringUtils.getUrlParams("gm");
         if (core.gm == core.GmCode) return;
 

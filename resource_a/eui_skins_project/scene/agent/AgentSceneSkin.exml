@@ -10,8 +10,9 @@
 		<e:Button id="btn_notice" width="400" y="382" label="代理说明" x="378" skinName="skins.Button_GreenSkin" height="60"/>
 		<e:Button id="btn_lv1" width="400" y="392" label="一级代理" x="388" height="60" skinName="skins.Button_GreenSkin"/>
 		<e:Button id="btn_lv2" width="400" y="402" label="二级代理" x="398" height="60" skinName="skins.Button_GreenSkin"/>
+		<e:Button id="btn_check" x="408" y="412" width="400" label="结算中心" height="60" skinName="skins.Button_GreenSkin"/>
 		<e:layout>
-			<e:VerticalLayout gap="40"/>
+			<e:VerticalLayout gap="20"/>
 		</e:layout>
 	</e:Group>
 	<e:Group right="20" bottom="20" left="20" top="560" x="10" y="10">

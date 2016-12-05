@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="AgentCheckCenterSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group right="0" left="0" height="80" x="10" locked="true">
+		<e:Rect fillColor="0xF8F8F8" left="0" top="0" right="0" bottom="0" y="10" x="10"/>
+		<e:Label textColor="0x000000" horizontalCenter="0" text="结算中心" fontFamily="微软雅黑" verticalCenter="0" size="36"/>
+		<e:Image source="img_line" left="0" bottom="0" right="0" y="10" x="10"/>
+	</e:Group>
+	<e:Group left="0" right="0" top="100">
+		<e:Group id="container" x="744" y="363">
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+		</e:Group>
+		<e:Group horizontalCenter="0" top="540">
+			<e:Button id="btn_weixin" width="400" label="结算到微信零钱" height="60" skinName="skins.Button_GreenSkin"/>
+			<e:Button id="btn_account" skinName="skins.Button_GreenSkin" width="400" label="结算到我的房卡" height="60" x="10" y="10"/>
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout horizontalAlign="center" gap="50"/>
+		</e:layout>
+	</e:Group>
+	<e:Label text="结算方式：工资结算按照阶梯计算，即超过部分按照高单价计算，没超过的部分按低价计算。领取工资时，累计返卡数量越高，越划算。" fontFamily="微软雅黑" size="24" bottom="20" left="20" right="20" wordWrap="true" multiline="true" lineSpacing="5" textColor="0x000000"/>
+
+</e:Skin>

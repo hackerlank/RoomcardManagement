@@ -188,6 +188,18 @@
 				{
 					"compress":false,
 					"key":"ico_agent"
+				},
+				{
+					"compress":false,
+					"key":"btn_green"
+				},
+				{
+					"compress":false,
+					"key":"btn_red"
+				},
+				{
+					"compress":false,
+					"key":"btn_gray"
 				}
 			],
 			"sort":0

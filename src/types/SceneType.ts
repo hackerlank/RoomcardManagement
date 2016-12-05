@@ -6,6 +6,7 @@
 class SceneType {
     static welcom: string = "1000";
     static login: string = "1001";
+    static loginGame: string = "1002";
 
     static transfer: string = "1101";
 
@@ -18,6 +19,7 @@ class SceneType {
     static agent_notice: string = "4003";
     static agent_lv1Record: string = "4004";
     static agent_lv2Record: string = "4005";
+    static agent_checkcenter: string = "4006";
 
     static account: string = "3001";
     static account_recharge: string = "3002";
@@ -28,6 +30,7 @@ class SceneType {
     static account_trans_in: string = "3007";
     static account_agent: string = "3008";
     static account_agent_record: string = "3009";
+    static account_agent_checkrecord: string = "3010";
 
     static error: string = "9999";
 }

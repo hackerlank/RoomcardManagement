@@ -53,4 +53,12 @@ class AccountRechargeScene extends BaseScene {
             this.gameManager.msgManager.recharge.sendOrder(rechargeVo.id);
         }
     }
+
+    public open() {
+        super.open();
+
+        if (this.initComplete) {
+            this.update();
+        }
+    }
 }
