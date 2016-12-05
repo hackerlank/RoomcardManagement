@@ -15,8 +15,10 @@ class AccountAgentScene extends BaseScene {
     private nba_count: NumberAdder;
     private btn_recharge: eui.Button;
     private btn_deduct: eui.Button;
-    private btn_off: eui.Button;
-    private btn_on: eui.Button;
+    private btn_agent_on: eui.Button;
+    private btn_agent_off: eui.Button;
+    private btn_checkcenter_on: eui.Button;
+    private btn_checkcenter_off: eui.Button;
     private btn_record: eui.Button;
 
     private userVo: UserVo;
@@ -42,8 +44,10 @@ class AccountAgentScene extends BaseScene {
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_recharge.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_deduct.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.btn_off.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
-        this.btn_on.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_agent_on.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_agent_off.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_checkcenter_on.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_checkcenter_off.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_record.addEventListener(egret.TouchEvent.TOUCH_TAP, this.recordHandler, this);
 
         this.gameManager.addEventListener(EventType.Agent_Update, this.onUpdateInfo, this);
@@ -78,16 +82,28 @@ class AccountAgentScene extends BaseScene {
                     this.gameManager.msgManager.agent.deduct(phone, this.nba_count.numb, this.searchUserGid);
                 }
                 break;
-            case this.btn_off:
+            case this.btn_agent_on:
+                //TODO 开启代理
+                if (this.searchUserGid) {
+                    this.gameManager.msgManager.agent.offOn(phone, 1, this.searchUserGid);
+                }
+                break;
+            case this.btn_agent_off:
                 //TODO 取消代理
                 if (this.searchUserGid) {
                     this.gameManager.msgManager.agent.offOn(phone, 0, this.searchUserGid);
                 }
                 break;
-            case this.btn_on:
-                //TODO 开启代理
+            case this.btn_checkcenter_on:
+                //TODO 开启结算
                 if (this.searchUserGid) {
-                    this.gameManager.msgManager.agent.offOn(phone, 1, this.searchUserGid);
+                    this.gameManager.msgManager.agent.checkcenter_OffOn(phone, 1, this.searchUserGid);
+                }
+                break;
+            case this.btn_checkcenter_off:
+                //TODO 关闭结算
+                if (this.searchUserGid) {
+                    this.gameManager.msgManager.agent.checkcenter_OffOn(phone, 0, this.searchUserGid);
                 }
                 break;
         }

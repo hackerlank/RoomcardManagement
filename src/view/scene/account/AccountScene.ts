@@ -34,16 +34,7 @@ class AccountScene extends BaseScene {
 
         this.userVo = this.gameManager.dataManager.userVo;
 
-        switch (this.userVo.pow) {
-            case Power.gm:
-                break;
-            case Power.agent:
-            case Power.agent_new:
-                this.menuGroup.removeChild(this.btn_power);
-                this.menuGroup.removeChild(this.btn_agent);
-                this.menuGroup.removeChild(this.btn_room);
-                break;
-        }
+        this.menuGroup.contains(this.btn_power) && this.menuGroup.removeChild(this.btn_power);
 
         this.onUpdateInfo();
 
@@ -93,17 +84,19 @@ class AccountScene extends BaseScene {
     }
 
     public onUpdateInfo() {
-        switch (this.userVo.pow) {
-            case Power.gm:
-            case Power.agent:
-                this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = this.btn_checkRecord.visible = true;
-                break;
-            case Power.agent_new:
-                this.btn_room.visible = this.btn_agent.visible = this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = this.btn_checkRecord.visible = false;
-                break;
+
+        if (Power.hasSuperManagerPower() == false) {
+            this.menuGroup.contains(this.btn_power) && this.menuGroup.removeChild(this.btn_power);
+            this.menuGroup.contains(this.btn_agent) && this.menuGroup.removeChild(this.btn_agent);
+            this.menuGroup.contains(this.btn_room) && this.menuGroup.removeChild(this.btn_room);
+        }
+        else {
+            this.menuGroup.contains(this.btn_logingame) && this.menuGroup.removeChild(this.btn_logingame);
+            this.menuGroup.contains(this.btn_sale) && this.menuGroup.removeChild(this.btn_sale);
+            this.menuGroup.contains(this.btn_buy) && this.menuGroup.removeChild(this.btn_buy);
         }
 
-        this.btn_logingame.visible = this.userVo.pow != Power.gm;
+        this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = this.btn_checkRecord.visible = this.userVo.pow != Power.agent_new;
 
         this.update();
     }

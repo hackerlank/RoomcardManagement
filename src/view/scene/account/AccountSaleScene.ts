@@ -62,9 +62,10 @@ class AccountSaleScene extends BaseScene {
 
     public update() {
         this.userVo = this.gameManager.dataManager.userVo;
-        // this.txt_total.text = this.userVo.cardMonth + "月售卡总计:" + this.userVo.cardBuy;
-        this.txt_total.text = "售卡总计:" + this.userVo.cardBuy;
-        this.txt_reward.text = "售卡奖励:" + this.userVo.cardReward;
+        this.txt_total.text = this.userVo.cardMonth + "月售卡总计:" + this.userVo.cardBuy;
+        // this.txt_total.text = "售卡总计:" + this.userVo.cardBuy;
+        this.txt_reward.text = this.userVo.cardMonth + "月售卡奖励:" + this.userVo.cardReward;
+        // this.txt_reward.text = "售卡奖励:" + this.userVo.cardReward;
     }
 
     public open() {

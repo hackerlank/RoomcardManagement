@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="AgentAppendSceneSkin" width="640" height="960" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
-	<e:Group right="0" left="0" height="80" locked="true">
+	<e:Group right="0" left="0" height="80">
 		<e:Rect right="0" left="0" top="0" bottom="0" y="10" fillColor="0xF8F8F8" x="10"/>
-		<e:Label textColor="0x000000" text="添加代理" fontFamily="微软雅黑" horizontalCenter="0" size="36" verticalCenter="0"/>
+		<e:Label textColor="0x000000" text="招聘员工" fontFamily="微软雅黑" horizontalCenter="0" size="36" verticalCenter="0"/>
 		<e:Image source="img_line" left="0" bottom="0" right="0" y="10" x="10"/>
 	</e:Group>
 	<e:Scroller id="scroller" top="95" bottom="20" horizontalCenter="0">
@@ -12,11 +12,11 @@
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle"/>
 					</e:layout>
-					<e:Label width="220" textColor="0x030202" text="新代理游戏ID" fontFamily="微软雅黑" textAlign="center"/>
+					<e:Label width="220" textColor="0x030202" text="*新员工游戏ID" fontFamily="微软雅黑" textAlign="center"/>
 					<e:TextInput id="lab_uid" y="32" x="41"/>
 				</e:Group>
 				<e:Group x="303" y="352">
-					<e:Label fontFamily="微软雅黑" textColor="0x030202" width="220" text="新代理微信号" textAlign="center"/>
+					<e:Label fontFamily="微软雅黑" textColor="0x030202" width="220" text="*新员工微信号" textAlign="center"/>
 					<e:TextInput id="lab_weixin" x="41" y="32"/>
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle"/>
@@ -26,12 +26,12 @@
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle"/>
 					</e:layout>
-					<e:Label width="220" textColor="0x030202" text="新代理手机号" fontFamily="微软雅黑" textAlign="center"/>
+					<e:Label width="220" textColor="0x030202" text="*新员工手机号" fontFamily="微软雅黑" textAlign="center"/>
 					<e:TextInput id="lab_phone" y="32" x="41"/>
 				</e:Group>
 				<e:Button id="btn_code" label="获取验证码" x="451" y="352" skinName="skins.Button_GreenSkin" enabled="true"/>
 				<e:Group y="372" x="323">
-					<e:Label width="220" textColor="0x030202" text="验证码" fontFamily="微软雅黑" textAlign="center"/>
+					<e:Label width="220" textColor="0x030202" text="*验证码" fontFamily="微软雅黑" textAlign="center"/>
 					<e:TextInput id="lab_code" y="32" x="41"/>
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle"/>
@@ -41,18 +41,18 @@
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle"/>
 					</e:layout>
-					<e:Label width="220" textColor="0x030202" text="游戏" fontFamily="微软雅黑" textAlign="center"/>
+					<e:Label width="220" textColor="0x030202" text="*游戏" fontFamily="微软雅黑" textAlign="center"/>
 					<ns1:MenuPopup id="menu_game" y="433" x="394" skinName="skins.MenuPopupSkin" enabled="false"/>
 				</e:Group>
 				<e:Group y="392" x="343">
-					<e:Label width="220" textColor="0x030202" text="省" fontFamily="微软雅黑" textAlign="center"/>
+					<e:Label width="220" textColor="0x030202" text="*省" fontFamily="微软雅黑" textAlign="center"/>
 					<ns1:MenuPopup id="menu_province" x="394" y="433" skinName="skins.MenuPopupSkin"/>
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle"/>
 					</e:layout>
 				</e:Group>
 				<e:Group y="402" x="353">
-					<e:Label width="220" textColor="0x030202" text="市" fontFamily="微软雅黑" textAlign="center"/>
+					<e:Label width="220" textColor="0x030202" text="*市" fontFamily="微软雅黑" textAlign="center"/>
 					<ns1:MenuPopup id="menu_city" x="404" y="443" skinName="skins.MenuPopupSkin"/>
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle"/>
@@ -62,11 +62,11 @@
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle"/>
 					</e:layout>
-					<e:Label width="220" textColor="0x030202" text="区/县" fontFamily="微软雅黑" textAlign="center"/>
+					<e:Label width="220" textColor="0x030202" text="*区/县" fontFamily="微软雅黑" textAlign="center"/>
 					<ns1:MenuPopup id="menu_area" y="453" skinName="skins.MenuPopupSkin" x="414"/>
 				</e:Group>
 				<e:Group y="422" x="373">
-					<e:Label width="220" textColor="0x030202" text="服务城市" fontFamily="微软雅黑" textAlign="center"/>
+					<e:Label width="220" textColor="0x030202" text="*服务城市" fontFamily="微软雅黑" textAlign="center"/>
 					<e:TextInput id="lab_server" y="32" x="41"/>
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle"/>

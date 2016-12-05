@@ -52,8 +52,8 @@ class AccountPowerScene extends BaseScene {
                     return;
                 }
 
-                var pow: Power = Power.agent;
-                // this.gameManager.msgManager.agent.appent(uid, gid, pow);
+                var pow: Power = Power.agent_normal;
+                // this.gameManager.msgManager.agent_normal.appent(uid, gid, pow);
                 break;
         }
     }

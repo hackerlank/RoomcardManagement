@@ -23,6 +23,8 @@ class AgentScene extends BaseScene {
     public childrenCreated() {
         super.childrenCreated();
 
+        this.btn_check.visible = Power.hasCheckCenter();
+
         this.onUpdateNotice();
 
         this.btn_add.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);

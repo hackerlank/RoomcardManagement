@@ -145,6 +145,25 @@ class AgentMsg extends BaseMsg {
     }
 
     /**
+     * 代理开关
+     * @param phone
+     * @param type 0关闭 1开启
+     */
+    public checkcenter_OffOn(phone, type, gid) {
+        var data: any = {};
+        data.s = core.sessionid;
+        data.p = phone;
+        data.t = type;
+        data.g = gid;
+
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Agent_checkcenter_OffOn, data, this.checkcenter_OffOnHandler, this);
+    }
+
+    private checkcenter_OffOnHandler(data: any) {
+        this.gameManager.alertManager.open(AlertType.Normal, "操作成功");
+    }
+
+    /**
      * 记录
      * @param page
      * @param count

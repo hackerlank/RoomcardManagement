@@ -38,10 +38,10 @@ class TransferInRecordItem extends GameSprite {
                 str = "在线购卡";
                 break;
             case 3:
-                str = "一级代理返卡";
+                str = "总监绩效返卡";
                 break;
             case 4:
-                str = "二级代理返卡";
+                str = "经理绩效返卡";
                 break;
             case 5:
                 str = "售卡奖励";

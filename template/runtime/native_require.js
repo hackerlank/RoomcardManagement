@@ -41,6 +41,7 @@ var game_file_list = [
 	"bin-debug/component/MenuPopup.js",
 	"bin-debug/component/NumberAdder.js",
 	"bin-debug/component/TurningTool.js",
+	"bin-debug/config/Power.js",
 	"bin-debug/constant/Common.js",
 	"bin-debug/constant/Lang_CH.js",
 	"bin-debug/constant/Lang_EN.js",

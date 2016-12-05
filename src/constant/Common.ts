@@ -11,10 +11,3 @@ enum Language {
 enum Status {
     closed, opened
 }
-
-/**
- * 权限
- */
-enum Power {
-    gm = 1, agent, agent_new
-}

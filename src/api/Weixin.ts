@@ -12,7 +12,7 @@ class Weixin {
         var url: string = "" +
             "https://open.weixin.qq.com/connect/oauth2/authorize?" +
             "appid=" + appid +
-            "&redirect_uri=" + encodeURIComponent(gameUrl + "?v=" + Math.random()) +
+            "&redirect_uri=" + encodeURIComponent(gameUrl) +
             "&response_type=code" +
             "&scope=snsapi_base" +
             "&state=1" +

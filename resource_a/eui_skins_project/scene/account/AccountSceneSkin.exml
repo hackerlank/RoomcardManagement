@@ -14,16 +14,16 @@
 		<e:Button id="btn_recharge" label="在线进货" left="380" height="60" width="236" bottom="0" skinName="skins.Button_GreenSkin"/>
 	</e:Group>
 	<e:Rect height="2" fillColor="0xFFFAFA" left="20" right="20" top="300"/>
-	<e:Scroller horizontalCenter="0" top="360" bottom="10">
+	<e:Scroller horizontalCenter="0" top="320" bottom="10">
 		<e:Group id="menuGroup">
-			<e:Button id="btn_logingame" width="400" label="切换游戏" skinName="skins.Button_GreenSkin" height="60" x="10" y="10"/>
+			<e:Button id="btn_logingame" width="400" label="切换区域" skinName="skins.Button_GreenSkin" height="60" x="10" y="10"/>
 			<e:Button id="btn_sale" width="400" label="售卡奖励" height="60" skinName="skins.Button_GreenSkin"/>
 			<e:Button id="btn_transfer" label="转账记录" width="400" height="60" skinName="skins.Button_GreenSkin"/>
 			<e:Button id="btn_buy" width="400" label="获卡记录" height="60" skinName="skins.Button_GreenSkin"/>
 			<e:Button id="btn_checkRecord" width="400" label="结算记录" height="60" skinName="skins.Button_GreenSkin" x="10" y="320"/>
 			<e:Button id="btn_room" width="400" label="房间管理" height="60" skinName="skins.Button_GreenSkin"/>
 			<e:Button id="btn_agent" label="代理管理" width="400" height="60" skinName="skins.Button_GreenSkin"/>
-			<e:Button id="btn_power" width="400" skinName="skins.Button_GreenSkin" label="权限管理" height="60" x="10" y="10" visible="false"/>
+			<e:Button id="btn_power" width="400" skinName="skins.Button_GreenSkin" label="权限管理" height="60" x="10" y="10"/>
 			<e:layout>
 				<e:VerticalLayout gap="20"/>
 			</e:layout>

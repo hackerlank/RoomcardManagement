@@ -46,13 +46,15 @@
 		</e:layout>
 	</e:Group>
 	<e:Group horizontalCenter="0" top="545">
-		<e:Button id="btn_recharge" anchorOffsetX="0" width="339" label="充值房卡" skinName="skins.Button_GreenSkin" height="60"/>
-		<e:Button id="btn_deduct" anchorOffsetX="0" width="339" label="扣除房卡" height="60" skinName="skins.Button_GreenSkin" x="10" y="10"/>
-		<e:Button id="btn_off" y="20" anchorOffsetX="0" width="339" label="取消代理" height="60" skinName="skins.Button_GreenSkin" x="20"/>
-		<e:Button id="btn_on" y="30" anchorOffsetX="0" width="339" label="开启代理" height="60" skinName="skins.Button_GreenSkin" x="30"/>
-		<e:Button id="btn_record" y="30" anchorOffsetX="0" x="30" width="339" label="操作记录" height="60" skinName="skins.Button_GreenSkin"/>
+		<e:Button id="btn_recharge" anchorOffsetX="0" label="充值房卡" skinName="skins.Button_GreenSkin" height="60"/>
+		<e:Button id="btn_deduct" anchorOffsetX="0" label="扣除房卡" height="60" skinName="skins.Button_GreenSkin" x="10" y="10"/>
+		<e:Button id="btn_agent_on" y="30" anchorOffsetX="0" label="开启代理" height="60" skinName="skins.Button_GreenSkin" x="30"/>
+		<e:Button id="btn_agent_off" y="20" anchorOffsetX="0" label="取消代理" height="60" skinName="skins.Button_GreenSkin" x="20"/>
+		<e:Button id="btn_checkcenter_on" y="50" skinName="skins.Button_GreenSkin" x="50" anchorOffsetX="0" label="开启结算" height="60"/>
+		<e:Button id="btn_checkcenter_off" anchorOffsetX="0" skinName="skins.Button_GreenSkin" label="关闭结算" height="60" y="40" x="40"/>
+		<e:Button id="btn_record" y="30" anchorOffsetX="0" x="30" label="操作记录" height="60" skinName="skins.Button_GreenSkin"/>
 		<e:layout>
-			<e:VerticalLayout/>
-		</e:layout>
+			<e:TileLayout requestedColumnCount="2" horizontalGap="20" verticalGap="20"/>
+		</e:layout>
 	</e:Group>
 </e:Skin>

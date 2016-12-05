@@ -5,6 +5,7 @@
  */
 class MenuUI extends BaseUI {
 
+    private btnGroup: eui.Group;
     private btn_transfer: eui.Button;
     private btn_lower: eui.Button;
     private btn_agent: eui.Button;
@@ -55,15 +56,13 @@ class MenuUI extends BaseUI {
     }
 
     private onUpdateInfo() {
-        switch (this.userVo.pow) {
-            case Power.gm:
-            case Power.agent:
-                this.btn_transfer.visible = this.btn_lower.visible = this.btn_agent.visible = true;
-                break;
-            case Power.agent_new:
-                this.btn_transfer.visible = this.btn_lower.visible = this.btn_agent.visible = false;
-                this.gameManager.sceneManager.open(SceneType.account);
-                break;
+        if (Power.hasSuperManagerPower()) {
+            this.btnGroup.contains(this.btn_lower) && this.btnGroup.removeChild(this.btn_lower);
         }
+        else {
+            this.btn_transfer.visible = this.btn_lower.visible = this.btn_agent.visible = Power.hasMenuUI();
+        }
+
+        Power.hasMenuUI() == false && this.gameManager.sceneManager.open(SceneType.account);
     }
 }

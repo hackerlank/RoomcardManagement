@@ -35,16 +35,13 @@ class TransferScene extends BaseScene {
 
         this.userVo = this.gameManager.dataManager.userVo;
 
-        switch (this.userVo.pow) {
-            case Power.gm:
-                this.menu_game.enabled = true;
-                this.menu_game.update(this.userVo.getGames());
-                break;
-            case Power.agent:
-            case Power.agent_new:
-                this.menu_game.enabled = false;
-                this.menu_game.update([this.userVo.getGameName(this.userVo.gid)]);
-                break;
+        if(Power.hasSuperManagerPower()){
+            this.menu_game.enabled = true;
+            this.menu_game.update(this.userVo.getGames());
+        }
+        else {
+            this.menu_game.enabled = false;
+            this.menu_game.update([this.userVo.getGameName(this.userVo.gid)]);
         }
 
         this.nba_count.setMaxChars(6);
@@ -65,7 +62,7 @@ class TransferScene extends BaseScene {
         }
 
         var gid: string;
-        if (this.userVo.pow == Power.gm) {
+        if(Power.hasSuperManagerPower()){
             gid = this.userVo.getGameId(this.menu_game.getSelectedValue());
         }
         else {

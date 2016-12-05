@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    <script>
+        function getParam(key) {
+            var r = new RegExp("(\\?|#|&)" + key + "=([^&#]*)(&|#|$)");
+            var m = location.href.match(r);
+            return decodeURIComponent(!m ? "" : m[2]);
+        }
+
+        //lt(1测试客户端 2测试客户端和服务器)
+
+		location.href = "" +
+                "http://mj.h5sd.com/gm/unofficial/index.html" +
+                "?" +
+                "v=" + Math.random() +
+                "&lt=1" +
+                "&gm=" + getParam("gm") +
+                "&pc=" + getParam("pc") +
+                "&code=" + getParam("code");
+    </script>
+</body>
+</html>

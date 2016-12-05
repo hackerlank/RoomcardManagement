@@ -6,7 +6,7 @@ class core {
     //版本号
     static version: string = "1.4.107";
     //客户端地址
-    static clientUrl: string = "http://mj.h5sd.com/gm/index.html";
+    static clientUrl: string = "http://mj.h5sd.com/gm/official/index.html";
     //服务器地址
     static serverUrl: string = "http://121.42.209.249";
     //默认每页显示长度

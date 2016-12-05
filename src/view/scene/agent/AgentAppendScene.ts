@@ -37,16 +37,14 @@ class AgentAppendScene extends BaseScene {
         this.lab_server.maxChars = 10;
 
         this.userVo = this.gameManager.dataManager.userVo;
-        switch (this.userVo.pow) {
-            case Power.gm:
-                this.menu_game.enabled = true;
-                this.menu_game.update(this.userVo.getGames());
-                break;
-            case Power.agent:
-            case Power.agent_new:
-                this.menu_game.enabled = false;
-                this.menu_game.update([this.userVo.getGameName(this.userVo.gid)]);
-                break;
+
+        if(Power.hasSuperManagerPower()){
+            this.menu_game.enabled = true;
+            this.menu_game.update(this.userVo.getGames());
+        }
+        else {
+            this.menu_game.enabled = false;
+            this.menu_game.update([this.userVo.getGameName(this.userVo.gid)]);
         }
 
         this.timerHandler();

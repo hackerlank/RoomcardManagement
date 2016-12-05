@@ -52,6 +52,8 @@ class Cmd {
     static Agent_Deduct: string = "/admin/reduceCard.vo";
     //代理开关
     static Agent_OffOn: string = "/admin/agentOnOff.vo";
+    //代理结算中心开关
+    static Agent_checkcenter_OffOn: string = "/admin/profOnOff.vo";
     //操作记录
     static Agent_Record: string = "/admin/getOpRecord.vo";
     //结算中心

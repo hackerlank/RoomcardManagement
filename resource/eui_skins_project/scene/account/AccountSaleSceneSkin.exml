@@ -11,11 +11,12 @@
 	<e:Button id="btn_get" label="领取" height="60" width="160" skinName="skins.Button_GreenSkin" right="20" top="200"/>
 	<e:Image source="img_line" left="20" right="20" top="300"/>
 	<e:TextInput height="60" prompt="奖励规则" enabled="false" x="52" width="160" top="343" y="343" scaleX="1" scaleY="1" skinName="skins.TextInput_CenterSkin"/>
-	<e:Scroller top="440" bottom="10" horizontalCenter="0">
+	<e:Scroller top="440" bottom="120" horizontalCenter="0">
 		<e:Group id="itemGroup">
 			<e:layout>
 				<e:VerticalLayout/>
 			</e:layout>
 		</e:Group>
 	</e:Scroller>
+	<e:Label text="注意：售卡奖励按月累计，满足奖励规则，即可获得相应奖励。本月售卡奖励在下个月才能领取。" bottom="20" fontFamily="微软雅黑" textColor="0x000000" left="20" right="20" size="26" multiline="true" wordWrap="true" lineSpacing="5"/>
 </e:Skin>
