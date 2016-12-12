@@ -105,7 +105,7 @@ class AccountScene extends BaseScene {
         this.img_portrait.source = "" + this.userVo.pic;
         this.lab_nick.text = "" + this.userVo.nick;
         this.lab_uid.text = "ID:" + this.userVo.uid;
-        this.lab_card.text = "房卡:" + this.userVo.cdnum;
+        this.lab_card.text = "剩余房卡:" + this.userVo.cdnum;
     }
 
     public open() {

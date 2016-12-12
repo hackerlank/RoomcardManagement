@@ -33,7 +33,15 @@ class RecordGmItem extends GameSprite {
                 des = "扣除" + data.taruid + "的房卡共" + data.num + "张";
                 break;
             case 4://卡关代理 num(2开 0关)
-                des = data.num == 0 ? "取消" + data.taruid + "的代理资格" : "将" + data.taruid + "设置成代理";
+                if (data.num == 0) {
+                    des = "取消" + data.taruid + "的代理资格";
+                }
+                else if (data.num == 2) {
+                    des = "将" + data.taruid + "设置成普通代理";
+                }
+                else if (data.num == 4) {
+                    des = "将" + data.taruid + "设置成高级代理";
+                }
                 break;
         }
 
