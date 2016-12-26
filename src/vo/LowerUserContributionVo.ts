@@ -10,6 +10,7 @@ class LowerUserContributionVo extends BaseVo {
     public uid: string;
     public sum: number;
     public rew: number;
+    public sxn: string;
 
     public constructor() {
         super();

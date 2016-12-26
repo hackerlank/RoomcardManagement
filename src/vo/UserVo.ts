@@ -60,6 +60,16 @@ class UserVo extends BaseVo {
     }
 
     /**
+     * 更新数
+     * @param data
+     */
+    public update(data: any): void {
+        super.update(data);
+
+        this.pow = this.pow == 0 ? Power.agent_new : this.pow;
+    }
+
+    /**
      * 获取全部游戏
      * @returns {string[]}
      */

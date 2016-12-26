@@ -20,7 +20,7 @@ class SaleCardRewardRuleItem extends GameSprite {
         super.childrenCreated();
 
         if (this.ruleVo) {
-            this.lab_rule.text = "每月售卡达到" + this.ruleVo.min + "张";
+            this.lab_rule.text = "月售卡达到" + this.ruleVo.min + "张";
             this.lab_reward.text = "奖励" + (this.ruleVo.per > 0 ? this.ruleVo.per + "%" : this.ruleVo.reb) + "张";
         }
     }

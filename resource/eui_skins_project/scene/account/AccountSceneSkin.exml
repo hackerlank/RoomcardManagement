@@ -14,7 +14,7 @@
 		<e:Button id="btn_recharge" label="在线进货" left="380" height="60" width="236" bottom="0" skinName="skins.Button_GreenSkin"/>
 	</e:Group>
 	<e:Rect height="2" fillColor="0xFFFAFA" left="20" right="20" top="300"/>
-	<e:Scroller horizontalCenter="0" top="320" bottom="10">
+	<e:Scroller horizontalCenter="0" top="320" bottom="10" locked="true">
 		<e:Group id="menuGroup">
 			<e:Button id="btn_logingame" width="400" label="切换区域" skinName="skins.Button_GreenSkin" height="60" x="10" y="10"/>
 			<e:Button id="btn_sale" width="400" label="售卡奖励" height="60" skinName="skins.Button_GreenSkin"/>
@@ -29,4 +29,5 @@
 			</e:layout>
 		</e:Group>
 	</e:Scroller>
+	<e:Label id="lab_description" fontFamily="微软雅黑" width="400" horizontalCenter="0" top="400" textColor="0xFF0000" wordWrap="true" multiline="true"/>
 </e:Skin>

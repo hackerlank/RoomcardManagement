@@ -10,10 +10,30 @@ class Power {
     static agent_new = 3;
 
     /**
+     * 不可访问
+     * @returns {boolean}
+     */
+    static get noAccess() {
+        return core.gameManager.dataManager.userVo.pow == 0;
+    }
+
+    /**
+     * 等同权限3
+     * @returns {boolean}
+     */
+    static get likePow3() {
+        return core.gameManager.dataManager.userVo.cdnum == 0;
+    }
+
+    /**
      * 获取显示权限-超管
      * @returns {boolean}
      */
     static hasSuperManagerPower() {
+        if (this.noAccess || this.likePow3) {
+            return false;
+        }
+
         return core.gameManager.dataManager.userVo.pow == Power.supermanager;
     }
 
@@ -22,6 +42,10 @@ class Power {
      * @returns {boolean}
      */
     static hasMenuUI() {
+        if (this.noAccess || this.likePow3) {
+            return false;
+        }
+
         return core.gameManager.dataManager.userVo.pow != Power.agent_new;
     }
 
@@ -30,7 +54,9 @@ class Power {
      * @returns {boolean}
      */
     static hasCheckCenter() {
+        if (this.noAccess || this.likePow3) {
+            return false;
+        }
         return core.gameManager.dataManager.userVo.pow == Power.agent_professional;
     }
-
 }

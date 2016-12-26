@@ -151,6 +151,9 @@ class SceneManager extends BaseManager {
             this.gameManager.uiManager.menuUI.close();
         }
         else {
+            if (core.gt && core.gtNonopen) {
+                return;
+            }
             this.gameManager.uiManager.menuUI.open();
         }
     }

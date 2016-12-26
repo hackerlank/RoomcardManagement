@@ -8,11 +8,12 @@ class Weixin {
     /**
      * 获取授权code, 对应支付
      */
-    static getAccessCodeForPay(appid: string, gameUrl: string) {
+    static getAccessCodeForPay(appid: string, gameUrl: string, gt:string) {
+
         var url: string = "" +
             "https://open.weixin.qq.com/connect/oauth2/authorize?" +
             "appid=" + appid +
-            "&redirect_uri=" + encodeURIComponent(gameUrl) +
+            "&redirect_uri=" + encodeURIComponent(gameUrl + "?gt=" + gt) +
             "&response_type=code" +
             "&scope=snsapi_base" +
             "&state=1" +
@@ -24,11 +25,11 @@ class Weixin {
     /**
      * 获取授权code, 对应登陆
      */
-    static getAccessCodeForLogin(appid: string, gameUrl: string, pcode:string) {
+    static getAccessCodeForLogin(appid: string, gameUrl: string, gt:string, pcode:string) {
         var url: string = "" +
             "https://open.weixin.qq.com/connect/oauth2/authorize?" +
             "appid=" + appid +
-            "&redirect_uri=" + encodeURIComponent(gameUrl + "?pc=" + pcode) +
+            "&redirect_uri=" + encodeURIComponent(gameUrl + "?gt=" + gt + "&pc=" + pcode) +
             "&response_type=code" +
             "&scope=snsapi_userinfo" +
             "&state=1" +

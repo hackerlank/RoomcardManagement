@@ -31,6 +31,10 @@ class Main extends eui.UILayer {
 
     constructor() {
         super();
+
+        console.log(location.href);
+
+        core.wxAccess();
     }
 
     /**
@@ -41,10 +45,6 @@ class Main extends eui.UILayer {
 
     protected createChildren(): void {
         super.createChildren();
-
-        if (core.wxAccess()) {
-            return;
-        }
 
         //注入自定义的素材解析器
         var assetAdapter = new AssetAdapter();
@@ -137,15 +137,17 @@ class Main extends eui.UILayer {
      * 创建场景界面
      */
     protected startCreateScene(): void {
+
         core.init(this.stage);
 
-        if (!core.gm || core.gm == "") {
-            if (core.code && core.code != "") {
-                core.gameManager.msgManager.login.sendLogin();
-            }
-        }
-        else {
+        if (core.gm == core.GmCode) {
             core.gameManager.sceneManager.open(SceneType.login);
+            return;
+        }
+
+        if (core.code && core.code != "") {
+            core.gameManager.msgManager.login.sendLogin();
+            return;
         }
 
         // core.gameManager.sceneManager.open(SceneType.transfer);

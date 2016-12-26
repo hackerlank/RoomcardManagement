@@ -7,7 +7,6 @@ class AgentAppendScene extends BaseScene {
 
     private scroller: eui.Scroller;
     private lab_uid: eui.TextInput;
-    private lab_weixin: eui.TextInput;
     private lab_phone: eui.TextInput;
     private lab_code: eui.TextInput;
     private btn_code: eui.Button;
@@ -38,14 +37,7 @@ class AgentAppendScene extends BaseScene {
 
         this.userVo = this.gameManager.dataManager.userVo;
 
-        if(Power.hasSuperManagerPower()){
-            this.menu_game.enabled = true;
-            this.menu_game.update(this.userVo.getGames());
-        }
-        else {
-            this.menu_game.enabled = false;
-            this.menu_game.update([this.userVo.getGameName(this.userVo.gid)]);
-        }
+        this.onUpdateUserInfo();
 
         this.timerHandler();
 
@@ -55,9 +47,21 @@ class AgentAppendScene extends BaseScene {
         this.btn_code.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_confirm.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
+        this.gameManager.addEventListener(EventType.User_Info, this.onUpdateUserInfo, this);
         this.gameManager.addEventListener(EventType.Agent_Success, this.clear, this);
 
         this.gameManager.timerManager.addEventListener(TimerManager.Second, this.timerHandler, this);
+    }
+
+    private onUpdateUserInfo() {
+        if (Power.hasSuperManagerPower()) {
+            this.menu_game.enabled = true;
+            this.menu_game.update(this.userVo.getGames());
+        }
+        else {
+            this.menu_game.enabled = false;
+            this.menu_game.update([this.userVo.getGameName(this.userVo.gid)]);
+        }
     }
 
     private timerHandler() {
@@ -93,7 +97,6 @@ class AgentAppendScene extends BaseScene {
             case this.btn_confirm:
                 if (this.checkNull(this.lab_uid.text) ||
                     this.checkNull(this.menu_game.getSelectedValue()) ||
-                    this.checkNull(this.lab_weixin.text) ||
                     this.checkNull(this.lab_phone.text) ||
                     this.checkNull(this.lab_code.text) ||
                     this.checkNull(this.menu_province.getSelectedValue()) ||
@@ -105,7 +108,7 @@ class AgentAppendScene extends BaseScene {
                 this.gameManager.msgManager.agent.appent(
                     this.lab_uid.text,
                     this.gameManager.dataManager.userVo.getGameId(this.menu_game.getSelectedValue()),
-                    this.lab_weixin.text,
+                    "wx",
                     this.lab_phone.text,
                     this.lab_code.text,
                     this.menu_province.getSelectedValue(),
@@ -128,7 +131,6 @@ class AgentAppendScene extends BaseScene {
 
     private clear() {
         this.lab_uid.text = "";
-        this.lab_weixin.text = "";
         this.lab_phone.text = "";
         this.lab_code.text = "";
         this.lab_server.text = "";

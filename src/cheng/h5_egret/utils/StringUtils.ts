@@ -86,13 +86,13 @@ class StringUtils {
 
     /**
      * 获取url参数
-     * @param name
+     * @param val
      * @returns {string}
      */
-    public static getUrlParams(name: string) {
-        var r = new RegExp("(\\?|#|&)" + name + "=([^&#]*)(&|#|$)");
-        var m = location.href.match(r);
-        return decodeURIComponent(!m ? "" : m[2]);
+    public static getUrlParams(val: string) {
+        var uri = window.location.search;
+        var re = new RegExp("" + val + "=([^&?]*)", "ig");
+        return ((uri.match(re)) ? (uri.match(re)[0].substr(val.length + 1)) : "");
     }
 
     /**

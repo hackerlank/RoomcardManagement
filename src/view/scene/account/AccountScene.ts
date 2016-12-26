@@ -19,6 +19,7 @@ class AccountScene extends BaseScene {
     public btn_buy: eui.Button;
     public btn_transfer: eui.Button;
     public btn_checkRecord: eui.Button;
+    public lab_description: eui.Label;
 
     public userVo: UserVo;
 
@@ -97,6 +98,7 @@ class AccountScene extends BaseScene {
         }
 
         this.btn_sale.visible = this.btn_transfer.visible = this.btn_buy.visible = this.btn_checkRecord.visible = this.userVo.pow != Power.agent_new;
+        this.lab_description.visible = this.userVo.pow == Power.agent_new;
 
         this.update();
     }
@@ -106,6 +108,7 @@ class AccountScene extends BaseScene {
         this.lab_nick.text = "" + this.userVo.nick;
         this.lab_uid.text = "ID:" + this.userVo.uid;
         this.lab_card.text = "剩余房卡:" + this.userVo.cdnum;
+        this.lab_description.text = "您还未开启【" + this.userVo.getGameName(this.userVo.gid) + "】代理，点击上面在线进货按钮，充值成功后自动获得" + this.userVo.getGameName(this.userVo.gid) + "代理权限和相应房卡！";
     }
 
     public open() {

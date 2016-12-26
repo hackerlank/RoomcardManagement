@@ -47,7 +47,7 @@ class RechargeMsg extends BaseMsg {
 
         var userVO: UserVo = this.gameManager.dataManager.userVo;
         userVO.cdnum = msg.cdnum;
-        userVO.pow = msg.pow;
+        userVO.pow = msg.pow == 0 ? Power.agent_new : msg.pow;
         this.gameManager.dispatchEvent(EventType.User_Info);
     }
 }

@@ -18,14 +18,18 @@ class core {
     //GM登录验证
     static GmCode = "cLGGRh2b4sMeRy";
     //公告1(转账)
-    static Notice01: string = "http://119.29.75.66:9001/cardroom/notice.php?t=1";
+    static Notice01: string = "http://139.129.225.54:9001/notice.php?t=1";
     //公告2(代理)
-    static Notice02: string = "http://119.29.75.66:9001/cardroom/notice.php?t=2";
+    static Notice02: string = "http://139.129.225.54:9001/notice.php?t=2";
 
     //登录类型
     static lt: any = "";
     //gm登录
     static gm: any = "";
+    //gt登录(特殊登录方式,如果未开通, 可自行开通)
+    static gt: any = "";
+    //gt未开通
+    static gtNonopen: boolean;
     //登录公众号appid
     static appid: string = "wxb6349744356b5312";
     //登录公众号登录code
@@ -87,6 +91,16 @@ class core {
 
         core.code_p = StringUtils.getUrlParams("pc");
         core.code = StringUtils.getUrlParams("code");
+        core.gt = StringUtils.getUrlParams("gt");
+
+        // switch (core.gt) {
+        //     case "scmj":
+        //         this.loginType = core.gt;
+        //         this.appid = "wx1310f5f590acf9d5";
+        //         break;
+        // }
+
+        console.log("================", core.gt);
 
         var isAccess: boolean;
 
@@ -94,17 +108,17 @@ class core {
             isAccess = true;
 
             if (core.code == "") {
-                Weixin.getAccessCodeForPay(core.appid_p, core.clientUrl);
+                Weixin.getAccessCodeForPay(core.appid_p, core.clientUrl, core.gt);
             }
             else {
-                Weixin.getAccessCodeForLogin(core.appid, core.clientUrl, core.code);
+                Weixin.getAccessCodeForLogin(core.appid, core.clientUrl, core.gt, core.code);
             }
         }
         else {
             if (core.code == StorageUtils.getData("code") && core.code_p == StorageUtils.getData("pc")) {
                 isAccess = true;
 
-                Weixin.getAccessCodeForPay(core.appid_p, core.clientUrl);
+                Weixin.getAccessCodeForPay(core.appid_p, core.clientUrl, core.gt);
             }
         }
         if (!isAccess) {

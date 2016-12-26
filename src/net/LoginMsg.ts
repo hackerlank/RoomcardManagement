@@ -29,18 +29,41 @@ class LoginMsg extends BaseMsg {
         data.pcode = core.code_p;
         data.url = location.href.split("#")[0];
         data.t = core.loginType;
+        core.gt && core.gt != "" && (data.gt = core.gt);
 
         this.gameManager.httpManager.send(core.serverUrl + Cmd.Login, data, this.loginHandler, this);
     }
 
     public loginHandler(msg: any) {
-        if (msg.code != 0)return;
-
         var userVo: UserVo = this.gameManager.dataManager.userVo;
+
+        //特殊游戏登录
+        if (msg.hasOwnProperty("gt")) {
+            core.gtNonopen = true;
+            core.sessionid = msg.sid;
+
+            userVo.gid = msg.gt;
+
+            if (msg.hasOwnProperty("gameTpl")) {
+                core.gameTpl = [];
+                userVo.gameMap = {};
+
+                var gameTpl: any[] = msg.gameTpl;
+                var game: any;
+                for (var i: number = 0; i < gameTpl.length; i++) {
+                    game = gameTpl[i];
+                    userVo.gameMap[game.gameid] = game;
+                    core.gameTpl.push(game.name);
+                }
+            }
+
+            core.gameManager.uiManager.menuUI.hide();
+            core.gameManager.sceneManager.open(SceneType.agent_append);
+            return;
+        }
 
         if (msg.data) {
             userVo.update(msg.data);
-
             core.sessionid = userVo.sid;
 
             if (!core.gm || core.gm == "") {
@@ -77,9 +100,7 @@ class LoginMsg extends BaseMsg {
         if (msg.code != 0)return;
 
         var userVo: UserVo = this.gameManager.dataManager.userVo;
-        if (msg.data) {
-            userVo.update(msg.data);
-        }
+        msg.data && userVo.update(msg.data);
 
         var gameTpl: any[] = msg.gameTpl;
         if (gameTpl) {
@@ -134,9 +155,9 @@ class LoginMsg extends BaseMsg {
                 }
             });
         }
+        this.gameManager.dataManager.clean();
         this.gameManager.sceneManager.open(SceneType.transfer);
         this.gameManager.uiManager.menuUI.open();
-
         this.gameManager.dispatchEvent(EventType.User_Info);
     }
 }

@@ -56,6 +56,7 @@ class MenuUI extends BaseUI {
     }
 
     private onUpdateInfo() {
+
         if (Power.hasSuperManagerPower()) {
             this.btnGroup.contains(this.btn_lower) && this.btnGroup.removeChild(this.btn_lower);
         }

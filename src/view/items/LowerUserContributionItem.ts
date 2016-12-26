@@ -29,7 +29,7 @@ class LowerUserContributionItem extends GameSprite {
         this.img_portrait.source = "" + this.juniorVo.pic;
         this.lab_nick.text = "" + this.juniorVo.nick;
         this.lab_id.text = "ID:" + this.juniorVo.uid;
-        this.lab_buyCard.text = "累计购卡:" + this.juniorVo.sum;
+        this.lab_buyCard.text = "上属:" + this.juniorVo.sxn;
         this.lab_contribution.text = "累计贡献:" + this.juniorVo.rew;
     }
 }

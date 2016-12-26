@@ -65,6 +65,22 @@ class DataManager extends BaseManager {
         super();
     }
 
+    clean() {
+        this.lowerUserCount = 0;
+        this.lowerUserMap = {};
+        this.transferOutRecordLength = 0;
+        this.transferOutRecordMap = {};
+        this.transferInRecordLength = 0;
+        this.transferInRecordMap = {};
+        this.agentLv1RecordLength = 0;
+        this.agentLv1RecordMap = {};
+        this.agentLv2RecordLength = 0;
+        this.agentLv2RecordMap = {};
+        this.agentCehckRecordLength = 0;
+        this.agentCehckRecordMap = {};
+        this.roomUserMap = {};
+    }
+
     /**
      * 获取下级用户列表
      * @returns {LowerUserVo[]}
@@ -183,7 +199,8 @@ class DataManager extends BaseManager {
             recordVo = this.transferOutRecordMap[id];
 
             if (!uid || uid == recordVo.tarid) {
-                list.unshift(recordVo);
+                // list.unshift(recordVo);
+                list.push(recordVo);
             }
         }
 
@@ -199,7 +216,8 @@ class DataManager extends BaseManager {
         var recordVo: TransferRecordVo;
         for (var id in this.transferInRecordMap) {
             recordVo = this.transferInRecordMap[id];
-            list.unshift(recordVo);
+            // list.unshift(recordVo);
+            list.push(recordVo);
         }
 
         return list;

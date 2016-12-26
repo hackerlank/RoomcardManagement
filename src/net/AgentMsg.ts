@@ -53,6 +53,12 @@ class AgentMsg extends BaseMsg {
     private appentHandler(data: any) {
         this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(2002));
         this.gameManager.dispatchEvent(EventType.Agent_Success);
+
+        if (core.gtNonopen) {
+            egret.setTimeout(function () {
+                location.href = core.clientUrl + "?gt=" + core.gt;
+            }, this, 3000);
+        }
     }
 
     /**
@@ -76,6 +82,28 @@ class AgentMsg extends BaseMsg {
     private searchHandler(data: any) {
 
         this.gameManager.dispatchEvent(EventType.Agent_Update, data);
+    }
+
+    /**
+     * 代理撤销订单
+     * @param uid
+     * @param odr
+     */
+    public revoke(uid, odr) {
+        var data: any = {};
+        data.s = core.sessionid;
+        data.u = uid;
+        data.o = odr;
+
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Agent_Revoke, data, this.revokeHandler, this);
+    }
+
+    /**
+     * {code, nick, pic, cdnum, gid}
+     * @param data
+     */
+    private revokeHandler(data: any) {
+        core.gameManager.alertManager.open(AlertType.Normal, "订单撤销成功!");
     }
 
     /**

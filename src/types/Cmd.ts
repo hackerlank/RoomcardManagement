@@ -46,6 +46,8 @@ class Cmd {
     static Agent_Append: string = "/admin/addUser.vo";
     //查找代理
     static Agent_Search: string = "/admin/searchUser.vo";
+    //代理撤销
+    static Agent_Revoke: string = "/admin/backOutTrs.vo";
     //代理充值
     static Agent_Recharge: string = "/admin/transfer.vo";
     //代理扣卡

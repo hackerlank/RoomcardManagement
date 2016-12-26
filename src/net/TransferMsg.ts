@@ -115,12 +115,12 @@ class TransferMsg extends BaseMsg {
             for (var i: number = 0; i < list.length; i++) {
                 data = list[i];
 
-                if (map.hasOwnProperty(data.id)) {
-                    recordVo = map[data.id];
+                if (map.hasOwnProperty(data.ctime)) {
+                    recordVo = map[data.ctime];
                 }
                 else {
                     recordVo = new TransferRecordVo();
-                    map[data.id] = recordVo;
+                    map[data.ctime] = recordVo;
                 }
 
                 recordVo.update(data);
@@ -160,12 +160,12 @@ class TransferMsg extends BaseMsg {
             for (var i: number = 0; i < list.length; i++) {
                 data = list[i];
 
-                if (map.hasOwnProperty(data.orderno)) {
-                    recordVo = map[data.orderno];
+                if (map.hasOwnProperty(data.ctime)) {
+                    recordVo = map[data.ctime];
                 }
                 else {
                     recordVo = new TransferRecordVo();
-                    map[data.orderno] = recordVo;
+                    map[data.ctime] = recordVo;
                 }
 
                 recordVo.update(data);

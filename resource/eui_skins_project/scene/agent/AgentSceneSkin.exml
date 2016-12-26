@@ -8,8 +8,8 @@
 	<e:Group horizontalCenter="0" top="130">
 		<e:Button id="btn_add" label="招聘员工" x="368" y="372" width="400" skinName="skins.Button_GreenSkin" height="60"/>
 		<e:Button id="btn_notice" width="400" y="382" label="招聘说明" x="378" skinName="skins.Button_GreenSkin" height="60"/>
-		<e:Button id="btn_lv1" width="400" y="392" label="一级代理" x="388" height="60" skinName="skins.Button_GreenSkin"/>
-		<e:Button id="btn_lv2" width="400" y="402" label="二级代理" x="398" height="60" skinName="skins.Button_GreenSkin"/>
+		<e:Button id="btn_lv1" width="400" y="392" label="总监绩效" x="388" height="60" skinName="skins.Button_GreenSkin"/>
+		<e:Button id="btn_lv2" width="400" y="402" label="经理绩效" x="398" height="60" skinName="skins.Button_GreenSkin"/>
 		<e:Button id="btn_check" x="408" y="412" width="400" label="结算中心" height="60" skinName="skins.Button_GreenSkin"/>
 		<e:layout>
 			<e:VerticalLayout gap="20"/>

@@ -13,6 +13,8 @@ class AgentScene extends BaseScene {
     private scroller: eui.Scroller;
     private container: eui.Group;
 
+    private userVo: UserVo;
+
     public constructor() {
         super();
 
@@ -23,9 +25,11 @@ class AgentScene extends BaseScene {
     public childrenCreated() {
         super.childrenCreated();
 
+        this.userVo = this.gameManager.dataManager.userVo;
+
         this.btn_check.visible = Power.hasCheckCenter();
 
-        this.onUpdateNotice();
+        this.onUpdateUserInfo();
 
         this.btn_add.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_notice.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
@@ -33,6 +37,7 @@ class AgentScene extends BaseScene {
         this.btn_lv2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_check.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
+        this.gameManager.addEventListener(EventType.User_Info, this.onUpdateUserInfo, this);
         this.gameManager.addEventListener(EventType.LowerUser_Contribution, this.onUpdate, this);
     }
 
@@ -56,11 +61,14 @@ class AgentScene extends BaseScene {
         }
     }
 
-    private onUpdateNotice() {
-        this.container.removeChildren();
+    private onUpdateUserInfo() {
+        this.onUpdateNotice();
+    }
 
+    private onUpdateNotice() {
         var _this = this;
-        this.gameManager.httpManager.send(core.Notice02, null, function (msg: any) {
+        this.gameManager.httpManager.send(core.Notice02 + "&g=" + this.userVo.gid, null, function (msg: any) {
+            _this.container.removeChildren();
             var data: any;
             for (var id in msg) {
                 if (!msg[id])continue;

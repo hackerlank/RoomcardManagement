@@ -15,13 +15,6 @@
 					<e:Label width="220" textColor="0x030202" text="*新员工游戏ID" fontFamily="微软雅黑" textAlign="center"/>
 					<e:TextInput id="lab_uid" y="32" x="41"/>
 				</e:Group>
-				<e:Group x="303" y="352">
-					<e:Label fontFamily="微软雅黑" textColor="0x030202" width="220" text="*新员工微信号" textAlign="center"/>
-					<e:TextInput id="lab_weixin" x="41" y="32"/>
-					<e:layout>
-						<e:HorizontalLayout verticalAlign="middle"/>
-					</e:layout>
-				</e:Group>
 				<e:Group x="333" y="382">
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle"/>

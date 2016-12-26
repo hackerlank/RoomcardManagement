@@ -28,27 +28,24 @@ class TransferScene extends BaseScene {
     public childrenCreated() {
         super.childrenCreated();
 
-        this.onUpdateNotice();
-
         this.txt_uid.restrict = "0-9";
         this.txt_uid.maxChars = 10;
 
         this.userVo = this.gameManager.dataManager.userVo;
 
-        if(Power.hasSuperManagerPower()){
+        if (Power.hasSuperManagerPower()) {
             this.menu_game.enabled = true;
             this.menu_game.update(this.userVo.getGames());
         }
-        else {
-            this.menu_game.enabled = false;
-            this.menu_game.update([this.userVo.getGameName(this.userVo.gid)]);
-        }
+
+        this.onUpdateUserInfo();
 
         this.nba_count.setMaxChars(6);
 
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_recharge.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
+        this.gameManager.addEventListener(EventType.User_Info, this.onUpdateUserInfo, this);
         this.gameManager.addEventListener(EventType.LowerUser_Selected, this.onUpdateFollow, this);
         this.gameManager.addEventListener(EventType.Transfer_Search, this.onUpdateSearch, this);
         this.gameManager.addEventListener(EventType.Transfer_Success, this.onUpdateSuccess, this);
@@ -62,7 +59,7 @@ class TransferScene extends BaseScene {
         }
 
         var gid: string;
-        if(Power.hasSuperManagerPower()){
+        if (Power.hasSuperManagerPower()) {
             gid = this.userVo.getGameId(this.menu_game.getSelectedValue());
         }
         else {
@@ -85,6 +82,15 @@ class TransferScene extends BaseScene {
         }
     }
 
+    private onUpdateUserInfo() {
+        if (!Power.hasSuperManagerPower()) {
+            this.menu_game.enabled = false;
+            this.menu_game.update([this.userVo.getGameName(this.userVo.gid)]);
+        }
+
+        this.onUpdateNotice();
+    }
+
     private onUpdateSuccess(addNum: number) {
         var zong: number = Number(this.lab_card.text.split(":")[1]) + addNum;
         this.lab_card.text = "房卡:" + zong;
@@ -103,10 +109,10 @@ class TransferScene extends BaseScene {
     }
 
     private onUpdateNotice() {
-        this.container.removeChildren();
 
         var _this = this;
-        this.gameManager.httpManager.send(core.Notice01, null, function (msg: any) {
+        this.gameManager.httpManager.send(core.Notice01 + "&g=" + this.userVo.gid, null, function (msg: any) {
+            _this.container.removeChildren();
             var data: any;
             for (var id in msg) {
                 if (!msg[id])continue;

@@ -11,6 +11,8 @@ class AccountAgentScene extends BaseScene {
     private img_portrait: eui.Image;
     private lab_nick: eui.TextInput;
     private lab_card: eui.TextInput;
+    private lab_order: eui.TextInput;
+    private btn_revoke: eui.TextInput;
     private lab_game: eui.TextInput;
     private nba_count: NumberAdder;
     private btn_recharge: eui.Button;
@@ -22,7 +24,8 @@ class AccountAgentScene extends BaseScene {
     private btn_record: eui.Button;
 
     private userVo: UserVo;
-    private searchUserGid: any;
+    private userUid: any;
+    private userGid: any;
 
     public constructor() {
         super();
@@ -42,6 +45,7 @@ class AccountAgentScene extends BaseScene {
         this.nba_count.setMaxChars(6);
 
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_revoke.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_recharge.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_deduct.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_agent_on.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
@@ -67,52 +71,62 @@ class AccountAgentScene extends BaseScene {
         switch (e.currentTarget) {
             case this.btn_search:
                 //TODO 查询房卡
-                this.searchUserGid = null;
+                this.userGid = null;
+                this.userUid = null;
                 this.gameManager.msgManager.agent.search(phone, this.userVo.getGameId(this.menu_game.getSelectedValue()));
+                break;
+            case this.btn_revoke:
+                //TODO 撤销订单
+                if (this.userUid && this.lab_order.text) {
+                    this.gameManager.msgManager.agent.revoke(this.userUid, this.lab_order.text);
+                }
                 break;
             case this.btn_recharge:
                 //TODO 充值房卡
-                if (this.searchUserGid) {
-                    this.gameManager.msgManager.agent.recharge(phone, this.nba_count.numb, this.searchUserGid);
+                if (this.userGid) {
+                    this.gameManager.msgManager.agent.recharge(phone, this.nba_count.numb, this.userGid);
                 }
                 break;
             case this.btn_deduct:
                 //TODO 扣除房卡
-                if (this.searchUserGid) {
-                    this.gameManager.msgManager.agent.deduct(phone, this.nba_count.numb, this.searchUserGid);
+                if (this.userGid) {
+                    this.gameManager.msgManager.agent.deduct(phone, this.nba_count.numb, this.userGid);
                 }
                 break;
             case this.btn_agent_on:
                 //TODO 开启代理
-                if (this.searchUserGid) {
-                    this.gameManager.msgManager.agent.offOn(phone, 1, this.searchUserGid);
+                if (this.userGid) {
+                    this.gameManager.msgManager.agent.offOn(phone, 1, this.userGid);
                 }
                 break;
             case this.btn_agent_off:
                 //TODO 取消代理
-                if (this.searchUserGid) {
-                    this.gameManager.msgManager.agent.offOn(phone, 0, this.searchUserGid);
+                if (this.userGid) {
+                    this.gameManager.msgManager.agent.offOn(phone, 0, this.userGid);
                 }
                 break;
             case this.btn_checkcenter_on:
                 //TODO 开启结算
-                if (this.searchUserGid) {
-                    this.gameManager.msgManager.agent.checkcenter_OffOn(phone, 1, this.searchUserGid);
+                if (this.userGid) {
+                    this.gameManager.msgManager.agent.checkcenter_OffOn(phone, 1, this.userGid);
                 }
                 break;
             case this.btn_checkcenter_off:
                 //TODO 关闭结算
-                if (this.searchUserGid) {
-                    this.gameManager.msgManager.agent.checkcenter_OffOn(phone, 0, this.searchUserGid);
+                if (this.userGid) {
+                    this.gameManager.msgManager.agent.checkcenter_OffOn(phone, 0, this.userGid);
                 }
                 break;
         }
     }
 
     private onUpdateInfo(data: any) {
+        if (data.hasOwnProperty("uid")) {
+            this.userUid = data.uid;
+        }
 
         if (data.hasOwnProperty("gid")) {
-            this.searchUserGid = data.gid;
+            this.userGid = data.gid;
         }
 
         if (data.hasOwnProperty("pic")) {
