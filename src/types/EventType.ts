@@ -26,6 +26,8 @@ class EventType {
     static LowerUser_List: string = "LowerUser_List";
     //下级用户-信息
     static LowerUser_Info: string = "LowerUser_Info";
+    //下级用户-评价
+    static LowerUser_Assess: string = "LowerUser_Assess";
     //下级用户-被选中用户
     static LowerUser_Selected: string = "LowerUser_Selected";
     //下级用户-贡献数据

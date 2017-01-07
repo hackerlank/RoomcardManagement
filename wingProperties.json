@@ -253,6 +253,56 @@
 					"isFolder":false,
 					"key":"tracklight_png",
 					"name":"tracklight_png"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_thumbs_down_4",
+					"name":"ico_thumbs_down_4"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_thumbs_up_4",
+					"name":"ico_thumbs_up_4"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_evaluate_1",
+					"name":"ico_evaluate_1"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_evaluate_1_0",
+					"name":"ico_evaluate_1_0"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_evaluate_2",
+					"name":"ico_evaluate_2"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_evaluate_2_0",
+					"name":"ico_evaluate_2_0"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_evaluate_3",
+					"name":"ico_evaluate_3"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_evaluate_3_0",
+					"name":"ico_evaluate_3_0"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_evaluate_4",
+					"name":"ico_evaluate_4"
+				},
+				{
+					"isFolder":false,
+					"key":"ico_evaluate_4_0",
+					"name":"ico_evaluate_4_0"
 				}
 			]
 		}

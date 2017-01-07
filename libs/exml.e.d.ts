@@ -134,9 +134,15 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
+declare class AssessCountAlertSkin extends eui.Skin{
+}
 declare class NormalAlertSkin extends eui.Skin{
 }
 declare class ProtocolAlertSkin extends eui.Skin{
+}
+declare class AssessBarSkin extends eui.Skin{
+}
+declare class AssessCountItemSkin extends eui.Skin{
 }
 declare class CheckListItemSkin extends eui.Skin{
 }
@@ -191,6 +197,8 @@ declare class AgentLv2RecordSceneSkin extends eui.Skin{
 declare class AgentNoticeSceneSkin extends eui.Skin{
 }
 declare class AgentSceneSkin extends eui.Skin{
+}
+declare class FollowAssessSceneSkin extends eui.Skin{
 }
 declare class FollowDetailsSceneSkin extends eui.Skin{
 }

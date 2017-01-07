@@ -200,6 +200,46 @@
 				{
 					"compress":false,
 					"key":"btn_gray"
+				},
+				{
+					"compress":false,
+					"key":"ico_thumbs_up_4"
+				},
+				{
+					"compress":false,
+					"key":"ico_thumbs_down_4"
+				},
+				{
+					"compress":false,
+					"key":"ico_evaluate_2"
+				},
+				{
+					"compress":false,
+					"key":"ico_evaluate_2_0"
+				},
+				{
+					"compress":false,
+					"key":"ico_evaluate_3"
+				},
+				{
+					"compress":false,
+					"key":"ico_evaluate_3_0"
+				},
+				{
+					"compress":false,
+					"key":"ico_evaluate_4"
+				},
+				{
+					"compress":false,
+					"key":"ico_evaluate_4_0"
+				},
+				{
+					"compress":false,
+					"key":"ico_evaluate_1"
+				},
+				{
+					"compress":false,
+					"key":"ico_evaluate_1_0"
 				}
 			],
 			"sort":0

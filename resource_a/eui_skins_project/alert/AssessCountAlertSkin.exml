@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="AssessCountAlertSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" width="640" height="960">
+	<w:Config id="1581526c932"/>
+	<e:Rect id="btn_close" left="0" right="0" top="0" bottom="0" fillAlpha="0.5"/>
+	<e:Group height="55%" width="70%" horizontalCenter="0" verticalCenter="0">
+		<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0xFFFFFF"/>
+		<ns1:AssessCountItem skinName="AssessCountItemSkin" left="0" right="0"/>
+		<e:Scroller id="scroller" left="0" right="0" top="40" bottom="120">
+			<e:Group id="group">
+				<e:layout>
+					<e:VerticalLayout horizontalAlign="justify" gap="0"/>
+				</e:layout>
+			</e:Group>
+		</e:Scroller>
+		<e:Rect right="0" bottom="120" left="0" height="1" fillAlpha="0.38" x="10" y="10"/>
+		<e:Label text="注：充值额度超过3000按照3000计算" fontFamily="微软雅黑" textColor="0xFF0000" size="20" horizontalCenter="0" bottom="80"/>
+		<e:Button id="btn_confirm" label="确定" skinName="skins.Button_WhiteSkin" scaleX="1" scaleY="1" left="0" right="0" bottom="0"/>
+	</e:Group>
+</e:Skin>

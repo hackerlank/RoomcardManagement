@@ -100,7 +100,12 @@ class LoginMsg extends BaseMsg {
         if (msg.code != 0)return;
 
         var userVo: UserVo = this.gameManager.dataManager.userVo;
-        msg.data && userVo.update(msg.data);
+        if (msg.data) {
+            userVo.update(msg.data);
+        }
+
+        userVo.rewardRule = msg.buycTpl;
+        userVo.assessRule = msg.zcrTpl;
 
         var gameTpl: any[] = msg.gameTpl;
         if (gameTpl) {
@@ -135,26 +140,6 @@ class LoginMsg extends BaseMsg {
             });
         }
 
-        var rewardRuleList: any[] = msg.buycTpl;
-        if (rewardRuleList) {
-            userVo.rewardRuleList = [];
-
-            var rewardRuleVo: RewardRuleVo;
-            for (var i: number = 0; i < rewardRuleList.length; i++) {
-                rewardRuleVo = new RewardRuleVo();
-                rewardRuleVo.update(rewardRuleList[i]);
-                userVo.rewardRuleList.push(rewardRuleVo);
-            }
-
-            userVo.rewardRuleList.sort(function (a: RewardRuleVo, b: RewardRuleVo) {
-                if (a.min > b.min) {
-                    return 1;
-                }
-                else {
-                    return -1;
-                }
-            });
-        }
         this.gameManager.dataManager.clean();
         this.gameManager.sceneManager.open(SceneType.transfer);
         this.gameManager.uiManager.menuUI.open();

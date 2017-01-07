@@ -27,6 +27,7 @@
 				<e:Image id="img_portrait" scaleX="1" scaleY="1" width="120" height="120" source="img_portrait_default" left="20"/>
 				<e:TextInput id="lab_nick" scaleX="1" scaleY="1" left="200" verticalCenter="-27" prompt="昵称" width="260" enabled="false"/>
 				<e:TextInput id="lab_card" scaleX="1" scaleY="1" verticalCenter="27" prompt="剩余" width="260" enabled="false" left="200"/>
+				<e:Button id="btn_assess" y="8" anchorOffsetX="0" width="100" label="评价" skinName="skins.Button_GreenSkin" x="499"/>
 			</e:Group>
 			<e:Group x="20" y="20">
 				<e:layout>

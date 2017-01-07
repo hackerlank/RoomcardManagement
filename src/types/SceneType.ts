@@ -13,6 +13,7 @@ class SceneType {
     static follow: string = "2001";
     static follow_search: string = "2002";
     static follow_details: string = "2003";
+    static follow_assess: string = "2004";
 
     static agent: string = "4001";
     static agent_append: string = "4002";

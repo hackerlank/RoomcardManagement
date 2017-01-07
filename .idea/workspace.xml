@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="34b027f0-66f5-41df-b439-3dac1a10d736" name="Default" comment="" />
+    <list default="true" id="34b027f0-66f5-41df-b439-3dac1a10d736" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource_a/config/credit.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resource_a/eui_skins_project/AssessBarSkin.exml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/AssessBar.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/alert/AssessCountAlert.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/items/AssessCountItem.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/scene/follow/FollowAssessScene.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resource/packs/preloadsheet_abac5fb4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resource/packs/preloadsheet_f0537ac1.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/exml.e.d.ts" afterPath="$PROJECT_DIR$/libs/exml.e.d.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/modules/egret/egret.web.min.js" afterPath="$PROJECT_DIR$/libs/modules/egret/egret.web.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/default.pub.json" afterPath="$PROJECT_DIR$/resource/default.pub.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/default.res.json" afterPath="$PROJECT_DIR$/resource/default.res.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/default.thm.json" afterPath="$PROJECT_DIR$/resource/default.thm.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/eui_skins/Button_GreenSkin.exml" afterPath="$PROJECT_DIR$/resource/eui_skins/Button_GreenSkin.exml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/eui_skins_project/scene/account/AccountSaleSceneSkin.exml" afterPath="$PROJECT_DIR$/resource/eui_skins_project/scene/account/AccountSaleSceneSkin.exml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource/eui_skins_project/scene/transfer/TransferSceneSkin.exml" afterPath="$PROJECT_DIR$/resource/eui_skins_project/scene/transfer/TransferSceneSkin.exml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource_a/default.pub.json" afterPath="$PROJECT_DIR$/resource_a/default.pub.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource_a/default.res.json" afterPath="$PROJECT_DIR$/resource_a/default.res.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource_a/default.thm.json" afterPath="$PROJECT_DIR$/resource_a/default.thm.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource_a/eui_skins/Button_GreenSkin.exml" afterPath="$PROJECT_DIR$/resource_a/eui_skins/Button_GreenSkin.exml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource_a/eui_skins_project/scene/account/AccountSaleSceneSkin.exml" afterPath="$PROJECT_DIR$/resource_a/eui_skins_project/scene/account/AccountSaleSceneSkin.exml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resource_a/eui_skins_project/scene/transfer/TransferSceneSkin.exml" afterPath="$PROJECT_DIR$/resource_a/eui_skins_project/scene/transfer/TransferSceneSkin.exml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/manager/AlertManager.ts" afterPath="$PROJECT_DIR$/src/manager/AlertManager.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/manager/SceneManager.ts" afterPath="$PROJECT_DIR$/src/manager/SceneManager.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/LoginMsg.ts" afterPath="$PROJECT_DIR$/src/net/LoginMsg.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/TransferMsg.ts" afterPath="$PROJECT_DIR$/src/net/TransferMsg.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/types/AlertType.ts" afterPath="$PROJECT_DIR$/src/types/AlertType.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/types/Cmd.ts" afterPath="$PROJECT_DIR$/src/types/Cmd.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/types/EventType.ts" afterPath="$PROJECT_DIR$/src/types/EventType.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/types/SceneType.ts" afterPath="$PROJECT_DIR$/src/types/SceneType.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/items/SaleCardRewardRuleItem.ts" afterPath="$PROJECT_DIR$/src/view/items/SaleCardRewardRuleItem.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/scene/account/AccountAgentScene.ts" afterPath="$PROJECT_DIR$/src/view/scene/account/AccountAgentScene.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/scene/account/AccountSaleScene.ts" afterPath="$PROJECT_DIR$/src/view/scene/account/AccountSaleScene.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/scene/transfer/TransferScene.ts" afterPath="$PROJECT_DIR$/src/view/scene/transfer/TransferScene.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vo/UserVo.ts" afterPath="$PROJECT_DIR$/src/vo/UserVo.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/runtime/native_require.js" afterPath="$PROJECT_DIR$/template/runtime/native_require.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wingProperties.json" afterPath="$PROJECT_DIR$/wingProperties.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z/indexTest.html" afterPath="$PROJECT_DIR$/z/indexTest.html" />
+    </list>
     <ignored path="ChessManager.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,28 +67,48 @@
       <file leaf-file-name="Cmd.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/types/Cmd.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
+            <state relative-caret-position="414">
+              <caret line="25" column="26" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountAgentScene.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/scene/account/AccountAgentScene.ts">
+      <file leaf-file-name="TransferMsg.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/TransferMsg.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+            <state relative-caret-position="664">
+              <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AgentMsg.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/AgentMsg.ts">
+      <file leaf-file-name="NormalAlert.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/alert/NormalAlert.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="92" column="27" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="27" />
+            <state relative-caret-position="102">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransferScene.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/scene/transfer/TransferScene.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1164">
+              <caret line="58" column="72" selection-start-line="58" selection-start-column="72" selection-end-line="58" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FollowAssessScene.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/scene/follow/FollowAssessScene.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -79,57 +140,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/view/scene/agent/AgentLv2RecordScene.ts" />
-        <option value="$PROJECT_DIR$/src/constant/Common.ts" />
-        <option value="$PROJECT_DIR$/src/view/scene/account/AccountRoomScene.ts" />
-        <option value="$PROJECT_DIR$/src/view/scene/agent/AgentNoticeScene.ts" />
-        <option value="$PROJECT_DIR$/src/view/scene/account/AccountSaleScene.ts" />
-        <option value="$PROJECT_DIR$/indexTest.html" />
-        <option value="$USER_HOME$/Desktop/index.html" />
-        <option value="$PROJECT_DIR$/src/view/items/TransferInRecordItem.ts" />
-        <option value="$PROJECT_DIR$/z/indexTest1.html" />
         <option value="$PROJECT_DIR$/src/view/items/RecordGmItem.ts" />
         <option value="$PROJECT_DIR$/src/view/scene/agent/AgentCheckCenterScene.ts" />
         <option value="$PROJECT_DIR$/src/config/Power.ts" />
         <option value="$PROJECT_DIR$/src/cheng/h5_egret/vo/BaseVo.ts" />
-        <option value="$PROJECT_DIR$/src/vo/UserVo.ts" />
         <option value="$PROJECT_DIR$/src/net/RechargeMsg.ts" />
         <option value="$PROJECT_DIR$/src/view/scene/account/AccountScene.ts" />
         <option value="$PROJECT_DIR$/src/vo/LowerUserContributionVo.ts" />
         <option value="$PROJECT_DIR$/src/view/items/LowerUserContributionItem.ts" />
-        <option value="$PROJECT_DIR$/src/view/items/SaleCardRewardRuleItem.ts" />
         <option value="$PROJECT_DIR$/bin-release/web/161223140957/index.html" />
         <option value="$PROJECT_DIR$/src/view/scene/agent/AgentAppendScene.ts" />
         <option value="$PROJECT_DIR$/bin-release/web/161223142523/index.html" />
-        <option value="$PROJECT_DIR$/src/net/TransferMsg.ts" />
         <option value="$PROJECT_DIR$/bin-release/web/161224113902/index.html" />
         <option value="$PROJECT_DIR$/bin-release/web/161224114701/index.html" />
         <option value="$PROJECT_DIR$/bin-release/web/161224114911/index.html" />
-        <option value="$PROJECT_DIR$/src/types/EventType.ts" />
         <option value="$PROJECT_DIR$/src/api/Weixin.ts" />
         <option value="$PROJECT_DIR$/src/cheng/h5_egret/manager/HttpManager.ts" />
         <option value="$PROJECT_DIR$/src/view/ui/MenuUI.ts" />
-        <option value="$PROJECT_DIR$/src/manager/SceneManager.ts" />
         <option value="$PROJECT_DIR$/src/constant/Lang_CH.ts" />
         <option value="$PROJECT_DIR$/bin-release/web/161224172224/index.html" />
         <option value="$PROJECT_DIR$/src/Main.ts" />
         <option value="$PROJECT_DIR$/bin-release/web/161224201416/index.html" />
         <option value="$PROJECT_DIR$/bin-release/web/161224204308/index.html" />
         <option value="$PROJECT_DIR$/z/index.html" />
-        <option value="$PROJECT_DIR$/z/indexTest.html" />
         <option value="$PROJECT_DIR$/src/cheng/h5_egret/utils/StringUtils.ts" />
         <option value="$PROJECT_DIR$/z_scmj/index.html" />
         <option value="$PROJECT_DIR$/src/Core.ts" />
-        <option value="$PROJECT_DIR$/src/view/scene/transfer/TransferScene.ts" />
         <option value="$PROJECT_DIR$/src/view/scene/agent/AgentScene.ts" />
         <option value="$PROJECT_DIR$/src/manager/DataManager.ts" />
-        <option value="$PROJECT_DIR$/src/net/LoginMsg.ts" />
         <option value="$PROJECT_DIR$/bin-release/web/161226103441/index.html" />
-        <option value="$PROJECT_DIR$/src/types/Cmd.ts" />
-        <option value="$PROJECT_DIR$/src/view/scene/account/AccountAgentScene.ts" />
         <option value="$PROJECT_DIR$/bin-release/web/161226160102/index.html" />
         <option value="$PROJECT_DIR$/bin-release/web/161226160605/index.html" />
         <option value="$PROJECT_DIR$/src/net/AgentMsg.ts" />
+        <option value="$PROJECT_DIR$/z/indexTest.html" />
+        <option value="$PROJECT_DIR$/src/view/items/SaleCardRewardRuleItem.ts" />
+        <option value="$PROJECT_DIR$/src/view/scene/account/AccountSaleScene.ts" />
+        <option value="$PROJECT_DIR$/bin-release/web/161227184413/index.html" />
+        <option value="$PROJECT_DIR$/src/types/Cmd.ts" />
+        <option value="$PROJECT_DIR$/src/view/scene/account/AccountAgentScene.ts" />
+        <option value="$PROJECT_DIR$/src/types/SceneType.ts" />
+        <option value="$PROJECT_DIR$/src/types/EventType.ts" />
+        <option value="$PROJECT_DIR$/src/view/scene/transfer/TransferScene.ts" />
+        <option value="$PROJECT_DIR$/src/manager/SceneManager.ts" />
+        <option value="$PROJECT_DIR$/src/net/LoginMsg.ts" />
+        <option value="$PROJECT_DIR$/src/types/AlertType.ts" />
+        <option value="$PROJECT_DIR$/src/manager/AlertManager.ts" />
+        <option value="$PROJECT_DIR$/src/vo/UserVo.ts" />
+        <option value="$PROJECT_DIR$/src/view/items/AssessCountItem.ts" />
+        <option value="$PROJECT_DIR$/src/view/alert/AssessCountAlert.ts" />
+        <option value="$PROJECT_DIR$/src/view/AssessBar.ts" />
+        <option value="$PROJECT_DIR$/src/net/TransferMsg.ts" />
+        <option value="$PROJECT_DIR$/src/view/scene/follow/FollowAssessScene.ts" />
       </list>
     </option>
   </component>
@@ -155,7 +216,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -190,6 +251,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="RoomcardManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RoomcardManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RoomcardManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="z" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -295,7 +370,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="other" />
+              <option name="myItemId" value="follow" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -317,11 +392,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scene" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="agent" />
+              <option name="myItemId" value="items" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,11 +414,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scene" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
+              <option name="myItemId" value="alert" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,11 +428,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="net" />
+              <option name="myItemId" value="resource_a" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -379,55 +442,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bin-release" />
+              <option name="myItemId" value="resource_a" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RoomcardManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RoomcardManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bin-release" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="161226160605" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RoomcardManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RoomcardManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bin-release" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="161226160102" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -442,22 +461,22 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="typescript-compiler-editor-notification" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="cmd&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/types/Cmd.ts&#10;lo&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/LoginMsg.ts&#10;main&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/Main.ts&#10;weixin&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/api/Weixin.ts&#10;core&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/Core.ts&#10;uimana&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/manager/UIManager.ts&#10;menu&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/ui/MenuUI.ts&#10;wel&#9;null&#9;null&#10;src/view/scene/agent/AgentAppendScene.ts&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/agent/AgentAppendScene.ts&#10;login&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/LoginMsg.ts&#10;src/view/scene/agent/AgentScene.ts&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/agent/AgentScene.ts&#10;tran&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/transfer/TransferScene.ts&#10;wei&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/api/Weixin.ts&#10;transfer&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/items/TransferInRecordItem.ts&#10;menuui&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/ui/MenuUI.ts&#10;src/view/scene/account/AccountRoomScene.ts&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/account/AccountRoomScene.ts&#10;src/view/scene/account/AccountScene.ts&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/account/AccountScene.ts&#10;tra&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/transfer/TransferScene.ts&#10;accountro&#9;null&#9;null&#10;power&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/config/Power.ts&#10;scenema&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/manager/SceneManager.ts&#10;Scenetype&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/types/SceneType.ts&#10;datamana&#9;null&#9;null&#10;age&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/AgentMsg.ts&#10;agentmsg&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/AgentMsg.ts&#10;Scenemana&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/manager/SceneManager.ts&#10;eventtype&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/types/EventType.ts&#10;src/cheng/h5_egret/utils/StorageUtils.ts&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/cheng/h5_egret/utils/StorageUtils.ts&#10;data&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/manager/DataManager.ts&#10;src/view/scene/account/AccountPowerScene.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/scene/account/AccountPowerScene.ts&#10;Scenema&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/manager/SceneManager.ts&#10;loginmsg&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/net/LoginMsg.ts&#10;src/view/scene/account/AccountAgentScene.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/scene/account/AccountAgentScene.ts&#10;src/view/scene/transfer/TransferScene.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/scene/transfer/TransferScene.ts&#10;transf&#9;null&#9;null&#10;scenemana&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/manager/SceneManager.ts&#10;src/view/items/TransferRecordItem.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/items/TransferRecordItem.ts&#10;src/view/scene/follow/FollowScene.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/scene/follow/FollowScene.ts&#10;followsear&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/scene/follow/FollowSearchScene.ts&#10;Data&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/manager/DataManager.ts&#10;msg&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/manager/MsgManager.ts&#10;Eventtype&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/types/EventType.ts&#10;uservo&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/vo/UserVo.ts&#10;msgma&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/manager/MsgManager.ts&#10;msgme&#9;null&#9;null&#10;number&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/component/NumberAdder.ts&#10;msgm&#9;null&#9;null&#10;transferme&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/net/TransferMessage.ts&#10;string&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/cheng/h5_egret/utils/StringUtils.ts&#10;src/net/TransferMessage.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/net/TransferMessage.ts" />
+    <property name="SearchEverywhereHistoryKey" value="normal&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/alert/NormalAlert.ts&#10;norma&#9;null&#9;null&#10;login&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/LoginMsg.ts&#10;scenemana&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/manager/SceneManager.ts&#10;transferm&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/TransferMsg.ts&#10;agentm&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/AgentMsg.ts&#10;lo&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/LowerUserMsg.ts&#10;low&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/LowerUserMsg.ts&#10;log&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/LoginMsg.ts&#10;cmd&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/types/Cmd.ts&#10;tran&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/TransferMsg.ts&#10;main&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/Main.ts&#10;weixin&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/api/Weixin.ts&#10;core&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/Core.ts&#10;uimana&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/manager/UIManager.ts&#10;menu&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/ui/MenuUI.ts&#10;wel&#9;null&#9;null&#10;src/view/scene/agent/AgentAppendScene.ts&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/agent/AgentAppendScene.ts&#10;src/view/scene/agent/AgentScene.ts&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/agent/AgentScene.ts&#10;wei&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/api/Weixin.ts&#10;transfer&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/items/TransferInRecordItem.ts&#10;menuui&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/ui/MenuUI.ts&#10;src/view/scene/account/AccountRoomScene.ts&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/account/AccountRoomScene.ts&#10;src/view/scene/account/AccountScene.ts&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/account/AccountScene.ts&#10;tra&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/view/scene/transfer/TransferScene.ts&#10;accountro&#9;null&#9;null&#10;power&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/config/Power.ts&#10;scenema&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/manager/SceneManager.ts&#10;Scenetype&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/types/SceneType.ts&#10;datamana&#9;null&#9;null&#10;age&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/AgentMsg.ts&#10;agentmsg&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/net/AgentMsg.ts&#10;Scenemana&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/manager/SceneManager.ts&#10;eventtype&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/types/EventType.ts&#10;src/cheng/h5_egret/utils/StorageUtils.ts&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/cheng/h5_egret/utils/StorageUtils.ts&#10;data&#9;FILE&#9;file://E:/work/h5_egret/RoomcardManagement/src/manager/DataManager.ts&#10;src/view/scene/account/AccountPowerScene.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/scene/account/AccountPowerScene.ts&#10;Scenema&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/manager/SceneManager.ts&#10;loginmsg&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/net/LoginMsg.ts&#10;src/view/scene/account/AccountAgentScene.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/scene/account/AccountAgentScene.ts&#10;src/view/scene/transfer/TransferScene.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/scene/transfer/TransferScene.ts&#10;transf&#9;null&#9;null&#10;src/view/items/TransferRecordItem.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/items/TransferRecordItem.ts&#10;src/view/scene/follow/FollowScene.ts&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/scene/follow/FollowScene.ts&#10;followsear&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/view/scene/follow/FollowSearchScene.ts&#10;Data&#9;FILE&#9;file://E:/work/h5_egret/ChessGameManager/src/manager/DataManager.ts&#10;msg&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/manager/MsgManager.ts&#10;Eventtype&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/types/EventType.ts&#10;uservo&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/vo/UserVo.ts&#10;msgma&#9;FILE&#9;file://E:/work/h5_egret/ChessManager/src/manager/MsgManager.ts" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\work\h5_egret\RoomcardManagement\src\view\items" />
+      <recent name="E:\work\h5_egret\RoomcardManagement\src\view\alert" />
+      <recent name="E:\work\h5_egret\RoomcardManagement\resource_a\config" />
+      <recent name="E:\work\h5_egret\RoomcardManagement\src\view\scene\follow" />
+      <recent name="E:\work\h5_egret\RoomcardManagement\resource_a\eui_skins_project" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\work\h5_egret\RoomcardManagement\z" />
       <recent name="E:\work\h5_egret\RoomcardManagement\src" />
       <recent name="E:\work\h5_egret\RoomcardManagement\src\cheng" />
       <recent name="E:\work\h5_egret\ChessGameManager\src\view\scene\other" />
       <recent name="E:\work\h5_egret\ChessManager\resource_origin" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\work\h5_egret\RoomcardManagement" />
-      <recent name="E:\work\h5_egret\RoomcardManagement\z" />
-      <recent name="E:\work\h5_egret\RoomcardManagement\src\view\items" />
-      <recent name="E:\work\h5_egret\RoomcardManagement\src\view\scene\other" />
-      <recent name="E:\work\h5_egret\ChessGameManager\src\component" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
@@ -516,25 +535,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19189766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848233" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275488" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2750533" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275488" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -553,152 +572,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/view/scene/account/AccountSaleScene.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/items/SaleCardRewardRuleItem.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin-release/web/161223140957/index.html" />
-    <entry file="file://$PROJECT_DIR$/bin-release/web/161223142523/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/vo/TransferRecordVo.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin-release/web/161224114911/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/net/TransferMsg.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="163" column="45" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin-release/web/161224114701/index.html" />
-    <entry file="file://$PROJECT_DIR$/bin-release/web/161224113902/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/vo/UserVo.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/types/EventType.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/alert/BaseAlert.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/alert/NormalAlert.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/manager/AlertManager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/manager/GameManager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="53" column="41" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/scene/other/WelcomScene.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/types/SceneType.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/scene/account/AccountScene.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="92" column="9" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/RechargeMsg.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cheng/h5_egret/component/BaseSprite.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/ui/BaseUI.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/manager/SceneManager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="121" column="52" selection-start-line="121" selection-start-column="52" selection-end-line="121" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/manager/UIManager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/ui/MenuUI.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/scene/agent/AgentAppendScene.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/constant/Lang_CH.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -728,32 +601,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin-release/web/161224201416/index.html" />
-    <entry file="file://$PROJECT_DIR$/bin-release/web/161224204308/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bin-release/web/161224204308/index.html" />
     <entry file="file://$PROJECT_DIR$/src/cheng/h5_egret/utils/StringUtils.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="94" column="82" selection-start-line="94" selection-start-column="82" selection-end-line="94" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z/indexTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -765,21 +618,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/z_scmj/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/Core.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/LowerUserMsg.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/scene/account/AccountTransInScene.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -794,77 +632,280 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/LoginMsg.ts">
+    <entry file="file://$PROJECT_DIR$/bin-release/web/161226103441/index.html" />
+    <entry file="file://$PROJECT_DIR$/bin-release/web/161226160605/index.html" />
+    <entry file="file://$PROJECT_DIR$/bin-release/web/161226160102/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/cheng/h5_egret/manager/HttpManager.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="157" column="45" selection-start-line="157" selection-start-column="45" selection-end-line="157" selection-end-column="45" />
+        <state relative-caret-position="284">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Core.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="83" column="72" selection-start-line="83" selection-start-column="72" selection-end-line="83" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vo/RewardRuleVo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/egretProperties.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin-release/web/161227184413/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/view/scene/account/AccountSaleScene.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="859">
+          <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin-release/web/161226103441/index.html">
+    <entry file="file://$PROJECT_DIR$/src/view/items/SaleCardRewardRuleItem.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+        <state relative-caret-position="391">
+          <caret line="23" column="85" selection-start-line="23" selection-start-column="85" selection-end-line="23" selection-end-column="85" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/manager/DataManager.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/scene/transfer/TransferScene.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="859">
-          <caret line="113" column="110" selection-start-line="113" selection-start-column="110" selection-end-line="114" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/types/Cmd.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
+        <state relative-caret-position="281">
+          <caret line="194" column="35" selection-start-line="194" selection-start-column="11" selection-end-line="194" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin-release/web/161226160605/index.html">
+    <entry file="file://$PROJECT_DIR$/src/view/scene/account/AccountTransOutScene.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin-release/web/161226160102/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/scene/account/AccountAgentScene.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+        <state relative-caret-position="451">
+          <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cheng/h5_egret/manager/HttpManager.ts">
+    <entry file="file://$PROJECT_DIR$/src/view/items/TransferRecordItem.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+        <state relative-caret-position="255">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/LowerUserMsg.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="92" column="22" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/AgentMsg.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="92" column="27" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="27" />
+        <state relative-caret-position="210">
+          <caret line="70" column="32" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/scene/account/AccountAgentScene.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="145" column="9" selection-start-line="145" selection-start-column="9" selection-end-line="145" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/types/Cmd.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource_a/eui_skins_project/AssessBarSkin.exml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/types/SceneType.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/types/EventType.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/manager/SceneManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/types/AlertType.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/alert/BaseAlert.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/manager/AlertManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/alert/ProtocolAlert.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/items/AssessCountItem.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z/indexTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin-debug/net/AgentMsg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="108" column="41" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource_a/config/credit.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vo/UserVo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/LoginMsg.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="107" column="22" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/alert/AssessCountAlert.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/AssessBar.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="909">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/scene/transfer/TransferScene.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1164">
+          <caret line="58" column="72" selection-start-line="58" selection-start-column="72" selection-end-line="58" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/TransferMsg.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/alert/NormalAlert.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/scene/follow/FollowAssessScene.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="101" column="21" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
           <folding />
         </state>
       </provider>

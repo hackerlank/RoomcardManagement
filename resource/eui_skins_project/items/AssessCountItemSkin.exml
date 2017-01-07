@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="AssessCountItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect right="0" bottom="0" left="0" top="0" fillColor="0xFFFFFF" x="10" y="10"/>
+	<e:Group verticalCenter="0" horizontalCenter="0">
+		<e:layout>
+			<e:HorizontalLayout verticalAlign="middle" gap="0"/>
+		</e:layout>
+		<e:Label id="lab_value1" y="13" textColor="0x000000" fontFamily="微软雅黑" width="200" size="24" x="303" textAlign="center" text="上月充值总额"/>
+		<e:Rect width="2" y="16" height="40" x="328"/>
+		<e:Label id="lab_value2" y="23" textColor="0x000000" fontFamily="微软雅黑" width="200" size="24" x="313" textAlign="center" text="本月操作总次数"/>
+	</e:Group>
+	<e:Rect left="0" right="0" height="1" fillAlpha="0.38" bottom="0"/>
+</e:Skin>

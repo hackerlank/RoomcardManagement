@@ -14,6 +14,7 @@ class SceneManager extends BaseManager {
 
     public followScene: FollowScene;
     public followSearchScene: FollowSearchScene;
+    public followAssessScene: FollowAssessScene;
     public followDetailsScene: FollowDetailsScene;
 
     public agentScene: AgentScene;
@@ -69,6 +70,9 @@ class SceneManager extends BaseManager {
 
         this.followSearchScene = new FollowSearchScene();
         this.addScene(this.followSearchScene);
+
+        this.followAssessScene = new FollowAssessScene();
+        this.addScene(this.followAssessScene);
 
         this.followDetailsScene = new FollowDetailsScene();
         this.addScene(this.followDetailsScene);

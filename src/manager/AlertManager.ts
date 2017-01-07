@@ -8,6 +8,7 @@ class AlertManager extends BaseManager {
 
     public normal: NormalAlert;
     public protocolAlert: ProtocolAlert;
+    public assessCountAlert: AssessCountAlert;
 
     public constructor() {
         super();
@@ -23,6 +24,9 @@ class AlertManager extends BaseManager {
 
         this.protocolAlert = new ProtocolAlert();
         this.gather[this.protocolAlert.id] = this.protocolAlert;
+
+        this.assessCountAlert = new AssessCountAlert();
+        this.gather[this.assessCountAlert.id] = this.assessCountAlert;
     }
 
     /**

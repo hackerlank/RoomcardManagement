@@ -1,6 +1,6 @@
 {
 	"groups":[{
-			"keys":"button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,ico_add,ico_add2,ico_cut,ico_details,ico_user,img_arrow_down,img_arrow_down2,img_arrow_page_left,img_arrow_page_right,img_arrow_right,img_arrow_right2,img_arrow_up,img_arrow_up2,img_basemap,img_basemap_alert,img_basemap2,img_basemap3,img_basemap4,img_green,img_green_unable,img_line,img_portrait_default,area_cn,ico_agent,btn_green,btn_red,btn_gray",
+			"keys":"button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,ico_add,ico_add2,ico_cut,ico_details,ico_user,img_arrow_down,img_arrow_down2,img_arrow_page_left,img_arrow_page_right,img_arrow_right,img_arrow_right2,img_arrow_up,img_arrow_up2,img_basemap,img_basemap_alert,img_basemap2,img_basemap3,img_basemap4,img_green,img_green_unable,img_line,img_portrait_default,area_cn,ico_agent,btn_green,btn_red,btn_gray,ico_thumbs_up_4,ico_thumbs_down_4,ico_evaluate_2,ico_evaluate_2_0,ico_evaluate_3,ico_evaluate_3_0,ico_evaluate_4,ico_evaluate_4_0,ico_evaluate_1,ico_evaluate_1_0,credit",
 			"name":"preload"
 		}],
 	"resources":[
@@ -253,6 +253,61 @@
 			"name":"btn_gray",
 			"type":"image",
 			"url":"assets/btn_gray.png"
+		},
+		{
+			"name":"ico_thumbs_up_4",
+			"type":"image",
+			"url":"assets/ico_thumbs_up_4.png"
+		},
+		{
+			"name":"ico_thumbs_down_4",
+			"type":"image",
+			"url":"assets/ico_thumbs_down_4.png"
+		},
+		{
+			"name":"ico_evaluate_2",
+			"type":"image",
+			"url":"assets/ico_evaluate_2.png"
+		},
+		{
+			"name":"ico_evaluate_2_0",
+			"type":"image",
+			"url":"assets/ico_evaluate_2_0.png"
+		},
+		{
+			"name":"ico_evaluate_3",
+			"type":"image",
+			"url":"assets/ico_evaluate_3.png"
+		},
+		{
+			"name":"ico_evaluate_3_0",
+			"type":"image",
+			"url":"assets/ico_evaluate_3_0.png"
+		},
+		{
+			"name":"ico_evaluate_4",
+			"type":"image",
+			"url":"assets/ico_evaluate_4.png"
+		},
+		{
+			"name":"ico_evaluate_4_0",
+			"type":"image",
+			"url":"assets/ico_evaluate_4_0.png"
+		},
+		{
+			"name":"ico_evaluate_1",
+			"type":"image",
+			"url":"assets/ico_evaluate_1.png"
+		},
+		{
+			"name":"ico_evaluate_1_0",
+			"type":"image",
+			"url":"assets/ico_evaluate_1_0.png"
+		},
+		{
+			"name":"credit",
+			"type":"json",
+			"url":"config/credit.json"
 		}
 	]
 }

@@ -7,6 +7,7 @@ class TransferScene extends BaseScene {
 
     private txt_uid: eui.TextInput;
     private btn_search: eui.Button;
+    private btn_assess: eui.Button;
     private img_portrait: eui.Image;
     private lab_nick: eui.TextInput;
     private lab_card: eui.TextInput;
@@ -43,6 +44,7 @@ class TransferScene extends BaseScene {
         this.nba_count.setMaxChars(6);
 
         this.btn_search.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
+        this.btn_assess.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
         this.btn_recharge.addEventListener(egret.TouchEvent.TOUCH_TAP, this.clickHandler, this);
 
         this.gameManager.addEventListener(EventType.User_Info, this.onUpdateUserInfo, this);
@@ -52,6 +54,11 @@ class TransferScene extends BaseScene {
     }
 
     private clickHandler(e: egret.TouchEvent) {
+
+        if (e.currentTarget == this.btn_assess) {
+            this.gameManager.sceneManager.open(SceneType.follow_assess);
+            return;
+        }
 
         if (this.txt_uid.text == "") {
             this.gameManager.alertManager.open(AlertType.Normal, Lang.getText(1001));
@@ -97,9 +104,15 @@ class TransferScene extends BaseScene {
     }
 
     private onUpdateSearch(data: any) {
-        this.img_portrait.source = "" + data.pic;
-        this.lab_nick.text = "" + data.nick;
-        this.lab_card.text = "房卡:" + data.cur;
+        if (data.hasOwnProperty("pic")) {
+            this.img_portrait.source = "" + data.pic;
+        }
+        if (data.hasOwnProperty("nick")) {
+            this.lab_nick.text = "" + data.nick;
+        }
+        if (data.hasOwnProperty("cur")) {
+            this.lab_card.text = "房卡:" + data.cur;
+        }
     }
 
     private onUpdateFollow(data: any) {

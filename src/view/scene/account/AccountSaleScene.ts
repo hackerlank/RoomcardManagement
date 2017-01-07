@@ -9,9 +9,10 @@ class AccountSaleScene extends BaseScene {
     private txt_reward: eui.TextInput;
     private btn_get: eui.Button;
     private itemGroup: eui.Group;
+    private lab_none: eui.Label;
 
     public userVo: UserVo;
-    public rewardRuleList: RewardRuleVo[];
+    public rewardRule: any;
 
     public constructor() {
         super();
@@ -22,18 +23,6 @@ class AccountSaleScene extends BaseScene {
 
     public childrenCreated() {
         super.childrenCreated();
-
-        this.itemGroup.removeChildren();
-
-        this.rewardRuleList = this.gameManager.dataManager.userVo.rewardRuleList;
-        if (this.rewardRuleList) {
-            var item: SaleCardRewardRuleItem;
-            for (var i: number = 0; i < this.rewardRuleList.length; i++) {
-                item = new SaleCardRewardRuleItem();
-                item.ruleVo = this.rewardRuleList[i];
-                this.itemGroup.addChild(item);
-            }
-        }
 
         this.update();
 
@@ -62,10 +51,42 @@ class AccountSaleScene extends BaseScene {
 
     public update() {
         this.userVo = this.gameManager.dataManager.userVo;
+
         this.txt_total.text = this.userVo.cardMonth + "月售卡总计:" + this.userVo.cardBuy;
-        // this.txt_total.text = "售卡总计:" + this.userVo.cardBuy;
         this.txt_reward.text = this.userVo.cardMonth + "月售卡奖励:" + this.userVo.cardReward;
-        // this.txt_reward.text = "售卡奖励:" + this.userVo.cardReward;
+
+        this.itemGroup.removeChildren();
+        this.rewardRule = this.gameManager.dataManager.userVo.rewardRule;
+
+        if (this.rewardRule) {
+            var list: any[] = this.rewardRule["" + this.userVo.cardMonth];
+            if (!list || !list.length)return;
+            list.sort(function (a, b) {
+                if (a.min > b.min) {
+                    return 1;
+                }
+                else {
+                    return -1;
+                }
+            });
+
+            var item: SaleCardRewardRuleItem;
+            var rule: any;
+            for (var i: number = 0; i < list.length; i++) {
+                rule = list[i];
+                if (rule.per == 0 && rule.reb == 0) {
+                    this.lab_none.visible = true;
+                    return;
+                }
+
+                item = new SaleCardRewardRuleItem();
+                this.itemGroup.addChild(item);
+
+                item.update(rule);
+            }
+
+            this.lab_none.visible = false;
+        }
     }
 
     public open() {

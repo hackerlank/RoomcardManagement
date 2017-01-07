@@ -197,4 +197,27 @@ class TransferMsg extends BaseMsg {
 
         this.gameManager.dispatchEvent(EventType.Transfer_Cancel, msg.orn);
     }
+
+    /**
+     * 评价
+     */
+    public assess(uid: string, gid: string, type: number) {
+        var data: any = {};
+        data.s = core.sessionid;
+        data.u = uid;
+        data.g = gid;
+        data.t = type;
+
+        this.gameManager.httpManager.send(core.serverUrl + Cmd.Transfer_Assess, data, this.assessHandler, this);
+    }
+
+    /**
+     * {code:0, cai:0, zan:0, zcrused:1}
+     * @param msg
+     */
+    public assessHandler(msg: any) {
+        this.gameManager.dataManager.userVo.zcrused = msg.zcrused;
+
+        this.gameManager.dispatchEvent(EventType.LowerUser_Assess, msg);
+    }
 }

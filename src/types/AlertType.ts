@@ -9,6 +9,8 @@ class AlertType {
 
     public static Protocol:string = "1002";
 
+    public static AssessCount:string = "1003";
+
     public constructor() {
     }
 }

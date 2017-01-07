@@ -22,6 +22,8 @@ class Cmd {
     static Transfer_Record_In: string = "/under/getBuyRecord.vo";
     //转账-撤销
     static Transfer_Cancel: string = "/under/backOutTrs.vo";
+    //转账-对象-评价
+    static Transfer_Assess: string = "/under/zcrt2user.vo";
 
     //下级信息
     static LowerUser_List: string = "/under/getUnderRole.vo";

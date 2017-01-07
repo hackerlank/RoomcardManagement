@@ -132,12 +132,15 @@ class AccountAgentScene extends BaseScene {
         if (data.hasOwnProperty("pic")) {
             this.img_portrait.source = "" + data.pic;
         }
+
         if (data.hasOwnProperty("nick")) {
             this.lab_nick.text = "" + data.nick;
         }
+
         if (data.hasOwnProperty("gid")) {
             this.lab_game.text = "" + this.userVo.getGameName(data.gid);
         }
+
         if (data.hasOwnProperty("cdnum")) {
             this.lab_card.text = "房卡:" + data.cdnum;
         }

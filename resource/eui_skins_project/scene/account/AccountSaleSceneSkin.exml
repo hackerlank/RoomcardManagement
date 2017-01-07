@@ -19,4 +19,5 @@
 		</e:Group>
 	</e:Scroller>
 	<e:Label text="注意：售卡奖励按月累计，满足奖励规则，即可获得相应奖励。本月售卡奖励在下个月才能领取。" bottom="20" fontFamily="微软雅黑" textColor="0x000000" left="20" right="20" size="26" multiline="true" wordWrap="true" lineSpacing="5"/>
+	<e:Label id="lab_none" text="暂无活动" horizontalCenter="0" fontFamily="微软雅黑" textColor="0x000000" size="26" top="440"/>
 </e:Skin>
